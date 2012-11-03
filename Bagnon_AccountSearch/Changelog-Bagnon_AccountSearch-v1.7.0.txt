@@ -1,0 +1,26 @@
+------------------------------------------------------------------------
+r31 | smuggles | 2012-09-02 14:08:58 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   A /tags/v1.7.0 (from /trunk:30)
+
+Tagging as v1.7.0
+------------------------------------------------------------------------
+r30 | smuggles | 2012-09-02 14:06:56 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/Bagnon_AccountSearch.lua
+
+Bagnon_AccountSearch.lua : fixed a bug where different realm guild banks could be searched
+------------------------------------------------------------------------
+r29 | smuggles | 2012-09-02 13:52:44 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/Bagnon_AccountSearch.lua
+   M /trunk/Bagnon_AccountSearch.toc
+
+Bagnon_AccountSearch.lua : implemented simple mode and search for all guild banks
+------------------------------------------------------------------------
+r28 | smuggles | 2012-09-02 11:04:00 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/Bagnon_AccountSearch.toc
+
+Bagnon_AccountSearch.toc : Updated version number to MoP
+------------------------------------------------------------------------

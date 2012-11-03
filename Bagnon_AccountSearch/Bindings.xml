@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="BAGNON_ACCSEARCH" description="BINDING_NAME_BAGNON_ACCSEARCH" header="BAGNON">
+		Bagnon.AccountSearchFrame:ShowSearch()
+	</Binding>
+</Bindings>

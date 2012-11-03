@@ -1,0 +1,34 @@
+## Interface: 50001
+## Title: Bagnon_AccountSearch
+## Author: Smuggles
+## Notes: Adds an account search function to Bagnon
+## Version: 1.7.0
+## Dependencies: Bagnon, BagBrother
+## SavedVariables: AccountSearchFrameSaveGlobal
+## SavedVariablesPerCharacter: AccountSearchFrameSave
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+## X-Curse-Packaged-Version: 1.2
+## X-Curse-Project-Name: Bagnon_AccountSearch
+## X-Curse-Project-ID: bagnon_accountsearch
+## X-Curse-Repository-ID: wow/bagnon_accountsearch/mainline
+## X-Curse-Packaged-Version: 1.3
+## X-Curse-Project-Name: Bagnon_AccountSearch
+## X-Curse-Project-ID: bagnon_accountsearch
+## X-Curse-Repository-ID: wow/bagnon_accountsearch/mainline
+## X-Curse-Packaged-Version: 1.5
+## X-Curse-Project-Name: Bagnon_AccountSearch
+## X-Curse-Project-ID: bagnon_accountsearch
+## X-Curse-Repository-ID: wow/bagnon_accountsearch/mainline
+## X-Curse-Packaged-Version: 1.6.2
+## X-Curse-Project-Name: Bagnon_AccountSearch
+## X-Curse-Project-ID: bagnon_accountsearch
+## X-Curse-Repository-ID: wow/bagnon_accountsearch/mainline
+## X-Curse-Packaged-Version: v1.7.0
+## X-Curse-Project-Name: Bagnon_AccountSearch
+## X-Curse-Project-ID: bagnon_accountsearch
+## X-Curse-Repository-ID: wow/bagnon_accountsearch/mainline
+
+embeds.xml
+
+Bagnon_AccountSearch.lua
