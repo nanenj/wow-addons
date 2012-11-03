@@ -1,0 +1,17 @@
+## Title: Auc:Util:AutoMagic
+## Notes: Automates some repetitive tasks, such as auto-selling grays, unusable quest rewards, or other items you designate.  Bulk mail items to Alternate Characters based upon the reason for which they were purchased.
+##
+## Interface: 50001
+## Dependancies: Auc-Advanced
+## OptionalDependencies: Auc-Util-Appraiser, Enchantrix, Auc-Util-ItemSuggest, LibDataBroker
+##
+## Version: 5.15.5365 (LikeableLyrebird)
+## Revision: $Id: Auc-Util-AutoMagic.toc 5326 2012-08-17 17:52:02Z brykrys $
+## Author: Norganna's AddOns
+## X-Part-Of: Auctioneer
+## X-Category: Auction House
+## X-Max-Interface: 50001
+## X-URL: http://auctioneeraddon.com/
+## X-Feedback: http://forums.norganna.org
+##
+Embed.xml

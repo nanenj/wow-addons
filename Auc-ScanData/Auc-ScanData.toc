@@ -1,0 +1,20 @@
+## Title: Auc:ScanData
+## Notes: Allows Auctioneer to delay loading the, probably, large auction scan dataset until it is needed. [5.15.5365] This AddOn is licensed under the GNU GPL, see GPL.txt for details.
+##
+## Interface: 50001
+## LoadOnDemand: 1
+## SavedVariables: AucScanData
+## Dependencies: Auc-Advanced
+## OptionalDeps: Auc-Util-PriceLevel
+##
+## Version: 5.15.5365 (LikeableLyrebird)
+## Revision: $Id: Auc-ScanData.toc 5326 2012-08-17 17:52:02Z brykrys $
+## Author: Norganna's AddOns
+## X-Part-Of: Auctioneer
+## X-Category: Auction House
+## X-Max-Interface: 50001
+## X-URL: http://auctioneeraddon.com/
+## X-Feedback: http://forums.norganna.org
+##
+StringRope.lua
+ScanData.lua

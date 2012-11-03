@@ -1,0 +1,36 @@
+## Title: Informant
+## Notes: Displays detailed item information in tooltips, such as use, vendor sales information, and more.  In additon, extended information can be viewed by binding a key from the keybind menu. [5.15.5365] This AddOn is licensed under the GNU GPL, see GPL.txt for details.
+##
+## Interface: 50001
+## LoadOnDemand: 1
+## Dependencies: Stubby
+## OptionalDeps: !nLog, Babylonian, DebugLib, Configator, SlideBar, LibExtraTip, TipHelper, LibDataBroker
+## SavedVariables: InformantConfig, InformantLocalUpdates
+##
+## Version: 5.15.5365 (LikeableLyrebird)
+## Revision: $Id: Informant.toc 5327 2012-08-17 19:09:03Z brykrys $
+## Author: Norganna's AddOns
+## X-Part-Of: Auctioneer
+## X-Category: Item Data
+## X-Max-Interface: 50001
+## X-URL: http://auctioneeraddon.com/
+## X-Feedback: http://forums.norganna.org
+##
+InfManifest.lua
+
+Libs\Load.xml
+
+InfStrings.lua
+InfLocale.lua
+
+InfMain.lua
+
+Data\InfQuests.lua
+Data\InfVendors.lua
+Data\InfData.lua
+
+InfCommand.lua
+InfSettings.lua
+InfTooltip.lua
+
+Informant.xml

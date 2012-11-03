@@ -1,0 +1,11 @@
+## Title: Auctioneer:Stat:Example2
+## Interface: 40300
+## Dependancies: Auc-Advanced
+##
+## Version: 5.15.5365 (LikeableLyrebird)
+## Revision: $Id: Auc-Stat-Example2.toc 5234 2011-11-24 04:54:19Z Nechckn $
+## URL: http://auctioneeraddon.com/
+## Author: Norganna's AddOns
+## X-Part-Of: Auctioneer
+##
+Embed.xml

@@ -1,0 +1,16 @@
+## Title: Configator |cff224477(lib)
+## Notes: Configator allows authors to easily construct a graphical user configuration interface.
+##
+## Interface: 50001
+## LoadOnDemand: 0
+##
+## Version: 5.15.5365 (LikeableLyrebird)
+## Revision: $Id: Configator.toc 329 2012-08-17 17:48:31Z brykrys $
+## Author: Norganna's AddOns
+## X-Part-Of: Libraries
+## X-Category: Library
+## X-Max-Interface: 50001
+## X-URL: http://zip.norganna.org/libs/Configator/
+## X-Feedback: http://forums.norganna.org
+##
+Load.xml
