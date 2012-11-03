@@ -1,0 +1,9 @@
+## Interface: 50001
+## Title: Bagnon Config
+## Notes: Load on demand configuration for Bagnon
+## Author: Tuller & Jaliborc (João Cardoso)
+## Dependencies: Bagnon
+## LoadOnDemand: 1
+localization.xml
+widgets.xml
+panels.xml

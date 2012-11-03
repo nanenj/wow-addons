@@ -1,0 +1,11 @@
+## Interface: 50001
+## Title: BagBrother
+## Notes: Stores your characters inventory, bank, and vault, so that you may view them from anywhere.
+## Author: Jaliborc (João Cardoso)
+
+## OptionalDeps: BagSync, Armory
+## SavedVariables: BrotherBags
+
+Startup.lua
+Events.lua
+API.lua

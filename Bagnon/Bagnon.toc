@@ -1,0 +1,20 @@
+## Interface: 50001
+## Title: Bagnon
+## Author: Tuller & Jaliborc (João Cardoso)
+## Notes: Single window displays for your inventory and bank
+## SavedVariablesPerCharacter: BagnonFrameSettings
+## SavedVariables: BagnonGlobalSettings
+
+## Version: 5.0.7
+## OptionalDeps: LibStub, Ace3, LibItemSearch-1.0, LibItemCache-1.0, Unfit-1.0, BagBrother, BagSync, Armory
+
+libs\libs.xml
+localization\localization.xml
+main.lua
+
+core\core.xml
+events\events.xml
+info\info.xml
+
+settings\settings.xml
+components\components.xml
