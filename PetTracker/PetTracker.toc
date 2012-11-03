@@ -1,0 +1,17 @@
+## Interface: 50001
+## Title: PetTracker
+## Notes:
+## Author: Jaliborc (João Cardoso)
+## SavedVariables: PetTracker_DevData
+## X-License: GNU General Public License Version 3
+## X-Category: Pet Battles
+
+Libs\Libs.xml
+Generators\Generators.xml
+
+PetTracker.lua
+
+Data\Data.xml
+Data\Tests\Tests.xml
+Components\Components.xml
+Features\Features.xml

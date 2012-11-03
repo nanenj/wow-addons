@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="AbilityButton.lua"/>
+	<Script file="Slot.lua"/>
+	
+	<Include file="AbilityButton.xml"/>
+	<Include file="ProgressBar.xml"/>
+	<Include file="StatusBar.xml"/>
+	<Include file="StatIcon.xml"/>
+	
+	<Include file="SlotBorder.xml"/>
+	<Include file="SlotHighlight.xml"/>
+	<Include file="Slot.xml"/>
+	
+	<Include file="MapButton.xml"/>
+</Ui>

@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="QualityGlow.lua"/>
+	<Script file="EnemyActions.lua"/>
+	<Script file="PetSwap.lua"/>
+	<Script file="ZoneTracker.lua"/>
+	<Script file="WorldMap.lua"/>
+</Ui>
