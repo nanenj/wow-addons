@@ -1,0 +1,14 @@
+tag 5.0.5-1.1.9
+95bb983f2e2480db57bf0b91434ad5c6f6bd1afa
+James D. Callahan III <jcallahan@curse.com>
+2012-10-16 19:51:20 -0500
+
+
+
+--------------------
+
+James D. Callahan III:
+	- Added mappings for Wolpertinger's Tankard and Parrot Cage (Cockatiel)
+	- Fix zone filtering for zones with empty sub zone names.
+	- Might help to include AceDB-3.0 in the list of files to load. Oops.
+	- Give pets which are set as Favorite precedence in the sorted list.

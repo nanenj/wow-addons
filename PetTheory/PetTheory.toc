@@ -1,0 +1,22 @@
+## Interface: 50001
+## Title: PetTheory
+## Version: 5.0.5-1.1.9
+## Author: Torhal
+## X-Revision: 97f2edb
+## X-Date: 2012-10-08T00:47:27Z
+## X-Category: Tradeskill
+## X-Curse-Packaged-Version: 5.0.5-1.1.9
+## X-Curse-Project-Name: Pet Theory
+## X-Curse-Project-ID: pet-theory
+## X-Curse-Repository-ID: wow/pet-theory/mainline
+
+## OptionalDeps: Ace3, LibPetJournal-2.0
+## DefaultState: Enabled
+## SavedVariables: PetTheorySettings
+
+#@no-lib-strip@
+# Libraries
+embeds.xml
+#@end-no-lib-strip@
+
+Core.lua
