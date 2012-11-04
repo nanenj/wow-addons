@@ -1,0 +1,266 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Glyphs.lua"></Script>
+
+	<Button name="AltoGlyphTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="72" y="72"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentGlyph" parentKey="glyph">
+					<Size x="57" y="57"/>
+					<Anchors>
+						<Anchor point="CENTER">
+							<Offset x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture name="$parentHighlight" file="Interface\Spellbook\UI-GlyphFrame" alphaMode="ADD" parentKey="highlight">
+					<Anchors>
+						<Anchor point="CENTER">
+							<Offset x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentRing" file="Interface\Spellbook\UI-GlyphFrame" parentKey="ring">
+					<Anchors>
+						<Anchor point="CENTER">
+							<Offset x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		
+		<Scripts>
+			<OnLoad>
+				Altoholic.Glyphs:Button_OnLoad(self)
+			</OnLoad>
+			<OnEnter>
+				Altoholic.Glyphs:Button_OnEnter(self)
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide();
+			</OnLeave>
+			<OnClick>
+				Altoholic.Glyphs:Button_OnClick(self, button);
+			</OnClick>
+		</Scripts>
+	</Button>
+	
+	<Frame name="AltoholicFrameGlyphs" parent="AltoholicTabCharacters" hidden="true">
+		<Size>
+			<AbsDimension x="615" y="306"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT">
+				<Offset>
+					<AbsDimension x="39" y="-105"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$Parent_PrimaryGlyphs" inherits="DialogButtonNormalText" justifyH="Center" text="TALENT_SPEC_PRIMARY_GLYPH">
+					<Size>
+						<AbsDimension x="200" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="25" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$Parent_SecondaryGlyphs" inherits="DialogButtonNormalText" justifyH="Center" text="TALENT_SPEC_SECONDARY_GLYPH">
+					<Size>
+						<AbsDimension x="200" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="360" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$Parent_MinorGlyphsLeft" inherits="DialogButtonNormalText" text="MINOR_GLYPHS">
+					<Size>
+						<AbsDimension x="150" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="10" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="1" g="1" b="1" /> 
+				</FontString>
+				<FontString name="$Parent_MajorGlyphsLeft" inherits="DialogButtonNormalText" text="MAJOR_GLYPHS">
+					<Size>
+						<AbsDimension x="150" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="10" y="-170"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="1" g="1" b="1" /> 
+				</FontString>
+				<FontString name="$Parent_MinorGlyphsRight" inherits="DialogButtonNormalText" text="MINOR_GLYPHS">
+					<Size>
+						<AbsDimension x="150" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="335" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="1" g="1" b="1" /> 
+				</FontString>
+				<FontString name="$Parent_MajorGlyphsRight" inherits="DialogButtonNormalText" text="MAJOR_GLYPHS">
+					<Size>
+						<AbsDimension x="150" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="335" y="-170"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="1" g="1" b="1" /> 
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- Minor Glyphs Spec 1 -->
+			<Button name="$parentGlyph1" inherits="AltoGlyphTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$Parent_MinorGlyphsLeft" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="50" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph3" inherits="AltoGlyphTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph1" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph5" inherits="AltoGlyphTemplate" id="5">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph3" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>	
+			
+			<!-- Major Glyphs Spec 1 -->
+			<Button name="$parentGlyph2" inherits="AltoGlyphTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$Parent_MajorGlyphsLeft" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="50" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph4" inherits="AltoGlyphTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph2" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph6" inherits="AltoGlyphTemplate" id="6">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph4" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			
+			<!-- Minor Glyphs Spec 2 -->
+			<Button name="$parentGlyph7" inherits="AltoGlyphTemplate" id="7">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$Parent_MinorGlyphsRight" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="50" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph9" inherits="AltoGlyphTemplate" id="9">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph7" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph11" inherits="AltoGlyphTemplate" id="11">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph9" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>	
+			
+			<!-- Major Glyphs Spec 2 -->
+			<Button name="$parentGlyph8" inherits="AltoGlyphTemplate" id="8">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$Parent_MajorGlyphsRight" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="50" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph10" inherits="AltoGlyphTemplate" id="10">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph8" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentGlyph12" inherits="AltoGlyphTemplate" id="12">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentGlyph10" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			
+		</Frames>
+	</Frame>
+	
+</Ui>

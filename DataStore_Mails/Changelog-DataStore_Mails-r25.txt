@@ -1,0 +1,16 @@
+------------------------------------------------------------------------
+r25 | thaoky | 2012-09-02 10:40:56 +0000 (Sun, 02 Sep 2012) | 2 lines
+Changed paths:
+   M /trunk/DataStore_Mails.toc
+   A /trunk/Locales/itIT.lua
+   M /trunk/locale.xml
+
+5.0.001 Commit
+Added support for itIT
+------------------------------------------------------------------------
+r24 | thaoky | 2012-05-04 14:32:49 +0000 (Fri, 04 May 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Mails.lua
+
+Added a method to clear a character's mailbox content
+------------------------------------------------------------------------

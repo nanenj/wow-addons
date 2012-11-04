@@ -1,0 +1,292 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="TabGrids.lua"></Script>
+	
+	<Button name="AltoTabGridsIconTemplate" inherits="AltoBagItemTemplate" virtual="true">
+		<Scripts>
+			<OnEnter>
+				Altoholic.Tabs.Grids:Icon_OnEnter(self)
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide()
+			</OnLeave>
+		</Scripts>
+	</Button>
+	
+ 	<Button name="AltoTabGridsMenuIconTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="30" y="30"/>
+		</Size>
+		<Layers>
+			<Layer level="BORDER">
+				<Texture name="$parentIconTexture"/>
+				<FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="-5" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentShine" inherits="AutoCastShineTemplate">
+				<Anchors>
+					<Anchor point="CENTER">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="28" y="28"/>
+				</Size>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnEnter>
+				if self.text then
+					AltoTooltip:ClearLines();
+					AltoTooltip:SetOwner(self, "ANCHOR_RIGHT");
+					AltoTooltip:AddLine(self.text,1,1,1);
+					AltoTooltip:Show();
+				end
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide();
+			</OnLeave>
+			<OnClick>
+				Altoholic.Tabs.Grids:MenuItem_OnClick(self, button)
+			</OnClick>
+		</Scripts>
+		<PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+	</Button>
+	
+	<Frame name="AltoholicTabGrids" parent="AltoholicFrame" hidden="true">
+		<Size>
+			<AbsDimension x="758" y="447"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT"/>
+		</Anchors>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText1" inherits="GameFontNormalSmall" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="100" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="35" y="-105"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTextView" inherits="GameFontNormalSmall" justifyH="LEFT" text="GUILD_ROSTER_VIEW" hidden="true">
+					<Size>
+						<AbsDimension x="60" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="AltoholicFrameSearchLabel" relativePoint="RIGHT" >
+							<Offset x="60" y="-5" />
+						</Anchor>
+					</Anchors>
+					<Color r="255" g="255" b="255" />
+				</FontString>
+				<FontString name="$parentStatus" inherits="GameFontNormal" justifyH="LEFT">
+					<Size x="320" y="24" />
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset x="-250" y="13" />
+						</Anchor>
+					</Anchors>
+					<Color r="255" g="255" b="255" />
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parent_SelectView" inherits="UIDropDownMenuTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentTextView" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="-25" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parent_SelectRealm" inherits="UIDropDownMenuTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentText1" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="-25" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						UIDropDownMenu_SetWidth(self, 100) 
+						UIDropDownMenu_SetButtonWidth(self, 20)
+						
+						local realm = GetRealmName()
+						UIDropDownMenu_SetSelectedValue(self, "Default|".. realm)
+						UIDropDownMenu_SetText(self, realm)
+						Altoholic:DDM_Initialize(self, Altoholic.Tabs.Grids.DropDownRealm_Initialize)
+					</OnLoad>
+				</Scripts>
+			</Frame>
+		
+			<!-- Menu Icons -->
+			<Button name="$parent_ClassIcon1" inherits="AltoTabGridsIconTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="370" y="-55" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon2" inherits="AltoTabGridsIconTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon1" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon3" inherits="AltoTabGridsIconTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon2" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon4" inherits="AltoTabGridsIconTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon3" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon5" inherits="AltoTabGridsIconTemplate" id="5">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon4" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon6" inherits="AltoTabGridsIconTemplate" id="6">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon5" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon7" inherits="AltoTabGridsIconTemplate" id="7">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon6" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon8" inherits="AltoTabGridsIconTemplate" id="8">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon7" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon9" inherits="AltoTabGridsIconTemplate" id="9">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon8" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon10" inherits="AltoTabGridsIconTemplate" id="10">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon9" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+		
+			<Frame name="$parentClassIconMenu1" inherits="AltoRightClickMenuTemplate" id="1" />
+			<Frame name="$parentClassIconMenu2" inherits="AltoRightClickMenuTemplate" id="2" />
+			<Frame name="$parentClassIconMenu3" inherits="AltoRightClickMenuTemplate" id="3" />
+			<Frame name="$parentClassIconMenu4" inherits="AltoRightClickMenuTemplate" id="4" />
+			<Frame name="$parentClassIconMenu5" inherits="AltoRightClickMenuTemplate" id="5" />
+			<Frame name="$parentClassIconMenu6" inherits="AltoRightClickMenuTemplate" id="6" />
+			<Frame name="$parentClassIconMenu7" inherits="AltoRightClickMenuTemplate" id="7" />
+			<Frame name="$parentClassIconMenu8" inherits="AltoRightClickMenuTemplate" id="8" />
+			<Frame name="$parentClassIconMenu9" inherits="AltoRightClickMenuTemplate" id="9" />
+			<Frame name="$parentClassIconMenu10" inherits="AltoRightClickMenuTemplate" id="10" />
+
+			<Button name="$parent_Equipment" inherits="AltoTabGridsMenuIconTemplate" id="1">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="AltoholicTabGrids" relativePoint="BOTTOMLEFT" >
+						<Offset x="30" y="240" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_Factions" inherits="AltoTabGridsMenuIconTemplate" id="2">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="$parent_Equipment" relativePoint="BOTTOMRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_Tokens" inherits="AltoTabGridsMenuIconTemplate" id="3">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="$parent_Factions" relativePoint="BOTTOMRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_Tabards" inherits="AltoTabGridsMenuIconTemplate" id="4">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="$parent_Tokens" relativePoint="BOTTOMRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			<Button name="$parent_Pets" inherits="AltoTabGridsMenuIconTemplate" id="5">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="AltoholicTabGrids" relativePoint="BOTTOMLEFT" >
+						<Offset x="30" y="200" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_Mounts" inherits="AltoTabGridsMenuIconTemplate" id="6">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="$parent_Pets" relativePoint="BOTTOMRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_TradeSkills" inherits="AltoTabGridsMenuIconTemplate" id="7">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="$parent_Mounts" relativePoint="BOTTOMRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_Archeology" inherits="AltoTabGridsMenuIconTemplate" id="8">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativeTo="$parent_TradeSkills" relativePoint="BOTTOMRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				Altoholic.Tabs.Grids:OnLoad()
+			</OnLoad>
+			<OnShow>
+				Altoholic.Tabs.Grids:OnShow()
+			</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

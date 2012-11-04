@@ -1,0 +1,89 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="TabAgenda.lua"></Script>
+	
+	<Button name="AltoAgendaMenuItemTemplate" inherits="AltoMenuItemTemplate" hidden="false" virtual="true">
+		<Size>
+			<AbsDimension x="156" y="20"/>
+		</Size>
+		<Scripts>
+			<OnClick>
+				Altoholic.Tabs.Agenda:MenuItem_OnClick(self:GetID())
+			</OnClick>
+		</Scripts>
+	</Button>
+	
+	<Frame name="AltoholicTabAgenda" parent="AltoholicFrame">
+		<Size>
+			<AbsDimension x="758" y="447"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT"/>
+		</Anchors>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentStatus" inherits="GameFontNormal" justifyH="LEFT">
+					<Size x="320" y="24" />
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset x="-250" y="13" />
+						</Anchor>
+					</Anchors>
+					<Color r="255" g="255" b="255" />
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentMenuItem1" inherits="AltoAgendaMenuItemTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="23" y="-105"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem2" inherits="AltoAgendaMenuItemTemplate" id="2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem1" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem3" inherits="AltoAgendaMenuItemTemplate" id="3" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem2" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem4" inherits="AltoAgendaMenuItemTemplate" id="4" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem3" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem5" inherits="AltoAgendaMenuItemTemplate" id="5" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem4" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				Altoholic.Tabs.Agenda:OnLoad()
+			</OnLoad>
+		</Scripts>
+	</Frame>
+
+</Ui>

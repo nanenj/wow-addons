@@ -1,0 +1,16 @@
+------------------------------------------------------------------------
+r37 | thaoky | 2012-09-02 10:20:17 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore.lua
+   M /trunk/DataStore.toc
+   A /trunk/Locales/itIT.lua
+   M /trunk/locale.xml
+
+5.0.001 Commit
+------------------------------------------------------------------------
+r36 | thaoky | 2012-01-29 10:22:14 +0000 (Sun, 29 Jan 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore.lua
+
+Fixed registering guild communication.
+------------------------------------------------------------------------

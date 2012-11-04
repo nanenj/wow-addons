@@ -1,0 +1,34 @@
+------------------------------------------------------------------------
+r39 | thaoky | 2012-09-13 17:57:42 +0000 (Thu, 13 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Talents.lua
+
+Fixed usage of underscore in the code.
+------------------------------------------------------------------------
+r38 | thaoky | 2012-09-03 16:45:12 +0000 (Mon, 03 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Talents.lua
+
+ Fixed a Lua error when scanning glyphs.
+------------------------------------------------------------------------
+r37 | thaoky | 2012-09-02 17:28:32 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Talents.lua
+
+Fixed scanning glyphs on a low level character
+------------------------------------------------------------------------
+r36 | thaoky | 2012-09-02 10:45:31 +0000 (Sun, 02 Sep 2012) | 2 lines
+Changed paths:
+   M /trunk/Data/GlyphIDToSpellID.lua
+   M /trunk/DataStore_Talents.lua
+   M /trunk/DataStore_Talents.toc
+
+5.0.001 Commit
+MoP Fixes
+------------------------------------------------------------------------
+r35 | thaoky | 2011-12-10 14:53:53 +0000 (Sat, 10 Dec 2011) | 1 line
+Changed paths:
+   M /trunk/DataStore_Talents.toc
+
+TOC Update
+------------------------------------------------------------------------

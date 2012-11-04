@@ -1,0 +1,19 @@
+------------------------------------------------------------------------
+r21 | thaoky | 2012-09-02 10:43:18 +0000 (Sun, 02 Sep 2012) | 2 lines
+Changed paths:
+   M /trunk/DataStore_Quests.toc
+   A /trunk/Locales/itIT.lua
+   M /trunk/locale.xml
+
+5.0.001 Commit
+Added support for itIT
+------------------------------------------------------------------------
+r20 | thaoky | 2011-12-10 14:52:59 +0000 (Sat, 10 Dec 2011) | 2 lines
+Changed paths:
+   M /trunk/DataStore_Quests.toc
+   A /trunk/Locales/ptBR.lua
+   M /trunk/locale.xml
+
+TOC Update
+ptBR support
+------------------------------------------------------------------------

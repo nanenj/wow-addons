@@ -1,0 +1,17 @@
+------------------------------------------------------------------------
+r25 | thaoky | 2012-10-06 10:42:23 +0000 (Sat, 06 Oct 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Auctions.lua
+
+Fixed Lua errors caused by Battle Pet links.
+------------------------------------------------------------------------
+r24 | thaoky | 2012-09-02 10:32:58 +0000 (Sun, 02 Sep 2012) | 3 lines
+Changed paths:
+   M /trunk/DataStore_Auctions.toc
+   A /trunk/Locales/itIT.lua
+   M /trunk/locale.xml
+
+5.0.001 Commit
+
+- Added support for itIT.
+------------------------------------------------------------------------

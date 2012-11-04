@@ -1,0 +1,348 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="TabAchievements.lua"></Script>
+	
+	<Button name="AltoTabAchievementsIconTemplate" inherits="AltoBagItemTemplate" virtual="true">
+		<Scripts>
+			<OnEnter>
+				Altoholic.Tabs.Achievements:Icon_OnEnter(self)
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide()
+			</OnLeave>
+		</Scripts>
+	</Button>
+	
+	<Frame name="AltoholicTabAchievements" parent="AltoholicFrame" hidden="true">
+		<Size>
+			<AbsDimension x="758" y="447"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT"/>
+		</Anchors>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText1" inherits="GameFontNormalSmall" justifyH="LEFT" text="GUILD_ROSTER_VIEW">
+					<Size>
+						<AbsDimension x="60" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="AltoholicFrameSearchLabel" relativePoint="RIGHT" >
+							<Offset x="60" y="-5" />
+						</Anchor>
+					</Anchors>
+					<Color r="255" g="255" b="255" />
+				</FontString>
+				<FontString name="$parentStatus" inherits="GameFontNormal" justifyH="LEFT">
+					<Size x="320" y="24" />
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset x="-250" y="13" />
+						</Anchor>
+					</Anchors>
+					<Color r="255" g="255" b="255" />
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parent_SelectRealm" inherits="UIDropDownMenuTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentText1" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="-25" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						UIDropDownMenu_SetWidth(self, 100) 
+						UIDropDownMenu_SetButtonWidth(self, 20)
+						
+						local realm = GetRealmName()
+						UIDropDownMenu_SetSelectedValue(self, "Default|".. realm)
+						UIDropDownMenu_SetText(self, realm)
+						Altoholic:DDM_Initialize(self, Altoholic.Tabs.Achievements.DropDownRealm_Initialize)
+					</OnLoad>
+				</Scripts>
+			</Frame>
+		
+			<!-- Menu Icons -->
+			<Button name="$parent_ClassIcon1" inherits="AltoTabAchievementsIconTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="370" y="-55" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon2" inherits="AltoTabAchievementsIconTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon1" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon3" inherits="AltoTabAchievementsIconTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon2" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon4" inherits="AltoTabAchievementsIconTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon3" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon5" inherits="AltoTabAchievementsIconTemplate" id="5">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon4" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon6" inherits="AltoTabAchievementsIconTemplate" id="6">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon5" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon7" inherits="AltoTabAchievementsIconTemplate" id="7">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon6" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon8" inherits="AltoTabAchievementsIconTemplate" id="8">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon7" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon9" inherits="AltoTabAchievementsIconTemplate" id="9">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon8" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_ClassIcon10" inherits="AltoTabAchievementsIconTemplate" id="10">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_ClassIcon9" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+		
+			<Frame name="$parentClassIconMenu1" inherits="AltoRightClickMenuTemplate" id="1" />
+			<Frame name="$parentClassIconMenu2" inherits="AltoRightClickMenuTemplate" id="2" />
+			<Frame name="$parentClassIconMenu3" inherits="AltoRightClickMenuTemplate" id="3" />
+			<Frame name="$parentClassIconMenu4" inherits="AltoRightClickMenuTemplate" id="4" />
+			<Frame name="$parentClassIconMenu5" inherits="AltoRightClickMenuTemplate" id="5" />
+			<Frame name="$parentClassIconMenu6" inherits="AltoRightClickMenuTemplate" id="6" />
+			<Frame name="$parentClassIconMenu7" inherits="AltoRightClickMenuTemplate" id="7" />
+			<Frame name="$parentClassIconMenu8" inherits="AltoRightClickMenuTemplate" id="8" />
+			<Frame name="$parentClassIconMenu9" inherits="AltoRightClickMenuTemplate" id="9" />
+			<Frame name="$parentClassIconMenu10" inherits="AltoRightClickMenuTemplate" id="10" />
+
+			<!-- Scroll frame items -->
+			<Button name="$parentMenuItem1" inherits="AltoMenuItemTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="23" y="-105"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem2" inherits="AltoMenuItemTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem1" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem3" inherits="AltoMenuItemTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem2" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem4" inherits="AltoMenuItemTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem3" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem5" inherits="AltoMenuItemTemplate" id="5">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem4" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem6" inherits="AltoMenuItemTemplate" id="6">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem5" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem7" inherits="AltoMenuItemTemplate" id="7">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem6" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem8" inherits="AltoMenuItemTemplate" id="8">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem7" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem9" inherits="AltoMenuItemTemplate" id="9">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem8" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem10" inherits="AltoMenuItemTemplate" id="10">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem9" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem11" inherits="AltoMenuItemTemplate" id="11">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem10" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem12" inherits="AltoMenuItemTemplate" id="12">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem11" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem13" inherits="AltoMenuItemTemplate" id="13">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem12" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem14" inherits="AltoMenuItemTemplate" id="14">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem13" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentMenuItem15" inherits="AltoMenuItemTemplate" id="15">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentMenuItem14" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<ScrollFrame name="AltoholicAchievementsMenuScrollFrame" inherits="FauxScrollFrameTemplate">
+				<Size>
+					<AbsDimension x="160" y="305"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="158" y="-105"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+							<Size>
+								<AbsDimension x="31" y="256"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+									<Offset>
+										<AbsDimension x="-2" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+						</Texture>
+						<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+							<Size>
+								<AbsDimension x="31" y="106"/>
+							</Size>
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+									<Offset>
+										<AbsDimension x="-2" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnVerticalScroll>
+						FauxScrollFrame_OnVerticalScroll(self, offset, 20, Altoholic.Tabs.Achievements.Update)
+					</OnVerticalScroll>
+					<OnShow>
+						Altoholic.Tabs.Achievements:Update();
+					</OnShow>
+				</Scripts>
+			</ScrollFrame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				Altoholic.Tabs.Achievements:OnLoad()
+			</OnLoad>
+			<OnShow>
+				Altoholic.Tabs.Achievements:UpdateClassIcons()
+				Altoholic.Tabs.Achievements:Update()
+			</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

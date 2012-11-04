@@ -1,0 +1,66 @@
+------------------------------------------------------------------------
+r125 | thaoky | 2012-10-06 10:44:09 +0000 (Sat, 06 Oct 2012) | 3 lines
+Changed paths:
+   M /trunk/Altoholic.lua
+   M /trunk/Altoholic.toc
+   M /trunk/Core.lua
+   M /trunk/Frames/TabOptions.lua
+   M /trunk/Modules/Altoholic_Achievements/Achievements.lua
+   M /trunk/Modules/Altoholic_Characters/Frames/Containers.lua
+   M /trunk/Modules/Altoholic_Characters/TabCharacters.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Archeology.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Reputations.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Tradeskills.lua
+   M /trunk/Modules/Altoholic_Summary/Data/Suggestions_enUS.lua
+   M /trunk/Modules/Altoholic_Summary/Skills.lua
+   M /trunk/changelog.txt
+
+5.0.002 Commit.
+
+See changelog.txt for details.
+------------------------------------------------------------------------
+r124 | thaoky | 2012-09-13 17:58:12 +0000 (Thu, 13 Sep 2012) | 3 lines
+Changed paths:
+   M /trunk/Altoholic.lua
+   M /trunk/Altoholic.toc
+   M /trunk/Comm.lua
+   M /trunk/Core.lua
+   D /trunk/Frames/GuildProfessions.lua
+   D /trunk/Frames/GuildProfessions.xml
+   M /trunk/Frames/TabOptions.lua
+   M /trunk/ItemFilters.lua
+   M /trunk/Modules/Altoholic_Achievements/Achievements.lua
+   M /trunk/Modules/Altoholic_Achievements/TabAchievements.lua
+   M /trunk/Modules/Altoholic_Agenda/Frames/Calendar.lua
+   M /trunk/Modules/Altoholic_Characters/Altoholic_Characters.toc
+   D /trunk/Modules/Altoholic_Characters/Data
+   M /trunk/Modules/Altoholic_Characters/Frames/Spellbook.lua
+   M /trunk/Modules/Altoholic_Characters/Frames/Talents.lua
+   M /trunk/Modules/Altoholic_Characters/TabCharacters.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Currencies.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Mounts.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Reputations.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Tabards.lua
+   M /trunk/Modules/Altoholic_Grids/Grid_Tradeskills.lua
+   M /trunk/Modules/Altoholic_Grids/TabGrids.lua
+   M /trunk/Modules/Altoholic_Search/Search.lua
+   M /trunk/Modules/Altoholic_Summary/BagUsage.lua
+   M /trunk/Modules/Altoholic_Summary/Characters.lua
+   M /trunk/Modules/Altoholic_Summary/Skills.lua
+   M /trunk/Modules/Altoholic_Summary/TabSummary.lua
+
+5.0.001d commit.
+
+See changelog.txt for details.
+------------------------------------------------------------------------
+r123 | thaoky | 2012-09-03 16:46:01 +0000 (Mon, 03 Sep 2012) | 3 lines
+Changed paths:
+   M /trunk/Altoholic.toc
+   M /trunk/Core.lua
+   M /trunk/Modules/Altoholic_Summary/Skills.lua
+   M /trunk/changelog.txt
+
+5.0.001c commit
+
+See changelog.txt for details
+------------------------------------------------------------------------

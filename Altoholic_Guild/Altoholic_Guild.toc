@@ -1,0 +1,18 @@
+﻿## Interface: 50001
+## Title: Altoholic_Guild
+## Notes: Altoholic's Guild UI
+## Author: Thaoky (EU-Marécages de Zangar)
+## Version: 5.0.001
+## Dependencies: Altoholic, DataStore, DataStore_Characters
+## LoadOnDemand: 1
+## X-Category: Interface Enhancements
+## X-Curse-Packaged-Version: r125
+## X-Curse-Project-Name: Altoholic
+## X-Curse-Project-ID: altoholic
+## X-Curse-Repository-ID: wow/altoholic/mainline
+
+TabGuild.xml
+
+Frames\GuildMembers.xml
+Frames\GuildBank.xml
+# Frames\GuildProfessions.xml

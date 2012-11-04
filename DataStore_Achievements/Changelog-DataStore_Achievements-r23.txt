@@ -1,0 +1,26 @@
+------------------------------------------------------------------------
+r23 | thaoky | 2012-09-13 17:54:32 +0000 (Thu, 13 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Achievements.lua
+
+Fixed usage of underscore in the code.
+------------------------------------------------------------------------
+r22 | thaoky | 2012-09-03 16:45:41 +0000 (Mon, 03 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Achievements.lua
+
+Fixed a Lua error when clicking on glyphs
+------------------------------------------------------------------------
+r21 | thaoky | 2012-09-02 10:30:39 +0000 (Sun, 02 Sep 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Achievements.lua
+   M /trunk/DataStore_Achievements.toc
+
+5.0.001 Commit
+------------------------------------------------------------------------
+r20 | thaoky | 2012-01-29 10:21:44 +0000 (Sun, 29 Jan 2012) | 1 line
+Changed paths:
+   M /trunk/DataStore_Achievements.lua
+
+Added support for tabards.
+------------------------------------------------------------------------

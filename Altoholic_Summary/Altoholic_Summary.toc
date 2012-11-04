@@ -1,0 +1,28 @@
+﻿## Interface: 50001
+## Title: Altoholic_Summary
+## Notes: Altoholic's Summary Tab
+## Author: Thaoky (EU-Marécages de Zangar)
+## Version: 5.0.001
+## Dependencies: Altoholic, DataStore, DataStore_Characters
+## LoadOnDemand: 1
+## X-Category: Interface Enhancements
+## X-Curse-Packaged-Version: r125
+## X-Curse-Project-Name: Altoholic
+## X-Curse-Project-ID: altoholic
+## X-Curse-Repository-ID: wow/altoholic/mainline
+
+TabSummary.xml
+Characters.lua
+
+AccountSummary.xml
+Activity.xml
+BagUsage.xml
+Skills.xml
+
+Data\Suggestions_enUS.lua
+Data\Suggestions_deDE.lua
+Data\Suggestions_frFR.lua
+Data\Suggestions_koKR.lua
+Data\Suggestions_ruRU.lua
+Data\Suggestions_zhCN.lua
+Data\Suggestions_zhTW.lua

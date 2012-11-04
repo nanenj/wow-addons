@@ -1,0 +1,40 @@
+﻿## Interface: 50001
+## Title: Altoholic
+## Title-zhCN: |cffeedd99 [物品] |r: 全角色统计 Altoholic
+## X-Curse-Packaged-Version: r125
+## X-Curse-Project-Name: Altoholic
+## X-Curse-Project-ID: altoholic
+## X-Curse-Repository-ID: wow/altoholic/mainline
+
+## Notes: Provides information about your alts
+## Notes-ruRU: Предоставляет информацию о вашем персонажах
+## Notes-zhTW: 讓你即時撿閱你所有角色的資料
+## Notes-zhCN: 能让你全面掌握你的所有角色的信息。
+## Notes-koKR: 부캐들(alts)의 정보들을 제공해 줍니다.
+
+## Author: Thaoky (EU-Marécages de Zangar)
+## Version: 5.0.002
+## X-Category: Inventory, Tradeskill, Mail
+## X-Localizations: enUS, frFR, zhCN, zhTW, deDE, koKR, esES, esMX, ruRU
+## X-Website: http://wow.curse.com/downloads/wow-addons/details/altoholic.aspx
+## X-eMail: thaoky.altoholic@yahoo.com
+## X-Donate: http://wow.curse.com/downloads/wow-addons/details/altoholic.aspx
+## X-Credits: My guild (Odysseüs), all translators, the wowace community, and all users for their invaluable suggestions !
+## Dependencies: DataStore, DataStore_Characters
+
+## OptionalDeps: Ace3, LibDataBroker-1.1, LibPeriodicTable-3.1, LibBabble-Zone-3.0, LibBabble-Boss-3.0, LibBabble-Inventory-3.0, LibBabble-Faction-3.0
+## SavedVariables: AltoholicDB
+## X-Category: Interface Enhancements
+
+#@no-lib-strip@
+# Libraries
+embeds.xml
+#@end-no-lib-strip@
+
+locale.xml
+
+AltoholicTemplates.xml
+Altoholic.xml
+
+Frames\TabOptions.xml
+Frames\AccountSharing.xml

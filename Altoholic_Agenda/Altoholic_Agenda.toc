@@ -1,0 +1,17 @@
+﻿## Interface: 50001
+## Title: Altoholic_Agenda
+## Notes: Altoholic's Agenda UI
+## Author: Thaoky (EU-Marécages de Zangar)
+## Version: 5.0.001
+## Dependencies: Altoholic, DataStore, DataStore_Agenda, DataStore_Characters
+## LoadOnDemand: 1
+## X-Category: Interface Enhancements
+## X-Curse-Packaged-Version: r125
+## X-Curse-Project-Name: Altoholic
+## X-Curse-Project-ID: altoholic
+## X-Curse-Repository-ID: wow/altoholic/mainline
+
+TabAgenda.xml
+
+Frames\Calendar.xml
+Frames\Contacts.xml

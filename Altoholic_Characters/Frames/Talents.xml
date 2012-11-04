@@ -1,0 +1,430 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Talents.lua"></Script>
+
+ 	<Button name="AltoTalentIconTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="30" y="30"/>
+		</Size>
+		<Layers>
+			<Layer level="BORDER">
+				<Texture name="$parentIconTexture"/>
+				<FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="-5" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentShine" inherits="AutoCastShineTemplate">
+				<Anchors>
+					<Anchor point="CENTER">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="28" y="28"/>
+				</Size>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnEnter>
+				Altoholic.Talents:Icon_OnEnter(self)
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide();
+			</OnLeave>
+			<OnClick>
+				Altoholic.Talents:Icon_OnClick(self, button)
+			</OnClick>
+		</Scripts>
+		<PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+	</Button>
+	
+ 	<Button name="AltoTalentButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="32" y="32"/>
+		</Size>
+		<Layers>
+			<Layer level="BORDER">
+				<Texture name="$parentIconTexture"/>
+				<FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="-5" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter>
+				Altoholic.Talents:Button_OnEnter(self)
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide();
+			</OnLeave>
+			<OnClick>
+				Altoholic.Talents:Button_OnClick(self, button);
+			</OnClick>
+		</Scripts>
+		<PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+	</Button>
+	
+	<Frame name="AltoTalentTreeTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="200" y="304"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parent_Branch1" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch2" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch3" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch4" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch5" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch6" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch7" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch8" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch9" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch10" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch11" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch12" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch13" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch14" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch15" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch16" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch17" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch18" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch19" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch20" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch21" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch22" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch23" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch24" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch25" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch26" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch27" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch28" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch29" inherits="TalentBranchTemplate"/>
+				<Texture name="$parent_Branch30" inherits="TalentBranchTemplate"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parent_Talent1" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent2" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent3" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent4" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent5" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent6" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent7" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent8" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent9" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent10" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent11" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent12" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent13" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent14" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent15" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent16" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent17" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent18" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent19" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent20" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent21" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent22" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent23" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent24" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent25" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent26" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent27" inherits="AltoTalentButtonTemplate" />
+			<Button name="$parent_Talent28" inherits="AltoTalentButtonTemplate" />
+
+			<Frame name="$parent_ArrowFrame" setAllPoints="true">
+				<Layers>
+					<Layer level="OVERLAY">
+						<Texture name="$parent_Arrow1" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow2" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow3" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow4" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow5" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow6" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow7" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow8" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow9" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow10" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow11" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow12" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow13" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow14" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow15" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow16" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow17" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow18" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow19" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow20" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow21" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow22" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow23" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow24" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow25" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow26" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow27" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow28" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow29" inherits="TalentArrowTemplate"/>
+						<Texture name="$parent_Arrow30" inherits="TalentArrowTemplate"/>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+	</Frame>
+	
+	<Frame name="AltoTreeIconsTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="200" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="GameFontNormalSmall" justifyH="LEFT">
+					<Size x="200" y="18" />
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="0" y="10" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parent_SpecIcon1" inherits="AltoTalentIconTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="0" y="-15" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpecIcon2" inherits="AltoTalentIconTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpecIcon1" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpecIcon3" inherits="AltoTalentIconTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpecIcon2" relativePoint="TOPRIGHT" >
+						<Offset x="5" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+	
+	<Frame name="AltoholicFrameTalents" parent="AltoholicTabCharacters" hidden="true">
+		<Size>
+			<AbsDimension x="615" y="306"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT">
+				<Offset>
+					<AbsDimension x="39" y="-105"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<!-- Tree 1 : left pane -->
+				<Texture name="$parent_Tree1TopLeft">
+					<Size>
+						<AbsDimension x="174" y="232"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parent_Tree1TopRight">
+					<Size>
+						<AbsDimension x="44" y="232"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parent_Tree1TopLeft" relativePoint="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parent_Tree1BottomLeft">
+					<Size>
+						<AbsDimension x="174" y="116"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parent_Tree1TopLeft" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parent_Tree1BottomRight">
+					<Size>
+						<AbsDimension x="44" y="116"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parent_Tree1TopLeft" relativePoint="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<!-- Tree 2 : right pane -->
+				<Texture name="$parent_Tree2TopLeft">
+					<Size>
+						<AbsDimension x="174" y="232"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="430" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parent_Tree2TopRight">
+					<Size>
+						<AbsDimension x="44" y="232"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parent_Tree2TopLeft" relativePoint="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parent_Tree2BottomLeft">
+					<Size>
+						<AbsDimension x="174" y="116"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parent_Tree2TopLeft" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parent_Tree2BottomRight">
+					<Size>
+						<AbsDimension x="44" y="116"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parent_Tree2TopLeft" relativePoint="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- Tree 1 : left pane -->
+			<Frame name="$parent_Tree1" inherits="AltoTalentTreeTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			
+			<!-- Tree 2 : right pane -->
+			<Frame name="$parent_Tree2" inherits="AltoTalentTreeTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="430" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			
+			<!-- Between both panes -->
+			<Frame name="$parent_Icons1" inherits="AltoTreeIconsTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="225" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parent_Icons2" inherits="AltoTreeIconsTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="225" y="-70"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parent_Icons3" inherits="AltoTreeIconsTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="225" y="-180"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parent_Icons4" inherits="AltoTreeIconsTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="225" y="-245"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			
+			<Frame name="$parent_SelectMember" inherits="UIDropDownMenuTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="270" y="-140"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local L = LibStub("AceLocale-3.0"):GetLocale("Altoholic")
+						
+						UIDropDownMenu_SetWidth(self, 120) 
+						UIDropDownMenu_SetButtonWidth(self, 20)
+						-- UIDropDownMenu_SetText(self, L["Guild Members"])
+						UIDropDownMenu_SetText(self, "Compare with")
+						Altoholic:DDM_Initialize(self, Altoholic.Talents.DropDownMembers_Initialize)
+					</OnLoad>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+	
+</Ui>

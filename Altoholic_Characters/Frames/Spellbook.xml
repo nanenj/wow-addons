@@ -1,0 +1,284 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Spellbook.lua"></Script>
+
+	<Button name="AltoSpellButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="37" y="37"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBackground" inherits="Spellbook-EmptySlot">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTextBackground" inherits="Spellbook-TextBackground" parentKey="TextBackground">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentBackground" relativePoint="TOPRIGHT" x="-4" y="-5"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture name="$parentIconTextureBg" setAllPoints="true" hidden="true" parentKey="IconTextureBg">
+					<Color r="0.40" g="0.20" b="0"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture name="$parentIconTexture" setAllPoints="true" hidden="true"/>
+				<FontString name="$parentSpellName" inherits="GameFontNormal" maxLines="3" hidden="true" justifyH="LEFT" parentKey="SpellName">
+					<Size>
+						<AbsDimension x="145" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="8" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentSubSpellName" inherits="SubSpellFont" hidden="true" justifyH="LEFT" parentKey="SpellSubName">
+					<Size>
+						<AbsDimension x="145" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentSpellName" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentRequiredLevelString" inherits="GameFontBlackSmall" hidden="true" justifyH="LEFT" parentKey="RequiredLevelString">
+					<Size>
+						<AbsDimension x="145" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentSubSpellName" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.25" g="0.12" b="0"/>
+				</FontString>
+				<FontString name="$parentSeeTrainerString" inherits="GameFontHighlightSmall" hidden="true" justifyH="LEFT" parentKey="SeeTrainerString" text="SPELLBOOK_TRAINABLE">
+					<Size>
+						<AbsDimension x="145" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentSubSpellName" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="OVERLAY" textureSubLevel="-1">
+				<Texture name="$parentSlotFrame" inherits="Spellbook-SlotFrame">
+					<Anchors>
+						<Anchor point="CENTER" x="1.5"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentUnlearnedSlotFrame" inherits="Spellbook-UnlearnedSlot" hidden="true" parentKey="UnlearnedFrame">
+					<Anchors>
+						<Anchor point="CENTER" x="1.5" y="-3"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTrainSlotFrame" inherits="Spellbook-TrainSlot" hidden="true" parentKey="TrainFrame">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-35" y="35"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY" textureSubLevel="1">
+				<Texture name="$parentFlyoutArrow" file="Interface\Buttons\ActionBarFlyoutButton" parentKey="FlyoutArrow" hidden="true">
+					<Size x="23" y="11"/>	
+					<TexCoords left="0.62500000" right="0.98437500" top="0.74218750" bottom="0.82812500"/>	
+					<Anchors>
+						<Anchor point="RIGHT" x="2" y="0"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="1">
+				<Texture name="$parentTrainTextBackground" inherits="Spellbook-TrainTextBackground" parentKey="TrainTextBackground" hidden="true">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTrainSlotFrame" relativePoint="TOPRIGHT" x="0" y="-12"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter>
+				Altoholic.Spellbook:OnEnter(self)
+			</OnEnter>
+			<OnLeave>
+				AltoTooltip:Hide();
+			</OnLeave>
+			<OnClick>
+				Altoholic.Spellbook:OnClick(self, button)
+			</OnClick>
+		</Scripts>
+		<HighlightTexture name="$parentHighlight" file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+	</Button>
+	
+	<Frame name="AltoholicFrameSpellbook" parent="AltoholicTabCharacters" hidden="true">
+		<Size>
+			<AbsDimension x="615" y="306"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT">
+				<Offset>
+					<AbsDimension x="39" y="-105"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$Parent_PageNumber" inherits="GameFontHighlightSmallOutline" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="500" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parent_SpellIcon1" inherits="AltoSpellButtonTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="30" y="-15" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon2" inherits="AltoSpellButtonTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon1" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon3" inherits="AltoSpellButtonTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon2" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon4" inherits="AltoSpellButtonTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon3" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			
+			<Button name="$parent_SpellIcon5" inherits="AltoSpellButtonTemplate" id="5">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon1" relativePoint="TOPRIGHT" >
+						<Offset x="170" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon6" inherits="AltoSpellButtonTemplate" id="6">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon5" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon7" inherits="AltoSpellButtonTemplate" id="7">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon6" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon8" inherits="AltoSpellButtonTemplate" id="8">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon7" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			
+			<Button name="$parent_SpellIcon9" inherits="AltoSpellButtonTemplate" id="9">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon5" relativePoint="TOPRIGHT" >
+						<Offset x="170" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon10" inherits="AltoSpellButtonTemplate" id="10">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon9" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon11" inherits="AltoSpellButtonTemplate" id="11">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon10" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_SpellIcon12" inherits="AltoSpellButtonTemplate" id="12">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_SpellIcon11" relativePoint="BOTTOMLEFT" >
+						<Offset x="0" y="-30" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			
+			<Button name="$ParentPrevPage">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="550" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						Altoholic.Spellbook:GoToPreviousPage()
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Down"/>
+				<DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+			</Button>
+			<Button name="$ParentNextPage">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$ParentPrevPage" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						Altoholic.Spellbook:GoToNextPage()
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+				<DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+			</Button>
+			
+		</Frames>
+	</Frame>
+	
+</Ui>

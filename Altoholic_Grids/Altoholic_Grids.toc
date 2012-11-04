@@ -1,0 +1,23 @@
+﻿## Interface: 50001
+## Title: Altoholic_Grids
+## Notes: Altoholic's Grids Tab
+## Author: Thaoky (EU-Marécages de Zangar)
+## Version: 5.0.001
+## Dependencies: Altoholic, DataStore, DataStore_Characters
+## LoadOnDemand: 1
+## X-Category: Interface Enhancements
+## X-Curse-Packaged-Version: r125
+## X-Curse-Project-Name: Altoholic
+## X-Curse-Project-ID: altoholic
+## X-Curse-Repository-ID: wow/altoholic/mainline
+
+TabGrids.xml
+Grids.xml
+
+Data\FactionLeveling_deDE.lua
+Data\FactionLeveling_enUS.lua
+Data\FactionLeveling_frFR.lua
+Data\FactionLeveling_koKR.lua
+Data\FactionLeveling_ruRU.lua
+Data\FactionLeveling_zhCN.lua
+Data\FactionLeveling_zhTW.lua
