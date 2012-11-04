@@ -1,0 +1,14 @@
+------------------------------------------------------------------------
+r24 | moncai | 2012-08-27 19:34:10 +0000 (Mon, 27 Aug 2012) | 1 line
+Changed paths:
+   A /tags/v1.5.4 (from /trunk:23)
+
+Tagging as 1.5.4 Mists of Pandaria
+------------------------------------------------------------------------
+r23 | moncai | 2012-08-27 19:32:45 +0000 (Mon, 27 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/!MoncaiCompare.lua
+   M /trunk/!MoncaiCompare.toc
+
+Mists of Pandaria compatibility update
+------------------------------------------------------------------------

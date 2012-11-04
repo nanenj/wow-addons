@@ -15,5 +15,6 @@ This is my personal collection of world of warcraft add-ons.  It's main purpose 
 * TomTom v50001-1.3.1
 * Postal v3.5.0
 * Altaholic v5.0.002
+* Moncai Compare v1.5.4
 
 
