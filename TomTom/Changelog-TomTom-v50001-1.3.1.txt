@@ -1,0 +1,12 @@
+tag v50001-1.3.1
+6d4d6ff6ef50e61065118b8e3ad2317d23acb3ba
+James Whitehead II <jnwhiteh@gmail.com>
+2012-10-30 07:40:35 +0100
+
+Tagging v50001-1.3.1
+
+
+--------------------
+
+James Whitehead II:
+	- Add cleardistance/arrivaldistance to reset button
