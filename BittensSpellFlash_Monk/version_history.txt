@@ -1,0 +1,44 @@
+== Version 2.4.1
+* Brewmaster: Bugfix - Tiger Palm wasn't flashing when you had 0 Chi (even though it's free).
+* Windwalker: Made Tigereye Brew and Energizing Brew flash yellow and continue to the next priority, like a cooldown should.
+
+== Version 2.4.0
+* Taking out of beta (see changes for version 2.3.0).
+* Brewmaster: Added Chi Wave / Zen Sphere / Chi Burst.
+
+== Version 2.3.1 beta
+* Windwalker: Bugfix - fixed a Lua error or two.
+
+== Version 2.3.0 beta
+* Brewmaster: Tries to be a little friendlier to leveling tanks (no promises).
+* Brewmaster: Added Tiger Palm.
+* Brewmaster: Jab was a bit broken.  Should behave better now.
+* Windwalker: Changed rotation to match what's in Simulationcraft.
+* Windwalker: Added Chi Brew.
+* All: Added Xnvoke Xuen and Rishing Jade Wind.
+* All: Added Roll.
+* All: Bugfix - Legacy of the Emperor broke with one of the previous releases of the library.
+
+== Version 2.2.1
+* Updated to work with the latest Bitten's SpellFlash Library version.
+* Brewmaster: Fortifying Brew now flashes yellow like it should.
+
+== Version 2.2.0
+* Brewmaster: Added Dampen Harm to the cooldown rotation.
+* Brewmaster: Guard now only flashes if you have at least 4 energy, so it never interferes with using Blackout Kick to refresh Shuffle.
+* All: Added AoE rotations.  Visit your keybindings to activate them.
+
+== Version 2.1.0
+* Brewmaster: Added Provoke.
+* All: Anticipates resources consumed by queued spells.
+* All: Flashes spells if you will have the resources by the time you should cast it (instead of if you have them now).
+
+== Version 2.0.0
+* Brewmaster: Added a Brewmaster rotation.
+* Windwalker: Added Touch of Death.
+* Windwalker: Added Stance of the Fierce Tiger.
+* Windwalker: Fists of Fury will no longer flash if your energy would cap during the channel.
+* All: Added Legacy of the Emperor.
+
+== Version 1.0.0
+* Initial Release

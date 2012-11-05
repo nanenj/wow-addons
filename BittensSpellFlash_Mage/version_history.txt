@@ -1,0 +1,124 @@
+== Version 2.12.1
+* Fire: Bugfix - The visibility of the combustion monitor would sometimes get out-of-sync.
+* Frost: Adjust the priority of Freeze down to just above ice-lance, to avoid using Freeze only to end up capping FoF and wasting a proc.  Simulations show this to be a dps increase.
+
+== Version 2.12.0
+Sorry about the double-release.  I simply forgot to add this one in earlier.
+* Frost: Frozen Orb is now prioritized just below the bomb spells (which shows a dps goin in simulations).
+
+== Version 2.11.0
+* Fire: Bugfix - Inferno Blast misses were not being handled correctly (causing Pyroblast to continue flashing as if it crit).
+* Frost: Ice Lance is now always prioritized above Frostfire Bolt (which shows a dps gain in simulations).
+* Frost: Freeze no longer flashes until 3 stacks of Frostbolt (which shows a dps gain in simulations).
+
+== Version 2.10.0
+* Frost: Add a frost rotation.
+* All: Now flashes Rune of Power when you don't have the buff.
+* All: Now flashes Evocation to keep up Invoker's Energy, if you have Invocation.
+
+== Verision 2.9.0
+* Fire: Now flashes Frostfire Bolt if glyphed.
+* Fire: Lowered the default value for "Minimum Combustion Total Damage" from 150K to 80K.
+* Fire: Bugfix - now flashes Molten Armor instead of Mage Armor (oops).
+* Fire: Bugfix - fighting in close combat, or when using Scorch, caused issues with proc tracking.
+
+== Version 2.8.0
+* Fire: Now has a Fire rotation.
+
+== Version 2.7.0
+* Arcane: Now flashes all 3 tier 5 talents.
+
+== Version 2.6.2
+* Arcane: Bugfix - stuff was messed up with mana gems, especially if glyphed.  Hopefully it's all better now.
+
+== Version 2.6.1
+* Arcane: Bugfix - it was printing a error messages every time you cast a spell.
+* Arcane: Bugfix - Arcane Power was not working correctly.
+
+== Version 2.6.0
+* Added an Arcane rotation for the MoP beta.
+
+== Version 2.5.5
+* All: Slight performance improvements.
+* All: Bugfix - If using the "In Combat Only" option for SpellFlash, the combustion monitor would appear between logging in and entering combat, even if it shouldn't. 
+
+== Version 2.5.4
+* Arcane: Focus Magic was broken.
+
+== Version 2.5.2
+* Arcane: Arcane Power was being a little wonky.
+* Taking out of beta.
+
+== Version 2.5.1 beta
+This beta release uses Bitten's SpellFlash Library version 3.  If you update you will also need to update any of your other Bitten's SpellFlash modules, which may also be in beta.
+* Fire: Workaround for a bug in the Blizzard UI that sometimes reports the wrong cast time for a spell.
+* Fire: Bugfix - Living Bomb was flashing a little crazy.  It has been stabilized.
+* Fire & Frost: Bugfix - mirror images was flashing all crazy.  It has been stabilized.
+
+== Version 2.5.0
+* Arcane: Continues flashing your mana gem for 5 seconds into Arcane Power.
+* Fire: Stolen Time is no longer considered in the decision to cast Combustion (sims show it is a dps loss).
+* Fire: The Combustion Monitor now hides itself out of combat if flashing is disabled out of combat.
+* Fire: Scorch to Refresh Critical Mass now flashes to refresh with 3 seconds remaining, down from 5.  Sims show this is a dps gain.
+* Fire: No longer flashes Scorch when moving.  I found it confusing because I didn't know if it was flashing because I was moving or because Critical Mass needed to be refreshed.  The module now assumes you know to cast Scorch instead of Fireball when you are moving.
+* Fire: Bugfix - no longer momentarily flashes Scorch between Pyroblast dealing damage and Critical Mass being refreshed.
+* Fire: Bugfix - in the detection of whether a spell is in the air that could overwrite Hot Streak.
+* Fire & Frost: Now flashes Evocation.
+* Fire & Frost: No longer flash Mana Gem.  It's too annoying on trash, and may not change the number of Evocations required on a boss anyway.
+* All: Now flashes Spellsteal.
+
+== Version 2.4.0
+* Frost: No longer flashes Summon Water Elemental when mounted.
+* All: Converted events to use the new framework in Bitten's SpellFlash Library.  I believe this fixed a couple bugs.
+
+== Version 2.3.0
+* Arcane: Now flashes Focus Magic.
+* Frost: Bugfix - Frost was completey broken by a Lua error when logging in :(.
+
+== Version 2.2.0
+* Fire: Now flashes Fire Blast a purple color when Impact is up.
+* Fire: Very slight performance increase in the combustion monitor.
+* Fire: Bugfix - sometimes the combustion monitor didn't show/hide itself when settings changed.
+
+== Version 2.1.0
+* Arcane: Mirror Images now flashes when you do NOT have Arcane Power if it is not glyphed.  (With the glyph it still flashes when you DO have Arcane Power.)
+* Arcane: Bugfix - now correctly calculates the cooldown of Arcane Power when deciding whether to flash it during the mana neutral phase.
+* Fire: Now comes with a combustion monitor - like a simplified CombustionHelper.  It can be shown or hidden from the options menu.
+* Fire: Combustion now flashes when it will do more than X amount of total damage, according to the new combustion monitor.  X is configurable in the options.
+* Fire: Now waits for Critical Mass (or equivalent) to fall off completely before giving Scorch high priority, and prioritizes it just above Fireball when it will fall off within 5 seconds (up from 3).
+* Fire: Bugfix - slightly improved detection of whether Hot Streak could be overwritten.
+* All: Flashes Counterspell.
+* All: Bugfix - now tracks cooldown reduction from Stolen Time more accurately.
+* All: Bugfix - hopefully fixed a lua error reported by Zidomo.
+
+== Version 2.0.0
+* Arcane: Arcane Power is now delayed until its cooldown is fully shortened if wearing 4pT13.
+* Fire: Added a fire rotation!
+* Frost: Fingers of Frost consumption is now anticipated, so that spells flash as if the buff is gone even for the second between casting a spell and Blizzard actually removing the buff.
+* Frost: Flashes Icy Veins.
+* Frost: Flashes Cold Snap.
+* Frost: Flashes your mana gem when low on mana.
+* Frost: Freeze now flashes on your pet bar, in addition to your regular action bars.
+* Frost: Now reminds you to Conjure Mana Gem out of combat.
+* Frost: Bugfix - Mirror Images no longer flashes out of combat.
+* All: Added German localization (thanks Gucki!)
+
+== Version 1.3.0
+* Bugfix: the arcane rotation was broken if spellflash was not set to flash out of combat.
+* Now flashes Arcane Brilliance.
+* Arcane code got a complete makeover.
+* Arcane supports 4pT13.
+* Now suggests you start your burn phase by flashing Arcane Blast yellow, instead of Arcane Power (I think this will be more intuitive).
+* Flashes a mana neutral rotation around your evocation percentage if you reach it before evocation is available.
+
+== Version 1.2.0
+* Added options to tweak the Arcane rotation.
+* Arcane mana pool calculations now handle all 3 versions of Will of Unbinding accurately, with and without Kings (or equivalent).
+* Added Summon Water Elemental, Freeze, and Evocation to the frost rotation.
+* Move to Bitten's SpellFlash Library 2.0.
+* Should now work on non-English clients.
+* Added localization support.
+* Plays nicer with other addons.
+
+== Version 1.0.0
+* Initial Release

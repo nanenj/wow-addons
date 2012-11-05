@@ -1,0 +1,54 @@
+== Version 2.4.4
+* Shadow Bugfix - found some smaller issues with cooldowns.  Flashing should be smoother now.
+
+== Version 2.4.3
+* Shadow: Bugfix - Shadow Word: Death was flashing even when it was on cooldown!  Booo.
+
+== Version 2.4.2
+* Shadow: Bugfix - If you could manage to get your mana low, Shadow Word: Death would start flashing as if you could cast it and it would give you mana back.  You can't.  And it won't.
+
+== Version 2.4.1
+* Why was there no version 2.4.1?
+
+== Version 2.4.0
+* Added a Shadow rotation for the MoP beta.
+
+== Version 2.3.1
+* Discipline: Bugfix - the mouseover option was not working for Power Word: Shield.
+
+== Version 2.3.0
+* Discipline/Holy: Now flashes Desperate Prayer.
+* Shadow: Devouring Plague now flashes yellow and continues to the next priority, in case you are multi-dotting.
+* Shadow: No longer flashes Mind Flay to stack up Dark Evangelism if you don't have the talent.
+
+== Version 2.2.2
+* Taking out of beta.
+
+== Version 2.2.1 beta
+This beta release uses Bitten's SpellFlash Library version 3.  If you update you will also need to update any of your other Bitten's SpellFlash modules, which may also be in beta.
+* Discipline/Holy: Now anticipates Seredipity stacks/consumption as you are casting Flash Heal, Binding Heal, Greater Heal or Prayer of Healing.
+
+== Version 2.2.0
+* Discipline: Now flashes Binding Heal.
+* Discipline: No longer flashes Pennance.
+* Holy: Now flashes Binding Heal.
+* Holy: No longer flashes Holy Word: Serenity.
+* Shadow: Bugfix - Mind Flay for Dark Evangelism was never flashing.
+
+== Version 2.1.0
+* Discipline: Bugfix - Power Word: Shield no longer flashes for targets with Weakened Soul.
+* Discipline: Spells will flash correctly taking into account the channeling time of Pennance.
+* Shadow: Dot refreshing is managed accurately based on haste.
+* Shadow: Spells will flash correctly taking into account the channeling time of Mind Flay.
+* Added German localization (thanks Gucki!)
+
+== Version 2.0.0
+* Adds flashing for Holy and Discipline.
+* Flashes Power Word: Fortitude and Shadow Protection.
+* Move to Bitten's SpellFlash Library 2.0.
+* Should now work on non-English clients.
+* Adds localization support.
+* Plays nicer with other addons.
+
+== Version 1.0.0 beta
+* Initial Release

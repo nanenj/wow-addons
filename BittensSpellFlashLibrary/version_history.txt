@@ -1,0 +1,248 @@
+== Version 3.15.3
+This update affects all classes.
+* Some sly spells were still getting Blizzard proc hilighting.  I think I covered everything this time.  See the last question in the FAQ for a discussion about why I disable them.
+
+== Version 3.15.2
+This update affects all classes.
+* Finally found how to disable Blizzard proc hilighting again!  See the last question in the FAQ for a discussion about why I disable them.
+
+== Version 3.15.1
+This is an optional update for all classes.
+* None of Bitten's module will ever flash anything when you are mounted out of combat anymore.
+
+== Version 3.15.0
+This version supports the latest Warlock module.
+* If c.GetID() is passed a table, it is now simply returned.
+
+== Version 3.14.2
+This version supports the latest Atonement module.
+* Bugfix: updated c.GetGroupMembers() for MoP.
+
+== Version 3.14.1
+This version fixes a bug that was introduced last version for Blood and Holy tanks.
+* Bugfix: c.FlashMitigationCooldowns wasn't respecting ShouldHold().
+
+== Version 3.14.0
+This version supports the latest Paladin module.
+* Many more (de)buff functions now take noGCD and matchSpellID arguments.
+
+== Version 3.13.0
+This version supports the latest Mage module (I'm a bit late releasing it, oops!).
+* c.HasMyDebuff and c.GetMyDebuffStack now take noGCD and matchSpellID arguments.
+
+== Version 3.12.2
+* Bugfix: protection against an error reported by a user.
+
+== Version 3.12.1
+* Absolutely no change whatsoever, except now it will no longer be reported as "Out of Date" in 5.0.4.
+
+== Version 3.12.0
+This version supports the latest Warlock module for MoP.
+* Added c.RegisterForFullChannels()
+* Added c.GetHastedTime()
+
+== Version 3.11.0
+This version supports the latest Druid module for MoP.
+* c.RegisterForEvents() now fires CastQueued.
+* c.GetCooldown() now takes an additional argument: NoGCD.
+
+== Version 3.10.0
+This version support the latest Hunter module for MoP.
+* Added c.BLOODLUST_BUFFS for MoP.
+
+== Version 3.9.0
+This version supports the latest Mage module for MoP.
+* c.GetCastingInfo() now supports channeled spells.
+
+== Version 3.8.0
+This version supports the latest Monk and DK modules for MoP.
+* Added raid (de)buff lists for MoP.
+* Replaced c.RotateCooldowns() with c.FlashMitigationBuffs()
+
+== Version 3.7.0
+This version supports the latest Hunter module.
+* Added key bindings to toggle AoE mode for the modules that support it.
+
+== Version 3.6.0
+This version supports the latest Monk module.
+* c.GetPower() now has an optional argument for which power type to count.
+
+== Version 3.5.2
+* I swear I tried the last version and it worked - but no, no it was broken.
+
+== Version 3.5.1
+* Fixed so the five percent buffs flash correctly in both the beta AND live clients.
+
+== Version 3.5.0
+This version supports the latest Monk module.
+* Added Legacy of the Emperor to c.FIVE_PERCENT_BUFFS
+* c.RotateCooldowns now supports the new UseBuffID flags.
+* c.AddSpell now supports the new UseBuffID flags.
+
+== Version 3.4.1
+This version supports the latest Druid module.
+* Bugfix: c.GetMyDebuffStack() was broken.
+* Bugfix: c.AddSpell() was not converting tables of spell names to ids correctly.
+* Bugfix: c.InfoMatches() was not working for spells with a sub name.
+
+== Version 3.4.0
+This version supports the latest Rogue release.
+* Added c.GetMyDebuffStack().
+* c.RegisterForEvents now notifies for Energized.
+* c.Flash now passes "self" to the flashing functions.
+
+== Version 3.3.2
+* Fixed a versioning issue on curseforge.com that caused 2.13.0 to download instead of 3.3.1.
+
+== Version 3.3.1
+This version supports the latest Priest release.
+* c.IsCasting() now works for channeled spells.
+
+== Version 3.3.0
+This version supports the new Priest Atonement module.
+* Added c.GetGroupMembers()
+
+== Version 3.2.0
+* c.RegisterForEvents() now notifies of SpellHeal.
+* Added an option for keybinding toggling floating combat text.  Only toggles target damage and self (not target healing or effects).
+* Bugfix: lua error in c.EstimateTravelTime().
+
+== Version 3.1.2
+* Bugfix: fixed a harmless but annoying lua error that only occurred for users with "In Combat Only" selected.
+
+== Version 3.1.1
+* Improved the predictions for queued spell timings & power changes.
+* c.InfoMatches() now accepts tables of spell names.
+* Added c.GetCost() to work around a bug in the Blizzard API.
+* Partial workaround for a bug in s.SpellTravelStartTime().
+* Bugfix in c.ShouldCastToRefresh()
+
+== Version 3.1.0
+* c.GetID() now uses a.SpellIDs if it exists.
+* c.GetID() is now ok if you pass it an ID instead of a string.
+* c.RegisterForEvents() now notifies of SpellMissed.
+* Added c.AddSpell().
+* Added c.AddOptionalSpell().
+* Added c.AddInterrupt().
+* Added c.AddTaunt().
+* Added c.CloneSpell().
+* Added c.GetSpell().
+* Added c.PriorityFlash().
+* Added c.FlashAll().
+* Minor performance improvements.
+
+== Version 3.0.0 beta
+This beta release breaks backward compatibility.  If you update you will also need to update any of your other Bitten's SpellFlash modules to their latest version, which may also be in beta.
+* Converted to a new event system.
+* Split off a couple files, one for buff definitions and one for events.
+* A handful of other changes that break backward compatibility.
+* c.GetBusyTime() now includes a queued spell.
+* c.HasBuff() no longer accepts a durationRequired argument.
+* Added c.ShouldCastToRefresh().
+* Added c.GetPower().
+* Added c.GetCastingInfo().
+* Added c.GetQueuedInfo().
+* Added c.InfoMatches().
+
+== Version 2.14.0
+This version supports the latest Warlock module.
+* Added c.SPELL_DAMAGE_DEBUFFS.
+* Added c.HasTalent().
+* Added c.GetTalentRank().
+* Added c.RegisterAura().
+* Removed version 1 of the library.
+
+== Version 2.13.0
+This release supports the latest Mage module, and fixes an issue for the Druid Balance rotation.
+* c.RegisterForEvents() now passes a flag to SpellDamage() to indicate whether it is from a DoT.
+* Bugfix - c.CountLandings() sometimes double-counted spells if they would land exactly on the edge of your window of interest.
+
+== Version 2.12.0
+* c.RegisterForEvents() now fires an event for leaving combat.
+* c.RegisterForEvents() now fires AuraApplied when an aura gains a stack.
+* c.RegisterForEvents() now fires AuraRemoved when an aura loses a stack.
+
+== Version 2.11.4
+* Grr.  There were still issues with events.  I tested it with every class that uses events this time, even if they were basically identical.  I *think* I have everything worked out now.
+
+== Version 2.11.3
+* Bugfix: Accidentally left some debug output in the last release.  The past couple days have not been my finest - sorry for all the bugfix releases in rapid succession.
+
+== Version 2.11.2
+* Bugfix: Now handles when events are fired for both "player" and, e.g., "raid3" when in a raid group. This was causing issues in the Hunter module - maybe others?
+
+== Version 2.11.1
+* Bugfix: c.ManageDots() didn't work if you also used c.RegisterForEvents().
+* Bugfix: the CastFailed events were not always called at the correct times.
+
+== Version 2.11.0
+* Added c.STR_AGI_BUFFS
+* c.GetBusyTime() now accepts a list of possible spells that are current but not casting.  If one is found in the list, the busy time will take into account the total cast time of that spell. 
+
+== Version 2.10.0
+* c.Flash() now separates .Function() into .FlashAlways(), .FlashInCombat(), and .FlashOutOfCombat().
+* Added c.GetCurrentCastTarget()
+* Added c.RegisterForEvents()
+
+== Version 2.9.0
+* Added c.BLOODLUST_BUFFS
+* c.Flash() now handles a rotation for when a player has no spec.
+
+== Version 2.8.0
+* c.HasMyDebuff() no longer considers a debuff gone when it has less than .2 seconds remaining.
+* Bugfix: c.GetBusyTime() no longer causes a lua error when called before SpellFlash is completely initialized.
+
+== Version 2.7.0
+* Added c.CRIT_DEBUFFS.
+* Added c.EstimateTravelTime().
+* Added c.CountLandings().
+
+== Version 2.6.0
+* Added c.IsAuraPendingFor().
+
+== Version 2.5.0
+* Added c.Flash(), which will replace c.Run() at some point.
+* Added c.IsTanking().
+* Added c.WearingSet().
+* Bugfix in c.GetBusyTime().
+* The mini-flash on a taunt when another tank has aggro is now 1/2 the normal size, up from 1/3.
+* Added c.ManageDotRefresh().
+
+== Version 2.4.0
+* Added a key binding to turn debug output on/off.
+* Added c.MANA_BUFFS, c.ATTACK_POWER_BUFFS, and c.MP5_BUFFS.
+* Added c.Debug(), c.IsCasting(), c.IsCastingOrInAir(), c.CheckFirstForTaunts(), c.IsInGroup(), and c.SpellsAreEqual()
+* c.HasBuff() now works for permanent buffs (that report duration == 0)
+
+== Version 2.3.0
+* Added c.INTELLECT_BUFFS.
+* Added c.SelfBuffNeeded().
+* c.RaidBuffNeeded() now requires mana users if passed c.INTELLECT_BUFFS
+
+== Version 2.2.0
+* Added c.STAMINA_BUFFS.
+* Added c.SHADOW_RESISTANCE_BUFFS.
+* Added c.GetBuffStack(name).
+* Added c.RaidBuffNeeded(idTable).
+
+== Version 2.1.1
+* Bugfix: blizzard default proc hilighting was staying disabled for users who changed from a Bitten's SpellFlash module to some other module.
+
+== Version 2.1.0
+* Bugfix: blizzard default proc hilighting was being disabled for users who have no module for their current character.
+* Adds a list of the 5% buffs.
+
+== Version 2.0.1
+* No functional change.  Plays nicer with other addons.
+
+== Version 2.0.0 beta
+* Version 2.0 library will reside separately from the original, which will not be phased out immediately.
+* Does not have all the priority flashing logic or extra spell flags, because SpellFlash adopted all those.
+* Adds a framework for keeping modules international-friendly while just as easy to read/mantain.
+
+== Version 1.1.0 beta
+* Added userFlagged().
+* Added run().
+
+== Version 1.0.0 beta
+* Initial Release.

@@ -1,0 +1,29 @@
+<Bindings>
+    <Binding
+        name="BITTENS_SPELLFLASH_AOE"
+        header="BITTENS_SPELLFLASH" >
+        
+        BittensSpellFlashLibrary.AoE = not BittensSpellFlashLibrary.AoE
+        BittensSpellFlashLibrary.Debug(
+        	"Lib", "AoE mode:", BittensSpellFlashLibrary.AoE)
+    </Binding>
+    <Binding
+        name="BITTENS_SPELLFLASH_DEBUGGING"
+        header="BITTENS_SPELLFLASH" >
+        
+		BittensSpellFlashLibrary.Debugging
+			= not BittensSpellFlashLibrary.Debugging
+    </Binding>
+    <Binding
+        name="BITTENS_SPELLFLASH_FLOATING_TEXT"
+        header="BITTENS_SPELLFLASH" >
+        
+		if GetCVar("CombatDamage") == "0" then
+			SetCVar("CombatDamage", 1)
+			SetCVar("enableCombatText", 1)
+		else
+			SetCVar("CombatDamage", 0)
+			SetCVar("enableCombatText", 0)
+		end
+    </Binding>
+</Bindings>
