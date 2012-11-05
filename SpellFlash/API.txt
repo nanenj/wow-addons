@@ -1,0 +1,4135 @@
+= ** local s = SpellFlashAddon
+
+\\
+----
+\\
+
+=== ** s.SpellName
+
+This returns the localized spell name.
+
+<<code lua>>name = s.SpellName(SpellID, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellID
+:		(number) Global spell ID number.
+; ** NoSubName
+:		(boolean) If true will not return the spell name with the sub name attached.
+
+===== ** Returns:
+
+; ** name
+:		(string) Localized spell name.
+
+\\
+----
+\\
+
+=== ** s.ItemName
+
+This returns the localized item name.
+
+<<code lua>>name = s.ItemName(ItemID)<</code>>
+
+===== ** Arguments:
+
+; ** ItemID
+:		(number) Global item ID number.
+
+===== ** Returns:
+
+; ** name
+:		(string) Localized item name.
+
+\\
+----
+\\
+
+=== ** s.Replace
+
+This replaces text with new text in a string.
+
+<<code lua>>REPLACED_STRING = s.Replace(STRING, FIND, REPLACE, FIND, REPLACE, ...)<</code>>
+
+===== ** Arguments:
+
+; ** STRING
+:		(string) The original string.
+; ** FIND
+:		(string or number) The search text.
+; ** REPLACE
+:		(string or number or nil) The replacement text.
+
+===== ** Returns:
+
+; ** REPLACED_STRING
+:		(string) The replaced string.
+
+\\
+----
+\\
+
+=== ** s.If
+
+A simple function that will return the second argument if the first argument is true and will return the third argument if the first argument is false.
+
+<<code lua>>Return = s.If(Argument, True, False)<</code>>
+
+===== ** Arguments:
+
+; ** Argument
+:		(boolean) If true will return the second argument and if false will return the third argument.
+; ** True
+:		(variable) This is used as the return value if the first argument is true.
+; ** False
+:		(variable) This is used as the return value if the first argument is false.
+
+===== ** Returns:
+
+; ** Return
+:		(variable) The returned argument.
+
+\\
+----
+\\
+
+=== ** s.RegisterModuleSpamFunction
+
+This will allow you to set a function to be called about 5 times a second if the module is enabled.
+
+<<code lua>>s.RegisterModuleSpamFunction(AddonName, Function)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string) The name of the addon that the spam function is being used for.
+; ** Function
+:		(function) The function that will be ran if the module is enabled.
+
+\\
+----
+\\
+
+=== ** s.RegisterModuleOptionsWindow
+
+This registers the module's options window frame so that SpellFlash is able to easily find it.
+
+<<code lua>>s.RegisterModuleOptionsWindow(AddonName, Frame)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string) The name of the addon for the options window.
+; ** Frame
+:		(frame) The module's options window frame.
+
+\\
+----
+\\
+
+=== ** s.RegisterModuleEvent
+
+This will allow you to set a function to be called every time an event is fired.
+
+<<code lua>>s.RegisterModuleEvent(AddonName, Event, Function)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string or table) The name, table or frame for the addon that the events are being used for. If a module's addon name is used, the events will not be used while that module is disabled.
+; ** Event
+:		(string) The name of the event.
+; ** Function
+:		(function) The function that will be ran when the event fires.
+
+<<code lua>>
+-- Example:
+local function EventFunction(event, ...)
+	--do something here
+end
+s.RegisterModuleEvent("MyAddonName", "EVENT_NAME", EventFunction)
+<</code>>
+
+\\
+----
+\\
+
+=== ** s.UnregisterModuleEvent
+
+This will unregister an event that has already been set using the s.RegisterModuleEvent function.
+
+<<code lua>>s.UnregisterModuleEvent(AddonName, Event)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string or table) The name, table or frame for the addon that the events are being used for.
+; ** Event
+:		(string) The name of the event.
+
+\\
+----
+\\
+
+=== ** s.RegisterBigLibTimer
+
+Use this to embed BigLibTimer into your addon. Use either the argument or the return value but not both, because that would be the same as just using the argument.\\
+BigLibTimer API: ** http://wow.curseforge.com/addons/biglibtimer/pages/api/
+
+<<code lua>>handler = s.RegisterBigLibTimer(handler)<</code>>
+
+===== ** Arguments:
+
+; ** handler
+:		(frame or table or nil) Table or frame to have the BigLibTimer functions saved to.
+
+===== ** Returns:
+
+; ** handler
+:		(table) Table with the BigLibTimer functions saved to it.
+
+\\
+----
+\\
+
+=== ** s.AddSettingsListener
+
+This will allow you to add a function that will be called every time the SpellFlash settings are saved.
+
+<<code lua>>s.AddSettingsListener(Function)<</code>>
+
+===== ** Arguments:
+
+; ** Function
+:		(function) A function that will be called every time the SpellFlash settings are saved.
+
+\\
+----
+\\
+
+=== ** s.CopyTable
+
+A simple function that will copy a table.
+
+<<code lua>>CopiedTable = s.CopyTable(Table)<</code>>
+
+===== ** Arguments:
+
+; ** Table
+:		(table) The original table.
+
+===== ** Returns:
+
+; ** CopiedTable
+:		(table) The copied table.
+
+\\
+----
+\\
+
+=== ** s.Class
+
+This is used to determine the class of a unit.
+
+<<code lua>>CLASS = s.Class(unit, class)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** class
+:		(string or table or nil) English class name or table of class names to compare to. This is not case sensitive and spaces are ignored.
+
+===== ** Returns:
+
+; ** CLASS
+:		(string or nil) English all capital no spaces class name or nil if the unit is not a player or did not match a given class name.
+
+\\
+----
+\\
+
+=== ** s.Race
+
+This is used to determine the race of a unit.
+
+<<code lua>>RACE = s.Race(unit, race)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** race
+:		(string or table or nil) English race name or table of race names to compare to. This is not case sensitive and spaces are ignored.
+
+===== ** Returns:
+
+; ** RACE
+:		(string or nil) English all capital no spaces race name or nil if the unit is not a player or did not match a given race name.
+
+\\
+----
+\\
+
+=== ** s.Healer
+
+This is used to check for a healer class.
+
+<<code lua>>ID = s.Healer(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to check raid and party members or "party" to only check party members. You may also add a combination of options separated by a line pipe such as "raid|range|afk|notself". Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself.
+
+===== ** Returns:
+
+; ** ID
+:		(string or nil) UnitID of the first found healer class or nil if the unit is not a healer or did not match a given option.
+
+\\
+----
+\\
+
+=== ** s.Form
+
+This will return the current stance or form that you are in if you are a Druid or Warrior.
+
+<<code lua>>currentForm = s.Form(form)<</code>>
+
+===== ** Arguments:
+
+; ** form
+:		(string or number or nil) Localized form or stance name or global id number of the spell to compare to.
+
+===== ** Returns:
+
+; ** currentForm
+:		(string or nil) Currently used localized form or stance name or nil if you are not in a form or it did not match the given form or stance name.
+
+\\
+----
+\\
+
+=== ** s.InCombat
+
+This is used to determine if you are in combat.
+
+<<code lua>>inCombat = s.InCombat()<</code>>
+
+===== ** Returns:
+
+; ** inCombat
+:		(boolean) True if you are in combat.
+
+\\
+----
+\\
+
+=== ** s.InRaid
+
+This is used to determine if you are in a raid.
+
+<<code lua>>members = s.InRaid()<</code>>
+
+===== ** Returns:
+
+; ** members
+:		(number or nil) Number of members in your raid or nil if not in a raid or you are the only one in the raid.
+
+\\
+----
+\\
+
+=== ** s.InParty
+
+This is used to determine if you are in a party.
+
+<<code lua>>members = s.InParty()<</code>>
+
+===== ** Returns:
+
+; ** members
+:		(number or nil) Number of members in your party excluding yourself, or nil if not in a party.
+
+\\
+----
+\\
+
+=== ** s.InGroup
+
+This is used to determine if you are in a raid/party.
+
+<<code lua>>members = s.InGroup()<</code>>
+
+===== ** Returns:
+
+; ** members
+:		(number or nil)  Number of members in your raid/party, or nil if not in a raid/party or you are the only one in the raid/party.
+
+\\
+----
+\\
+
+=== ** s.Shooting
+
+Determines if the player is casting a spell which automatically repeats, such as Shoot for wand users.
+
+<<code lua>>isShooting = s.Shooting()<</code>>
+
+===== ** Returns:
+
+; ** isShooting
+:		(boolean) True if you are shooting.
+
+\\
+----
+\\
+
+=== ** s.Moving
+
+Determines if the target is moving.
+
+<<code lua>>isMoving = s.Moving(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** isMoving
+:		(boolean) True if moving.
+
+\\
+----
+\\
+
+=== ** s.MeleeDistance
+
+Determine if you are within melee distance.
+
+<<code lua>>withinMeleeRange = s.MeleeDistance(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** withinMeleeRange
+:		(boolean) True if you are within melee range of the target if melee distance can be determined, otherwise true if you are within 10 yards of the target.
+
+\\
+----
+\\
+
+=== ** s.GUIDInfo
+
+Decodes the unit GUID string to find the identification information.
+
+<<code lua>>Type, ID = s.GUIDInfo(GUID)<</code>>
+
+===== ** Arguments:
+
+; ** GUID
+:		(string) The GUID string of the unit.
+
+===== ** Returns:
+
+; ** Type
+:		(string) The unit type: "player", "npc", "pet", "vehicle" or "unknown".
+; ** ID
+:		(number) The unit identification number.
+
+\\
+----
+\\
+
+=== ** s.UnitInfo
+
+Decodes the unit GUID string to find the identification information.
+
+<<code lua>>Type, ID = s.UnitInfo(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** Type
+:		(string) The unit type: "player", "npc", "pet", "vehicle" or "unknown".
+; ** ID
+:		(number) The unit identification number.
+
+\\
+----
+\\
+
+=== ** s.UnitID
+
+Finds the UnitID from the name of the target.
+
+<<code lua>>id = s.UnitID(name)<</code>>
+
+===== ** Arguments:
+
+; ** name
+:		(string) The name of the target to find the UnitID for.
+
+===== ** Returns:
+
+; ** id
+:		(string or nil) The UnitID or nil if not found.
+
+\\
+----
+\\
+
+=== ** s.GetPrimaryThreatTarget
+
+Finds the primary threat target of the target.
+
+<<code lua>>id = s.GetPrimaryThreatTarget(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** id
+:		(string or nil) The UnitID or nil if not found.
+
+\\
+----
+\\
+
+=== ** s.UnitSelection
+
+Returns a unit id based on conditions.
+
+<<code lua>>Unit = s.UnitSelection(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. Use "enemy" to look for the first enemy found by searching every target of target.
+
+===== ** Returns:
+
+; ** Unit
+:		(string) Returns the unit id.
+
+\\
+----
+= ** Talent
+----
+\\
+
+=== ** s.HasTalent
+
+Determines if you have any points spent on a talent.
+
+<<code lua>>hasTalent = s.HasTalent(TalentName)<</code>>
+
+===== ** Arguments:
+
+; ** TalentName
+:		(string or number) Localized name or global id number of the talent.
+
+===== ** Returns:
+
+; ** hasTalent
+:		(boolean) True if you have any points spent on the talent.
+
+\\
+----
+\\
+
+=== ** s.TalentRank
+
+Determines the amount of points spent on a talent.
+
+<<code lua>>rank = s.TalentRank(TalentName)<</code>>
+
+===== ** Arguments:
+
+; ** TalentName
+:		(string or number) Localized name or global id number of the talent.
+
+===== ** Returns:
+
+; ** rank
+:		(number) Amount of points spent on the talent.
+
+\\
+----
+\\
+
+=== ** s.Spec
+
+Determines what specialization you have selected.
+
+<<code lua>>hasSpec = s.Spec(SpecializationNumber)<</code>>
+
+===== ** Arguments:
+
+; ** SpecializationNumber
+:		(number or nil) Number representing the specialization.
+
+===== ** Returns:
+
+; ** hasSpec
+:		(number or nil) Number representing the specialization, or nil if no argument is used and no specialization is selected or the specialization number does not match the given specialization number.
+
+\\
+----
+= ** Spell
+----
+\\
+
+=== ** s.Autocast
+
+Determines if a spell is set to autocast or not.
+
+<<code lua>>autocastOn = s.Autocast(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+
+===== ** Returns:
+
+; ** autocastOn
+:		(boolean) True if the spell is set to autocast.
+
+\\
+----
+\\
+
+=== ** s.CastTime
+
+Determine the amount of time it will take a spell to cast from start to finish.
+
+<<code lua>>castTime = s.CastTime(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+
+===== ** Returns:
+
+; ** castTime
+:		(number) Seconds it will take a spell to cast from start to finish.
+
+\\
+----
+\\
+
+=== ** s.SpellCost
+
+Determines the power cost of the spell.
+
+<<code lua>>cost = s.SpellCost(SpellName, PowerType)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** PowerType
+:		(number or nil) Power type required.
+
+===== ** Returns:
+
+; ** cost
+:		(number) Power cost of the spell.
+
+\\
+----
+\\
+
+=== ** s.SpellInRange
+
+Determines if a spell is in range of a target.
+
+<<code lua>>inRange = s.SpellInRange(SpellName, unit)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** inRange
+:		(number or nil) 1 if the spell is in range of a target or nil if not.
+
+\\
+----
+\\
+
+=== ** s.SpellHasRange
+
+Determines if a spell has a range limitation.
+
+<<code lua>>hasRange = s.SpellHasRange(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+
+===== ** Returns:
+
+; ** hasRange
+:		(number or nil) 1 if the spell has a range limitation or nil if not.
+
+\\
+----
+\\
+
+=== ** s.UsableSpell
+
+Determines whether a spell can be used by the player character.
+
+<<code lua>>isUsable, notEnoughMana = s.UsableSpell(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+
+===== ** Returns:
+
+; ** isUsable
+:		(number or nil) 1 if the player has learned the spell, has the required power and reagents, and reactive conditions have been met or nil if not.
+; ** notEnoughMana
+:		(number or nil) 1 if the spell can not be cast due to low power or nil if not.
+
+\\
+----
+\\
+
+=== ** s.CurrentSpell
+
+Determines if one of your spells is currently casting, channeling or turned on.
+
+<<code lua>>isCurrent = s.CurrentSpell(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+
+===== ** Returns:
+
+; ** isCurrent
+:		(number or nil) 1 if the spell is currently casting, channeling or turned on or nil if not.
+
+\\
+----
+\\
+
+=== ** s.CurrentItem
+
+Determines if one of your item is currently casting, channeling or turned on.
+
+<<code lua>>isCurrent = s.CurrentItem(ItemName)<</code>>
+
+===== ** Arguments:
+
+; ** ItemName
+:		(string or number or table) Localized name or id number of the item, or a table of localized names or id numbers.
+
+===== ** Returns:
+
+; ** isCurrent
+:		(number or nil) 1 if the item is currently casting, channeling or turned on or nil if not.
+
+\\
+----
+\\
+
+=== ** s.CurrentVehicle
+
+Determines if one of your vehicle spells is currently casting, channeling or turned on.
+
+<<code lua>>isCurrent = s.CurrentVehicle(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the vehicle spell, or a table of localized names or global id numbers.
+
+===== ** Returns:
+
+; ** isCurrent
+:		(number or nil) 1 if the vehicle spell is currently casting, channeling or turned on or nil if not.
+
+\\
+----
+= ** Availability
+----
+\\
+
+=== ** s.HasSpell
+
+Determines if you have learned a spell.
+
+<<code lua>>isKnown = s.HasSpell(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+
+===== ** Returns:
+
+; ** isKnown
+:		(boolean) True if you have learned the spell.
+
+\\
+----
+\\
+
+=== ** s.HasItem
+
+Determines if you have an item. Does not look in your bank inventory.
+
+<<code lua>>hasItem = s.HasItem(ItemName)<</code>>
+
+===== ** Arguments:
+
+; ** ItemName
+:		(string or number) Localized name or global id number of the item.
+
+===== ** Returns:
+
+; ** hasItem
+:		(boolean) True if you have the item.
+
+\\
+----
+\\
+
+=== ** s.HasGlyph
+
+Determines if you are currently using a glyph.
+
+<<code lua>>found = s.HasGlyph(GlyphName)<</code>>
+
+===== ** Arguments:
+
+; ** GlyphName
+:		(string or number) Localized name or global spell id number of the glyph.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if you are currently using the glyph.
+
+\\
+----
+= ** Cooldown
+----
+\\
+
+=== ** s.SpellCooldown
+
+This determines the current cooldown of the spell, including a global cooldown.
+
+<<code lua>>timeLeft, duration = s.SpellCooldown(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell. If nil then this function will return a nil value instead of a number.
+
+===== ** Returns:
+
+; ** timeLeft
+:		(number) Seconds currently remaining on the cooldown or 0 if not on cooldown.
+; ** duration
+:		(number) Seconds the current cooldown will last in total or 0 if not on cooldown.
+
+\\
+----
+\\
+
+=== ** s.ItemCooldown
+
+This determines the current cooldown of the item, including a global cooldown.
+
+<<code lua>>timeLeft, duration = s.ItemCooldown(ItemName)<</code>>
+
+===== ** Arguments:
+
+; ** ItemName
+:		(string or number) Localized name or global id number of the item. If nil then this function will return a nil value instead of a number.
+
+===== ** Returns:
+
+; ** timeLeft
+:		(number) Seconds currently remaining on the cooldown or 0 if not on cooldown.
+; ** duration
+:		(number) Seconds the current cooldown will last in total or 0 if not on cooldown.
+
+\\
+----
+\\
+
+=== ** s.ActionCooldown
+
+This determines the current cooldown of the action bar button, including a global cooldown.
+
+<<code lua>>timeLeft, duration = s.ActionCooldown(ActionID)<</code>>
+
+===== ** Arguments:
+
+; ** ActionID
+:		(number) Slot number of the action bar button. If nil then this function will return a nil value instead of a number.
+
+===== ** Returns:
+
+; ** timeLeft
+:		(number) Seconds currently remaining on the cooldown or 0 if not on cooldown.
+; ** duration
+:		(number) Seconds the current cooldown will last in total or 0 if not on cooldown.
+
+\\
+----
+\\
+
+=== ** s.PetActionCooldown
+
+This determines the current cooldown of the pet action bar button, including a global cooldown.
+
+<<code lua>>timeLeft, duration = s.PetActionCooldown(PetActionID)<</code>>
+
+===== ** Arguments:
+
+; ** PetActionID
+:		(number) Slot number of the pet action bar button. If nil then this function will return a nil value instead of a number.
+
+===== ** Returns:
+
+; ** timeLeft
+:		(number) Seconds currently remaining on the cooldown or 0 if not on cooldown.
+; ** duration
+:		(number) Seconds the current cooldown will last in total or 0 if not on cooldown.
+
+\\
+----
+\\
+
+=== ** s.GlobalCooldown
+
+This determines the current global cooldown.
+
+<<code lua>>timeLeft, duration = s.GlobalCooldown()<</code>>
+
+===== ** Returns:
+
+; ** timeLeft
+:		(number) Seconds currently remaining on the cooldown or 0 if not on cooldown.
+; ** duration
+:		(number) Seconds the current cooldown will last in total or 0 if not on cooldown.
+
+\\
+----
+= ** Casting and Channeling
+----
+\\
+
+=== ** s.Casting
+
+Determines if a spell is casting.
+
+<<code lua>>remaining = s.Casting(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the cast is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for a sub-name match.
+
+===== ** Returns:
+
+; ** remaining
+:		(number or nil) Seconds remaining on the cast, or nil for none.
+
+\\
+----
+\\
+
+=== ** s.Channeling
+
+Determines if a spell is channeling.
+
+<<code lua>>remaining = s.Channeling(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the channel is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for a sub-name match.
+
+===== ** Returns:
+
+; ** remaining
+:		(number or nil) Seconds remaining on the channel, or nil for none.
+
+\\
+----
+\\
+
+=== ** s.CastingOrChanneling
+
+Determines if a spell is casting or channeling.
+
+<<code lua>>remaining = s.CastingOrChanneling(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the cast or channel is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for a sub-name match.
+
+===== ** Returns:
+
+; ** remaining
+:		(number or nil) Seconds remaining on the cast or channel, or nil for none.
+
+\\
+----
+\\
+
+=== ** s.GetCasting
+
+Determines the seconds remaining on a spell that is casting.
+
+<<code lua>>remaining = s.GetCasting(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the cast is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for a sub-name match.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds remaining on the cast, or 0 for none.
+
+\\
+----
+\\
+
+=== ** s.GetChanneling
+
+Determines the seconds remaining on a spell that is channeling.
+
+<<code lua>>remaining = s.GetChanneling(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the channel is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for a sub-name match.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds remaining on the channel, or 0 for none.
+
+\\
+----
+\\
+
+=== ** s.GetCastingOrChanneling
+
+Determines the seconds remaining on a spell that is casting or channeling.
+
+<<code lua>>remaining = s.GetCastingOrChanneling(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the cast or channel is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for a sub-name match.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds remaining on the cast or channel, or 0 for none.
+
+\\
+----
+\\
+
+=== ** s.CastingName
+
+Returns the name of a spell that is casting.
+
+<<code lua>>name = s.CastingName(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the cast is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for or return a sub-name match.
+
+===== ** Returns:
+
+; ** name
+:		(string or nil) Name of the spell that is casting or nil for none.
+
+\\
+----
+\\
+
+=== ** s.ChannelingName
+
+Returns the name of a spell that is channeling.
+
+<<code lua>>name = s.ChannelingName(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the channel is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for or return a sub-name match.
+
+===== ** Returns:
+
+; ** name
+:		(string or nil) Name of the spell that is channeling or nil for none.
+
+\\
+----
+\\
+
+=== ** s.CastingOrChannelingName
+
+Returns the name of a spell that is casting or channeling.
+
+<<code lua>>name = s.CastingOrChannelingName(SpellName, unit, interruptible, NoSubName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** interruptible
+:		(boolean) If true will check to see if the cast or channel is interruptible.
+; ** NoSubName
+:		(boolean) If true will not look for or return a sub-name match.
+
+===== ** Returns:
+
+; ** name
+:		(string or nil) Name of the spell that is casting or channeling or nil for none.
+
+\\
+----
+= ** Target
+----
+\\
+
+=== ** s.Enemy
+
+Determines if a target is able to be attacked by you.
+
+<<code lua>>found = s.Enemy(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is able to be attacked by you.
+
+\\
+----
+\\
+
+=== ** s.ActiveEnemy
+
+Determines if a target is able to be attacked by you, and is in combat or is a player, and is not crowed controlled.
+
+<<code lua>>found = s.ActiveEnemy(unit, NoCrowedControlCheck)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** NoCrowedControlCheck
+:		(boolean or nil) If true will not check for a crowed control debuff.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is able to be attacked by you, and is in combat or is a player, and is not crowed controlled.
+
+\\
+----
+\\
+
+=== ** s.Dummy
+
+Determines if a target is a training dummy.
+
+<<code lua>>found = s.Dummy(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(string or nil) Returns the English name of the target if the target is a training dummy.
+
+\\
+----
+\\
+
+=== ** s.GivesXP
+
+Determines if a target is able to give you honor or experience points if you kill it.
+
+<<code lua>>found = s.GivesXP(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is able to give you honor or experience points if you kill it.
+
+\\
+----
+\\
+
+=== ** s.NotDieing
+
+Determines if the target has more than 25% health or is a player or a boss that is alive.
+
+<<code lua>>found = s.NotDieing(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target has more than 25% health or is a player or a boss that is alive.
+
+\\
+----
+\\
+
+=== ** s.Player
+
+Determines if the target is a player.
+
+<<code lua>>found = s.Player(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is a player.
+
+\\
+----
+\\
+
+=== ** s.Boss
+
+Determines if the target is a mob that is classified as a boss or is too high of a level above you to show a level number.
+
+<<code lua>>found = s.Boss(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is a mob that is classified as a boss or is too high of a level above you to show a level number.
+
+\\
+----
+\\
+
+=== ** s.EnemyTargetingYourFriend
+
+Determines if the target is able to be attacked by you and is also targeting someone other than yourself that is friendly to you.
+
+<<code lua>>found = s.EnemyTargetingYourFriend(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is able to be attacked by you and is also targeting someone other than yourself that is friendly to you.
+
+\\
+----
+\\
+
+=== ** s.EnemyTargetingYou
+
+Determines if the target is able to be attacked by you and is also targeting you.
+
+<<code lua>>found = s.EnemyTargetingYou(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is able to be attacked by you and is also targeting you.
+
+\\
+----
+\\
+
+=== ** s.SameTargetAsPet
+
+Determines if the target is also being targeted by your pet.
+
+<<code lua>>found = s.SameTargetAsPet(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if the target is also being targeted by your pet.
+
+\\
+----
+= ** Health
+----
+\\
+
+=== ** s.HealthPercent
+
+Determines the percentage of health that a target has.
+
+<<code lua>>health, counted = s.HealthPercent(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to return the lowest health percent from a raid or party member or "party" for only party members. You may also add a combination of options separated by a line pipe such as "raid|range|afk|notself|healer|notfull|average". Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "notfull" to not check group members who have 90% or more health. Use "average" to get the average health of the checked group members.
+
+===== ** Returns:
+
+; ** health
+:		(number) Percentage of health that a target has. Will return 0 if unknown.
+; ** counted
+:		(number or nil) This will return the number of group members counted only if "raid" or "party" is used in the unit argument.
+
+\\
+----
+\\
+
+=== ** s.Health
+
+Determines the amount of health that a target has.
+
+<<code lua>>health = s.Health(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** health
+:		(number) Amount of health that a target has. Will return 0 if unknown.
+
+\\
+----
+\\
+
+=== ** s.MaxHealth
+
+Determines the maximum amount of health that a target is able to have.
+
+<<code lua>>health = s.MaxHealth(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** health
+:		(number) Maximum amount of health that a target is able to have. Will return 0 if unknown.
+
+\\
+----
+\\
+
+=== ** s.HealthDamagePercent
+
+Determines the percentage of health that a target is missing.
+
+<<code lua>>damage, counted = s.HealthDamagePercent(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to return the highest health damage percent from a raid or party member or "party" for only party members. You may also add a combination of options separated by a line pipe such as "raid|range|afk|notself|healer|notfull|average". Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "notfull" to not check group members who have 90% or more health. Use "average" to get the average health of the checked group members.
+
+===== ** Returns:
+
+; ** damage
+:		(number) Percentage of health that a target is missing. Will return 0 if unknown.
+; ** counted
+:		(number or nil) This will return the number of group members counted only if "raid" or "party" is used in the unit argument.
+
+\\
+----
+\\
+
+=== ** s.HealthDamage
+
+Determines the amount of health that a target is missing.
+
+<<code lua>>damage = s.HealthDamage(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** damage
+:		(number) Amount of health that a target is missing. Will return 0 if unknown.
+
+\\
+----
+= ** Power
+----
+\\
+
+=== ** s.PowerPercent
+
+Determines the percentage of power that a target has.
+
+<<code lua>>power, counted = s.PowerPercent(unit, PowerType, arg3)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to return the lowest power percent from a raid or party member or "party" for only party members. You may also add a combination of options separated by a line pipe such as "raid|range|afk|notself|healer|notfull|average". Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "notfull" to not check group members who have 90% or more health. Use "average" to get the average health of the checked group members.
+; ** PowerType
+:		(number or nil) The power type of the target. FrameXML defines constants in the Constants.lua file that can be used, such as SPELL_POWER_ENERGY. If nil, uses the current primary type such as energy for a druid in cat form.
+; ** arg3
+:		(unknown) ?
+
+===== ** Returns:
+
+; ** power
+:		(number) Percentage of power that a target has. Will return 0 if unknown.
+; ** counted
+:		(number or nil) This will return the number of group members counted only if "raid" or "party" is used in the unit argument.
+
+\\
+----
+\\
+
+=== ** s.Power
+
+Determines the amount of power that a target has.
+
+<<code lua>>power = s.Power(unit, PowerType, arg3)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** PowerType
+:		(number or nil) The power type of the target. FrameXML defines constants in the Constants.lua file that can be used, such as SPELL_POWER_ENERGY. If nil, uses the current primary type such as energy for a druid in cat form.
+; ** arg3
+:		(unknown) ?
+
+===== ** Returns:
+
+; ** power
+:		(number) Amount of power that a target has. Will return 0 if unknown.
+
+\\
+----
+\\
+
+=== ** s.MaxPower
+
+Determines the maximum amount of power that a target is able to have.
+
+<<code lua>>power = s.MaxPower(unit, PowerType, arg3)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** PowerType
+:		(number or nil) The power type of the target. FrameXML defines constants in the Constants.lua file that can be used, such as SPELL_POWER_ENERGY. If nil, uses the current primary type such as energy for a druid in cat form.
+; ** arg3
+:		(unknown) ?
+
+===== ** Returns:
+
+; ** power
+:		(number) Maximum amount of power that a target is able to have. Will return 0 if unknown.
+
+\\
+----
+\\
+
+=== ** s.PowerMissingPercent
+
+Determines the percentage of power that a target is missing.
+
+<<code lua>>missing, counted = s.PowerMissingPercent(unit, PowerType, arg3)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to return the highest power missing percent from a raid or party member or "party" for only party members. You may also add a combination of options separated by a line pipe such as "raid|range|afk|notself|healer|notfull|average". Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "notfull" to not check group members who have 90% or more health. Use "average" to get the average health of the checked group members.
+; ** PowerType
+:		(number or nil) The power type of the target. FrameXML defines constants in the Constants.lua file that can be used, such as SPELL_POWER_ENERGY. If nil, uses the current primary type such as energy for a druid in cat form.
+; ** arg3
+:		(unknown) ?
+
+===== ** Returns:
+
+; ** missing
+:		(number) Percentage of power that a target is missing. Will return 0 if unknown.
+; ** counted
+:		(number or nil) This will return the number of group members counted only if "raid" or "party" is used in the unit argument.
+
+\\
+----
+\\
+
+=== ** s.PowerMissing
+
+Determines the amount of power that a target is missing.
+
+<<code lua>>missing = s.PowerMissing(unit, PowerType, arg3)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** PowerType
+:		(number or nil) The power type of the target. FrameXML defines constants in the Constants.lua file that can be used, such as SPELL_POWER_ENERGY. If nil, uses the current primary type such as energy for a druid in cat form.
+; ** arg3
+:		(unknown) ?
+
+===== ** Returns:
+
+; ** missing
+:		(number) Amount of power that a target is missing. Will return 0 if unknown.
+
+\\
+----
+\\
+
+=== ** s.UsesMana
+
+Determines if any of the targets power bars are for mana.
+
+<<code lua>>usesMana = s.UsesMana(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** usesMana
+:		(boolean) True if any of the targets power bars are for mana.
+
+\\
+----
+\\
+
+=== ** s.HasMana
+
+Determines if any of the targets power bars are for mana and is not empty.
+
+<<code lua>>hasMana = s.HasMana(unit)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** hasMana
+:		(boolean) True if any of the targets power bars are for mana and is not empty.
+
+\\
+----
+= ** Equipped Item
+----
+\\
+
+=== ** s.MainHand
+
+Determines if you have an item type that is not broken in the main hand.
+
+<<code lua>>Type = s.MainHand(ItemType)<</code>>
+
+===== ** Arguments:
+
+; ** ItemType
+:		(string or number or nil) Localized name or global spell id number of the item type, or nil for any.
+
+===== ** Returns:
+
+; ** Type
+:		(string or nil) Localized name of the item type, or nil if not found.
+
+\\
+----
+\\
+
+=== ** s.OffHand
+
+Determines if you have an item type that is not broken in the off hand.
+
+<<code lua>>Type = s.OffHand(ItemType)<</code>>
+
+===== ** Arguments:
+
+; ** ItemType
+:		(string or number or nil) Localized name or global spell id number of the item type, or nil for any.
+
+===== ** Returns:
+
+; ** Type
+:		(string or nil) Localized name of the item type, or nil if not found.
+
+\\
+----
+\\
+
+=== ** s.ShieldEquipped
+
+Determines if you have a shield that is not broken in the off hand.
+
+<<code lua>>found = s.ShieldEquipped()<</code>>
+
+===== ** Returns:
+
+; ** found
+:		(string or nil) Localized name of the item type, or nil if not found.
+
+\\
+----
+\\
+
+=== ** s.Equipped
+
+Determines if you have an item equipped that is not broken.
+
+<<code lua>>slot = s.Equipped(ItemName, Slot)<</code>>
+
+===== ** Arguments:
+
+; ** ItemName
+:		(string or number or table or nil) Localized name or global id number or table of localized names or global id numbers of the item. May be nil if the Slot argument is used.
+; ** Slot
+:		(string or number or nil) Name or number of an inventory slot to query.
+
+===== ** Returns:
+
+; ** slot
+:		(number or nil) Slot number that the item is equipped in or nil if broken or not found.
+
+\\
+----
+= ** Buff
+----
+\\
+
+=== ** s.Buff
+
+This checks for buffs.
+
+<<code lua>>found = s.Buff(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to check raid and party members or "party" to only check party members. You may also add a combination of options separated by a line pipe such as "raid|all|range|afk|notself|healer|mana". Use "all" to only return true if all group members have the buff. Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "mana" to make sure the unit is currently using a mana bar.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the buff is found and all of the included arguments passed the checks or nil.
+
+\\
+----
+\\
+
+=== ** s.BuffStack
+
+Determines the amount of applications for a buff.
+
+<<code lua>>applications = s.BuffStack(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** applications
+:		(number) Amount of applications on the found buff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.BuffDuration
+
+Determines the remaining time left on a buff.
+
+<<code lua>>remaining = s.BuffDuration(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left on the found buff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass. Will give the highest duration remaining found when a table of spell names or Global ID numbers is used.
+
+\\
+----
+\\
+
+=== ** s.MyBuff
+
+This checks for buffs that came from you.
+
+<<code lua>>found = s.MyBuff(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to check raid and party members or "party" to only check party members. You may also add a combination of options separated by a line pipe such as "raid|all|range|afk|notself|healer|mana". Use "all" to only return true if all group members have the buff. Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "mana" to make sure the unit is currently using a mana bar.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the buff is found and all of the included arguments passed the checks or nil.
+
+\\
+----
+\\
+
+=== ** s.MyBuffStack
+
+Determines the amount of applications for a buff that came from you.
+
+<<code lua>>applications = s.MyBuffStack(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** applications
+:		(number) Amount of applications on the found buff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.MyBuffDuration
+
+Determines the remaining time left on a buff that came from you.
+
+<<code lua>>remaining = s.MyBuffDuration(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left on the found buff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass. Will give the highest duration remaining found when a table of spell names or Global ID numbers is used.
+
+\\
+----
+\\
+
+=== ** s.SelfBuff
+
+This checks for buffs that are cast from the same unit that you are checking.
+
+<<code lua>>found = s.SelfBuff(SpellName, unit, DurationRemainingGreaterThan, Stealable, Castable, UseBuffID)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed. You may use the string "raid" to check raid and party members or "party" to only check party members. You may also add a combination of options separated by a line pipe such as "raid|all|range|afk|notself|healer|mana". Use "all" to only return true if all group members have the buff. Use "range" to make sure that the unit is in range of most common spells. Use "afk" to make sure that the unit is not AFK. Use "notself" to not check yourself. Use "healer" to make sure the unit is a healer class. Use "mana" to make sure the unit is currently using a mana bar.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the buff is able to be spellstolen.
+; ** Castable
+:		(boolean) If true will check to see if the buff is from a spell that you have.
+; ** UseBuffID
+:		(boolean) If true will compare the buff Spell ID to the provided Spell ID.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the buff is found and all of the included arguments passed the checks or nil.
+
+\\
+----
+= ** Item Buff
+----
+\\
+
+=== ** s.MainHandItemBuff
+
+Checks to see if your currently equipped main hand item has a temporary buff.
+
+<<code lua>>found = s.MainHandItemBuff(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the buff is found or nil.
+
+\\
+----
+\\
+
+=== ** s.MainHandItemBuffStack
+
+Determines the amount of charges for a temporary buff on your currently equipped main hand item.
+
+<<code lua>>charges = s.MainHandItemBuffStack(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** charges
+:		(number) Amount of charges if all of the included arguments passed the checks, or 0 if not buffed or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.MainHandItemBuffDuration
+
+Determines the remaining time left for a temporary buff on your currently equipped main hand item.
+
+<<code lua>>remaining = s.MainHandItemBuffDuration(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left if all of the included arguments passed the checks, or 0 if not buffed or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.OffHandItemBuff
+
+Checks to see if your currently equipped off hand item has a temporary buff.
+
+<<code lua>>found = s.OffHandItemBuff(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the buff is found or nil.
+
+\\
+----
+\\
+
+=== ** s.OffHandItemBuffStack
+
+Determines the amount of charges for a temporary buff on your currently equipped off hand item.
+
+<<code lua>>charges = s.OffHandItemBuffStack(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** charges
+:		(number) Amount of charges if all of the included arguments passed the checks, or 0 if not buffed or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.OffHandItemBuffDuration
+
+Determines the remaining time left for a temporary buff on your currently equipped off hand item.
+
+<<code lua>>remaining = s.OffHandItemBuffDuration(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left if all of the included arguments passed the checks, or 0 if not buffed or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.RangedItemBuff
+
+Checks to see if your currently equipped ranged item has a temporary buff.
+
+<<code lua>>found = s.RangedItemBuff(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) 1 if the buff is found or nil.
+
+\\
+----
+\\
+
+=== ** s.RangedItemBuffStack
+
+Determines the amount of charges for a temporary buff on your currently equipped ranged item.
+
+<<code lua>>charges = s.RangedItemBuffStack(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** charges
+:		(number) Amount of charges if all of the included arguments passed the checks, or 0 if not buffed or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.RangedItemBuffDuration
+
+Determines the remaining time left for a temporary buff on your currently equipped ranged item.
+
+<<code lua>>remaining = s.RangedItemBuffDuration(SpellName, DurationRemainingGreaterThan)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global spell id number, or a table of localized names or global id numbers, or nil for any.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the buff has more seconds left on its duration than this.
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left if all of the included arguments passed the checks, or 0 if not buffed or the argument checks did not all pass.
+
+\\
+----
+= ** Debuff
+----
+\\
+
+=== ** s.Debuff
+
+This checks for debuffs.
+
+<<code lua>>found = s.Debuff(SpellName, unit, DurationRemainingGreaterThan, Stealable, Dispelable, UseDebuffID, Type)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+; ** UseDebuffID
+:		(boolean) If true will compare the debuff Spell ID to the provided Spell ID.
+; ** Type
+:		(string or nil) Checks to see if the debuff is a spell type: "Magic", "Disease", "Poison" or "Curse".
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the debuff is found and all of the included arguments passed the checks or nil.
+
+\\
+----
+\\
+
+=== ** s.DebuffStack
+
+Determines the amount of applications for a debuff.
+
+<<code lua>>applications = s.DebuffStack(SpellName, unit, DurationRemainingGreaterThan, Stealable, Dispelable, UseDebuffID, Type)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+; ** UseDebuffID
+:		(boolean) If true will compare the debuff Spell ID to the provided Spell ID.
+; ** Type
+:		(string or nil) Checks to see if the debuff is a spell type: "Magic", "Disease", "Poison" or "Curse".
+
+===== ** Returns:
+
+; ** applications
+:		(number) Amount of applications on the found debuff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.DebuffDuration
+
+Determines the remaining time left on a debuff.
+
+<<code lua>>remaining = s.DebuffDuration(SpellName, unit, DurationRemainingGreaterThan, Stealable, Dispelable, UseDebuffID, Type)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+; ** UseDebuffID
+:		(boolean) If true will compare the debuff Spell ID to the provided Spell ID.
+; ** Type
+:		(string or nil) Checks to see if the debuff is a spell type: "Magic", "Disease", "Poison" or "Curse".
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left on the found debuff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass. Will give the highest duration remaining found when a table of spell names or Global ID numbers is used.
+
+\\
+----
+\\
+
+=== ** s.MyDebuff
+
+This checks for debuffs that came from you.
+
+<<code lua>>found = s.MyDebuff(SpellName, unit, DurationRemainingGreaterThan, Stealable, Dispelable, UseDebuffID, Type)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table or nil) Localized name or global id number of the spell, or a table of localized names or global id numbers, or nil for any spell name.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+; ** UseDebuffID
+:		(boolean) If true will compare the debuff Spell ID to the provided Spell ID.
+; ** Type
+:		(string or nil) Checks to see if the debuff is a spell type: "Magic", "Disease", "Poison" or "Curse".
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the debuff is found and all of the included arguments passed the checks or nil.
+
+\\
+----
+\\
+
+=== ** s.MyDebuffStack
+
+Determines the amount of applications for a debuff that came from you.
+
+<<code lua>>applications = s.MyDebuffStack(SpellName, unit, DurationRemainingGreaterThan, Stealable, Dispelable, UseDebuffID, Type)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+; ** UseDebuffID
+:		(boolean) If true will compare the debuff Spell ID to the provided Spell ID.
+; ** Type
+:		(string or nil) Checks to see if the debuff is a spell type: "Magic", "Disease", "Poison" or "Curse".
+
+===== ** Returns:
+
+; ** applications
+:		(number) Amount of applications on the found debuff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass.
+
+\\
+----
+\\
+
+=== ** s.MyDebuffDuration
+
+Determines the remaining time left on a debuff that came from you.
+
+<<code lua>>remaining = s.MyDebuffDuration(SpellName, unit, DurationRemainingGreaterThan, Stealable, Dispelable, UseDebuffID, Type)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+; ** UseDebuffID
+:		(boolean) If true will compare the debuff Spell ID to the provided Spell ID.
+; ** Type
+:		(string or nil) Checks to see if the debuff is a spell type: "Magic", "Disease", "Poison" or "Curse".
+
+===== ** Returns:
+
+; ** remaining
+:		(number) Seconds left on the found debuff if all of the included arguments passed the checks, or 0 if not found or the argument checks did not all pass. Will give the highest duration remaining found when a table of spell names or Global ID numbers is used.
+
+\\
+----
+= ** Pre-configured Debuff
+----
+\\
+
+=== ** s.BreakOnDamageCC
+
+Determines if a target has a crowed control debuff on it that will break if the target is damaged.
+
+<<code lua>>found = s.BreakOnDamageCC(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target has a crowed control debuff on it that will break if the target is damaged or nil.
+
+\\
+----
+\\
+
+=== ** s.ImmunityDebuff
+
+Determines if a target has a debuff on it that makes the target immune to damage.
+
+<<code lua>>found = s.ImmunityDebuff(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target has a debuff on it that makes the target immune to damage or nil.
+
+\\
+----
+\\
+
+=== ** s.NoDamageCC
+
+Determines if a target has a crowed control debuff on it that will break if the target is damaged or makes the target immune to damage.
+
+<<code lua>>found = s.NoDamageCC(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target has a crowed control debuff on it that will break if the target is damaged or makes the target immune to damage or nil.
+
+\\
+----
+\\
+
+=== ** s.CrowedControlled
+
+Determines if a target has a crowed control debuff on it that will break if the target is damaged or makes the target immune to damage, or the target is feared.
+
+<<code lua>>found = s.CrowedControlled(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target has a crowed control debuff on it that will break if the target is damaged or makes the target immune to damage, or the target is feared or nil.
+
+\\
+----
+\\
+
+=== ** s.Feared
+
+Determines if a target is feared.
+
+<<code lua>>found = s.Feared(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target is feared or nil.
+
+\\
+----
+\\
+
+=== ** s.Rooted
+
+Determines if a target is rooted.
+
+<<code lua>>found = s.Rooted(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target is rooted or nil.
+
+\\
+----
+\\
+
+=== ** s.MovementImpaired
+
+Determines if a target is movement impaired.
+
+<<code lua>>found = s.MovementImpaired(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target is movement impaired or nil.
+
+\\
+----
+\\
+
+=== ** s.Poisoned
+
+Determines if a target is poisoned.
+
+<<code lua>>found = s.Poisoned(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target is poisoned or nil.
+
+\\
+----
+\\
+
+=== ** s.Diseased
+
+Determines if a target is diseased.
+
+<<code lua>>found = s.Diseased(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target is diseased or nil.
+
+\\
+----
+\\
+
+=== ** s.Cursed
+
+Determines if a target is cursed.
+
+<<code lua>>found = s.Cursed(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target is cursed or nil.
+
+\\
+----
+\\
+
+=== ** s.Magic
+
+Determines if a target has a magic debuff.
+
+<<code lua>>found = s.Magic(unit, DurationRemainingGreaterThan, Stealable, Dispelable)<</code>>
+
+===== ** Arguments:
+
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** DurationRemainingGreaterThan
+:		(number or nil) Checks to see if the debuff has more seconds left on its duration than this.
+; ** Stealable
+:		(boolean) If true will check to see if the debuff is able to be spellstolen.
+; ** Dispelable
+:		(boolean) If true will check to see if you have a spell that is capable if dispelling the debuff.
+
+===== ** Returns:
+
+; ** found
+:		(number or nil) 1 if the target has a magic debuff or nil.
+
+\\
+----
+= ** Spell and Aura Travel Time
+----
+\\
+
+=== ** s.SpellTravelStartTime
+
+This determines the launch time for cast spells that are currently casting or traveling to a target.
+
+<<code lua>>time = s.SpellTravelStartTime(SpellName, unit)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID, or "all" for all unit tables, or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** time
+:		(table or nil) A table containing tables of times returned by GetTime() when the spell (both casting and sent) is first sent and traveling to the target in the order of newest first or nil if not available.
+
+\\
+----
+\\
+
+=== ** s.LastSpellTravelTime
+
+This determines the amount of time the last spell took to hit the target.
+
+<<code lua>>seconds, time = s.LastSpellTravelTime(SpellName, unit)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number) Localized name or global id number of the spell.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** seconds
+:		(number or nil) How long the last spell took to hit the target or nil if not available.
+; ** time
+:		(number or nil) The time returned by GetTime() when the spell hit the target.
+
+\\
+----
+\\
+
+=== ** s.SpellDelay
+
+This determines if your spell has been cast but has not yet reached its target.
+
+<<code lua>>traveling = s.SpellDelay(SpellName, unit, any)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+; ** unit
+:		(string or nil) UnitID, or "all" for all units, or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** any
+:		(boolean) If true will return the first result that is found.
+
+===== ** Returns:
+
+; ** traveling
+:		(number or nil) How many spell casts for your specified spell(s) while targeting the same target have yet to land, or nil for none.
+
+\\
+----
+\\
+
+=== ** s.AuraDelay
+
+This determines if your spell has landed on its target but has not yet applied its buff or debuff.
+
+<<code lua>>waiting = s.AuraDelay(SpellName, unit)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+
+===== ** Returns:
+
+; ** waiting
+:		(number or nil) 1 if your spell that has landed has not yet applied a buff or debuff or nil.
+
+\\
+----
+\\
+
+=== ** s.SpellOrAuraDelay
+
+This determines if your spell has been cast but has not yet reached its target, or if your spell has landed on its target but has not yet applied its buff or debuff.
+
+<<code lua>>waiting = s.SpellOrAuraDelay(SpellName, unit, any)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell, or a table of localized names or global id numbers.
+; ** unit
+:		(string or nil) UnitID or nil for "target" or "focus" depending on if the focus casting modifier key is pressed.
+; ** any
+:		(boolean) If true will return the first result that is found.
+
+===== ** Returns:
+
+; ** waiting
+:		(number or nil) How many spell casts for your specified spell(s) have yet to land, or nil for none.
+
+\\
+----
+\\
+
+=== ** s.RegisterOtherAurasFunction
+
+Registers a function to be ran whenever scripts using the s.SetOtherAuras function should be processed.
+
+<<code lua>>s.RegisterOtherAurasFunction(Function, AddonName)<</code>>
+
+===== ** Arguments:
+
+; ** Function
+:		(function) A function that utilises the s.SetOtherAuras function.
+; ** AddonName
+:		(string) The name of the addon that the function is being called for.
+
+\\
+----
+\\
+
+=== ** s.SetOtherAuras
+
+Use this to indicate your spell that applies a buff or debuff but has a different name than the buff or debuff, so that the buff or debuff name may be used with the s.SpellDelay, s.AuraDelay and s.SpellOrAuraDelay functions.
+
+<<code lua>>s.SetOtherAuras(Spell, Aura, Delete)<</code>>
+
+===== ** Arguments:
+
+; ** Spell
+:		(string or number) Localized name or global id number of your spell.
+; ** Aura
+:		(string or number) Localized name or global spell id number of buff or debuff.
+; ** Delete
+:		(boolean) If true will remove this information from the listing. This information is automatically cleared before the functions added with the s.RegisterOtherAurasFunction function are called anyway.
+
+\\
+----
+\\
+
+=== ** s.AuraCastingOrChanneling
+
+Use this to check if a unit is casting or channeling a spell that applies a buff or debuff at the end of the cast or channel.
+
+<<code lua>>CastingOrChanneling = s.AuraCastingOrChanneling(Aura, unit)<</code>>
+
+===== ** Arguments:
+
+; ** Aura
+:		(string or number) Localized name or global id number of a buff or debuff.
+; ** unit
+:		(string or nil) The unit id to check for casting or channeling of a buff or debuff spell.
+
+===== ** Returns:
+
+; ** CastingOrChanneling
+:		(number or nil) Returns 1 if casting the aura spell and nil if not casting.
+
+\\
+----
+= ** Castable
+----
+\\
+
+=== ** s.Castable
+
+Determines if a spell is able to be cast.
+
+<<code lua>>castable = s.Castable(InfoArray)<</code>>
+
+===== ** Arguments:
+
+; ** InfoArray
+:		(table) A table of arguments.
+
+<<code lua>>
+-- Example flash color coding:
+-- White - Default
+-- Yellow - Limited Time or No Global Cooldown
+-- Purple - AOE or Positional Damage
+-- Blue - AOE Debuff
+-- Orange - Finishing Move
+-- Aqua - Spell Interrupt, Reflect or Dispel
+-- Green - Self Buff or Turn Autocast On
+-- Red - Emergency Mitigation Cooldowns or Turn Autocast Off
+-- Pink - Optional
+
+-- Example spell table:
+a.spells["English_Spell_Name"] = {
+	ID = GlobalSpellID--[[English_Spell_Name]],   --this is for defining the correct name of the spell
+	
+	Debuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may only be on a target once in total from everyone and has a cooldown shorter than the debuff duration
+	MyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may be on the target multiple times by many people and has a cooldown shorter than the debuff duration
+	Buff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may only be on yourself once in total from everyone and has a cooldown shorter than the buff duration
+	MyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may be on the target multiple times by many people and has a cooldown shorter than the buff duration
+	BuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	UseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	Stack = 2,   --use this if the buff or debuff requires more than one application
+	StackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	EarlyRefresh = 5,   --use this to indicate the buff or debuff early for a desired number of seconds
+	
+	RequireDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	RequireMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	RequireBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	RequireMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	RequireBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	RequireUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	RequireStack = 2,   --use this if the buff or debuff requires more than one application
+	RequireStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	RequireMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	ConsumeDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	ConsumeMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	ConsumeBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	ConsumeMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	ConsumeBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	ConsumeUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	ConsumeStack = 2,   --use this if the spell requires more than one application of the buff or debuff
+	ConsumeStackTaken = 2,   --use this if the spell consumes more than one application at a time
+	ConsumeStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	ConsumeMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	Debuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	MyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	Buff1 = GlobalSpellID--[[English_Spell_Name]],
+	MyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	BuffUnit1 = "player",
+	UseBuffID1 = true,
+	Stack1 = 2,
+	StackGiven1 = 2,
+	EarlyRefresh1 = 5,
+	
+	RequireDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	RequireMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuffUnit1 = "player",
+	RequireUseBuffID1 = true,
+	RequireStack1 = 2,
+	RequireStackGiven1 = 2,
+	RequireMoreBuffTime1 = 5,
+	
+	ConsumeDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	ConsumeMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuffUnit1 = "player",
+	ConsumeUseBuffID1 = true,
+	ConsumeStack1 = 2,
+	ConsumeStackTaken1 = 2,
+	ConsumeStackGiven1 = 2,
+	ConsumeMoreBuffTime1 = 5,
+	
+	EnemyTargetNeeded = true,   --use this if the spell should have an enemy targeted
+	TargetThatUsesManaNeeded = true,   --use this if the spell is only useful on a target that uses mana such as mana draining spells
+	Melee = true,   --use this to check if you are within melee distance if the spell does not have built in distance checking
+	Interrupt = true,   --use this if the target should be casting or channeling an interruptible ability
+	NotIfActive = true,   --(you may use a spell ID, a table of spell IDs, or a true value for this spell) use this if the spell may be toggled on such as auto attack or on next swing spells, or to disable when casting or channeling, or if the spell has a cooldown
+	NotWhileMoving = true,   --use this if the spell is not able to be cast while moving
+	NoStopChannel = true,   --(you may use a spell ID, a table of spell IDs, or a true value for all spells) use this if you intend to always wait for the channel to finish - this will flash earlier based on the channeling time left
+	NoGCD = true,   --use this to not use global cool down time to indicate the spell earlier
+	CastTime = 0,   --use this only if you want to replace the spell cast time used for early indication of a buff or debuff
+	Unit = "target",   --this should not be used unless the spell is not to be cast on the target
+	
+	NoRangeCheck = true,   --use this to disable range detection if the spell has a limited range but the detection is not working correctly for the particular spell
+	NoPowerCheck = true,   --use this to disable the power checking
+	EvenIfNotUsable = true,   --use this to disable the usability checking and may be used if currently in the process of completing a prerequisite that will make the spell usable
+	Conditional = true,   --use this to not ignore usable checking when it is detecting low power
+	
+	Continue = true,   --this will make it so that even if this spell flashes in a list of spells it will continue checking the rest of the spells so that they may also be able to flash
+	FlashColor = "White",   --use this to change the flash color if you want it to flash something other than white
+	FlashSize = s.FlashSizePercent() * 2,   --use this to change the flash size
+	FlashBrightness = 100,   --use this to change the flash brightness
+	FlashBlink = true,   --use this to have the button blink
+	FlashNoMacros = true,   --use this to not flash macros
+	FlashID = GlobalSpellID--[[English_Spell_Name]],   --use this to add a spell ID or a table of spell IDs that will replace the spell that is flashed
+	
+	Check = function(z)   --use this to dynamically check conditions first before everything else has been checked
+		return true
+	end,
+	Run = function(z)   --use this to dynamically modify settings before everything else has been checked
+		z.FlashColor = s.If(x.ActiveEnemy, "White", "Pink")
+	end,
+	CheckLast = function(z)   --use this to dynamically check conditions last after everything else has been checked
+		return true
+	end,
+	RunLast = function(z)   --use this to dynamically modify settings after everything else has been checked
+		return true
+	end,
+	Override = function(z)   --use this to use this function for condition checking and nothing else
+		return true
+	end,
+}
+
+-- Example form, aspect, or stance table:
+-- This will automatically check to see if you are in the form, aspect, or stance without needing to add any buff or form checking.
+a.spells["English_Spell_Name"] = {
+	Type = "form",   --this indicates what kind of spell this is
+	ID = GlobalSpellID--[[English_Spell_Name]],   --this is for defining the correct name of the spell
+	
+	Debuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may only be on a target once in total from everyone and has a cooldown shorter than the debuff duration
+	MyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may be on the target multiple times by many people and has a cooldown shorter than the debuff duration
+	Buff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may only be on yourself once in total from everyone and has a cooldown shorter than the buff duration
+	MyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may be on the target multiple times by many people and has a cooldown shorter than the buff duration
+	BuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	UseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	Stack = 2,   --use this if the buff or debuff requires more than one application
+	StackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	EarlyRefresh = 5,   --use this to indicate the buff or debuff early for a desired number of seconds
+	
+	RequireDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	RequireMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	RequireBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	RequireMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	RequireBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	RequireUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	RequireStack = 2,   --use this if the buff or debuff requires more than one application
+	RequireStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	RequireMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	ConsumeDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	ConsumeMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	ConsumeBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	ConsumeMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	ConsumeBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	ConsumeUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	ConsumeStack = 2,   --use this if the spell requires more than one application of the buff or debuff
+	ConsumeStackTaken = 2,   --use this if the spell consumes more than one application at a time
+	ConsumeStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	ConsumeMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	Debuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	MyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	Buff1 = GlobalSpellID--[[English_Spell_Name]],
+	MyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	BuffUnit1 = "player",
+	UseBuffID1 = true,
+	Stack1 = 2,
+	StackGiven1 = 2,
+	EarlyRefresh1 = 5,
+	
+	RequireDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	RequireMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuffUnit1 = "player",
+	RequireUseBuffID1 = true,
+	RequireStack1 = 2,
+	RequireStackGiven1 = 2,
+	RequireMoreBuffTime1 = 5,
+	
+	ConsumeDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	ConsumeMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuffUnit1 = "player",
+	ConsumeUseBuffID1 = true,
+	ConsumeStack1 = 2,
+	ConsumeStackTaken1 = 2,
+	ConsumeStackGiven1 = 2,
+	ConsumeMoreBuffTime1 = 5,
+	
+	EnemyTargetNeeded = true,   --use this if the spell should have an enemy targeted
+	TargetThatUsesManaNeeded = true,   --use this if the spell is only useful on a target that uses mana such as mana draining spells
+	Melee = true,   --use this to check if you are within melee distance if the spell does not have built in distance checking
+	Interrupt = true,   --use this if the target should be casting or channeling an interruptible ability
+	NotIfActive = true,   --(you may use a spell ID, a table of spell IDs, or a true value for this spell) use this if the spell may be toggled on such as auto attack or on next swing spells, or to disable when casting or channeling, or if the spell has a cooldown
+	NotWhileMoving = true,   --use this if the spell is not able to be cast while moving
+	NoStopChannel = true,   --(you may use a spell ID, a table of spell IDs, or a true value for all spells) use this if you intend to always wait for the channel to finish - this will flash earlier based on the channeling time left
+	NoGCD = true,   --use this to not use global cool down time to indicate the spell earlier
+	CastTime = 0,   --use this only if you want to replace the spell cast time used for early indication of a buff or debuff
+	Unit = "target",   --this should not be used unless the spell is not to be cast on the target
+	
+	NoRangeCheck = true,   --use this to disable range detection if the spell has a limited range but the detection is not working correctly for the particular spell
+	NoPowerCheck = true,   --use this to disable the power checking
+	EvenIfNotUsable = true,   --use this to disable the usability checking and may be used if currently in the process of completing a prerequisite that will make the spell usable
+	
+	Continue = true,   --this will make it so that even if this spell flashes in a list of spells it will continue checking the rest of the spells so that they may also be able to flash
+	FlashColor = "White",   --use this to change the flash color if you want it to flash something other than white
+	FlashSize = s.FlashSizePercent() * 2,   --use this to change the flash size
+	FlashBrightness = 100,   --use this to change the flash brightness
+	FlashBlink = true,   --use this to have the button blink
+	FlashNoMacros = true,   --use this to not flash macros
+	FlashID = GlobalSpellID--[[English_Spell_Name]],   --use this to add a spell ID or a table of spell IDs that will replace the spell that is flashed
+	
+	Check = function(z)   --use this to dynamically check conditions first before everything else has been checked
+		return true
+	end,
+	Run = function(z)   --use this to dynamically modify settings before everything else has been checked
+		z.FlashColor = s.If(x.ActiveEnemy, "White", "Pink")
+	end,
+	CheckLast = function(z)   --use this to dynamically check conditions last after everything else has been checked
+		return true
+	end,
+	RunLast = function(z)   --use this to dynamically modify settings after everything else has been checked
+		return true
+	end,
+	Override = function(z)   --use this to use this function for condition checking and nothing else
+		return true
+	end,
+}
+
+-- Example item table:
+a.spells["English_Item_Name"] = {
+	Type = "item",   --this indicates what kind of spell this is
+	ID = ItemID--[[English_Item_Name]],   --this is for defining the correct name of the item
+	
+	Debuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the item has a debuff that may only be on a target once in total from everyone and has a cooldown shorter than the debuff duration
+	MyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the item has a debuff that may be on the target multiple times by many people and has a cooldown shorter than the debuff duration
+	Buff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the item has a buff that may only be on yourself once in total from everyone and has a cooldown shorter than the buff duration
+	MyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the item has a buff that may be on the target multiple times by many people and has a cooldown shorter than the buff duration
+	BuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	UseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	Stack = 2,   --use this if the buff or debuff requires more than one application
+	StackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	EarlyRefresh = 5,   --use this to indicate the buff or debuff early for a desired number of seconds
+	
+	RequireDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	RequireMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	RequireBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	RequireMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	RequireBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	RequireUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	RequireStack = 2,   --use this if the buff or debuff requires more than one application
+	RequireStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	RequireMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	ConsumeDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	ConsumeMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	ConsumeBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	ConsumeMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	ConsumeBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	ConsumeUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	ConsumeStack = 2,   --use this if the spell requires more than one application of the buff or debuff
+	ConsumeStackTaken = 2,   --use this if the spell consumes more than one application at a time
+	ConsumeStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	ConsumeMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	Debuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	MyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	Buff1 = GlobalSpellID--[[English_Spell_Name]],
+	MyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	BuffUnit1 = "player",
+	UseBuffID1 = true,
+	Stack1 = 2,
+	StackGiven1 = 2,
+	EarlyRefresh1 = 5,
+	
+	RequireDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	RequireMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuffUnit1 = "player",
+	RequireUseBuffID1 = true,
+	RequireStack1 = 2,
+	RequireStackGiven1 = 2,
+	RequireMoreBuffTime1 = 5,
+	
+	ConsumeDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	ConsumeMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuffUnit1 = "player",
+	ConsumeUseBuffID1 = true,
+	ConsumeStack1 = 2,
+	ConsumeStackTaken1 = 2,
+	ConsumeStackGiven1 = 2,
+	ConsumeMoreBuffTime1 = 5,
+	
+	EnemyTargetNeeded = true,   --use this if the item should have an enemy targeted
+	TargetThatUsesManaNeeded = true,   --use this if the item is only useful on a target that uses mana such as mana draining items
+	Melee = true,   --use this to check if you are within melee distance if the spell does not have built in distance checking
+	Interrupt = true,   --use this if the target should be casting or channeling an interruptible ability
+	NotIfActive = true,   --(you may use a spell ID, a table of spell IDs, or a true value for this spell) use this if the item may be toggled on such as auto attack or on next swing spells, or to disable when casting or channeling, or if the item has a cooldown
+	NotWhileMoving = true,   --use this if the item is not able to be used while moving
+	NoStopChannel = true,   --(you may use a spell ID, a table of spell IDs, or a true value for all spells) use this if you intend to always wait for the channel to finish - this will flash earlier based on the channeling time left
+	NoGCD = true,   --use this to not use global cool down time to indicate the item earlier
+	CastTime = 0,   --use this if the item has a cast time for indication of a buff or debuff early
+	Unit = "target",   --this should not be used unless the item is not to be cast on the target
+	
+	NoEquipCheck = true,   --use this to disable equippable detection if the item can be equipped but does not need to be
+	NoRangeCheck = true,   --use this to disable range detection if the item has a limited range but the detection is not working correctly for the particular item
+	NoPowerCheck = true,   --use this to disable the power checking
+	EvenIfNotUsable = true,   --use this to disable the usability checking and may be used if currently in the process of completing a prerequisite that will make the item usable
+	
+	Continue = true,   --this will make it so that even if this spell flashes in a list of spells it will continue checking the rest of the spells so that they may also be able to flash
+	FlashColor = "White",   --use this to change the flash color if you want it to flash something other than white
+	FlashSize = s.FlashSizePercent() * 2,   --use this to change the flash size
+	FlashBrightness = 100,   --use this to change the flash brightness
+	FlashBlink = true,   --use this to have the button blink
+	FlashNoMacros = true,   --use this to not flash macros
+	FlashID = GlobalSpellID--[[English_Spell_Name]],   --use this to add a spell ID or a table of spell IDs that will replace the spell that is flashed
+	
+	Check = function(z)   --use this to dynamically check conditions first before everything else has been checked
+		return true
+	end,
+	Run = function(z)   --use this to dynamically modify settings before everything else has been checked
+		z.FlashColor = s.If(x.ActiveEnemy, "White", "Pink")
+	end,
+	CheckLast = function(z)   --use this to dynamically check conditions last after everything else has been checked
+		return true
+	end,
+	RunLast = function(z)   --use this to dynamically modify settings after everything else has been checked
+		return true
+	end,
+	Override = function(z)   --use this to use this function for condition checking and nothing else
+		return true
+	end,
+}
+
+-- Example vehicle table:
+a.spells["English_Spell_Name"] = {
+	Type = "vehicle",   --this indicates what kind of spell this is
+	ID = GlobalSpellID--[[English_Spell_Name]],   --this is for defining the correct name of the spell
+	
+	Debuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may only be on a target once in total from everyone and has a cooldown shorter than the debuff duration
+	MyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may be on the target multiple times by many people and has a cooldown shorter than the debuff duration
+	Buff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may only be on yourself once in total from everyone and has a cooldown shorter than the buff duration
+	MyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may be on the target multiple times by many people and has a cooldown shorter than the buff duration
+	BuffUnit = "vehicle",   --you will need to use this if the buff or debuff is not applied to your target
+	UseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	Stack = 2,   --use this if the buff or debuff requires more than one application
+	StackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	EarlyRefresh = 5,   --use this to indicate the buff or debuff early for a desired number of seconds
+	
+	RequireDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	RequireMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	RequireBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	RequireMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	RequireBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	RequireUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	RequireStack = 2,   --use this if the buff or debuff requires more than one application
+	RequireStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	RequireMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	ConsumeDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	ConsumeMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	ConsumeBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	ConsumeMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	ConsumeBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	ConsumeUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	ConsumeStack = 2,   --use this if the spell requires more than one application of the buff or debuff
+	ConsumeStackTaken = 2,   --use this if the spell consumes more than one application at a time
+	ConsumeStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	ConsumeMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	Debuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	MyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	Buff1 = GlobalSpellID--[[English_Spell_Name]],
+	MyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	BuffUnit1 = "player",
+	UseBuffID1 = true,
+	Stack1 = 2,
+	StackGiven1 = 2,
+	EarlyRefresh1 = 5,
+	
+	RequireDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	RequireMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuffUnit1 = "player",
+	RequireUseBuffID1 = true,
+	RequireStack1 = 2,
+	RequireStackGiven1 = 2,
+	RequireMoreBuffTime1 = 5,
+	
+	ConsumeDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	ConsumeMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuffUnit1 = "player",
+	ConsumeUseBuffID1 = true,
+	ConsumeStack1 = 2,
+	ConsumeStackTaken1 = 2,
+	ConsumeStackGiven1 = 2,
+	ConsumeMoreBuffTime1 = 5,
+	
+	GlobalVehicleCooldownSpell = GlobalSpellID--[[English_Spell_Name]],   -- use this if spell has more than a global cooldown
+	EnemyTargetNeeded = true,   --use this if the spell should have an enemy targeted
+	TargetThatUsesManaNeeded = true,   --use this if the spell is only useful on a target that uses mana such as mana draining spells
+	Interrupt = true,   --use this if the target should be casting or channeling an interruptible ability
+	NotIfActive = true,   --(you may use a spell ID, a table of spell IDs, or a true value for this spell) use this if the spell may be toggled on such as auto attack or on next swing spells, or to disable when casting or channeling, or if the spell has a cooldown
+	NotWhileMoving = true,   --use this if the spell is not able to be cast while moving
+	NoStopChannel = true,   --(you may use a spell ID, a table of spell IDs, or a true value for all spells) use this if you intend to always wait for the channel to finish - this will flash earlier based on the channeling time left
+	NoGCD = true,   --use this to not use global cool down time to indicate the spell earlier
+	CastTime = 0,   --use this if the spell has a cast time for indication of a buff or debuff early
+	Unit = "target",   --this should not be used unless the spell is not to be cast on the target
+	
+	NoRangeCheck = true,   --use this to disable range detection if the spell has a limited range but the detection is not working correctly for the particular spell
+	NoPowerCheck = true,   --use this to disable the power checking
+	EvenIfNotUsable = true,   --use this to disable the usability checking and may be used if currently in the process of completing a prerequisite that will make the spell usable
+	
+	Continue = true,   --this will make it so that even if this spell flashes in a list of spells it will continue checking the rest of the spells so that they may also be able to flash
+	FlashColor = "White",   --use this to change the flash color if you want it to flash something other than white
+	FlashSize = s.FlashSizePercent() * 2,   --use this to change the flash size
+	FlashBrightness = 100,   --use this to change the flash brightness
+	FlashBlink = true,   --use this to have the button blink
+	FlashID = GlobalSpellID--[[English_Spell_Name]],   --use this to add a spell ID or a table of spell IDs that will replace the spell that is flashed
+	
+	Check = function(z)   --use this to dynamically check conditions first before everything else has been checked
+		return true
+	end,
+	Run = function(z)   --use this to dynamically modify settings before everything else has been checked
+		z.FlashColor = s.If(x.ActiveEnemy, "White", "Pink")
+	end,
+	CheckLast = function(z)   --use this to dynamically check conditions last after everything else has been checked
+		return true
+	end,
+	RunLast = function(z)   --use this to dynamically modify settings after everything else has been checked
+		return true
+	end,
+	Override = function(z)   --use this to use this function for condition checking and nothing else
+		return true
+	end,
+}
+
+-- Example pet table:
+a.spells["English_Spell_Name"] = {
+	Type = "pet",   --this indicates what kind of spell this is
+	ID = GlobalSpellID--[[English_Spell_Name]],   --this is for defining the correct name of the spell
+	
+	Debuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may only be on a target once in total from everyone and has a cooldown shorter than the debuff duration
+	MyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place debuff ID or table of IDs here if the spell has a debuff that may be on the target multiple times by many people and has a cooldown shorter than the debuff duration
+	Buff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may only be on yourself once in total from everyone and has a cooldown shorter than the buff duration
+	MyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if the spell has a buff that may be on the target multiple times by many people and has a cooldown shorter than the buff duration
+	BuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	UseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	Stack = 2,   --use this if the buff or debuff requires more than one application
+	StackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	EarlyRefresh = 5,   --use this to indicate the buff or debuff early for a desired number of seconds
+	
+	RequireDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	RequireMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	RequireBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	RequireMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	RequireBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	RequireUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	RequireStack = 2,   --use this if the buff or debuff requires more than one application
+	RequireStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	RequireMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	ConsumeDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a debuff needs to be on the target first
+	ConsumeMyDebuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your debuff needs to be on the target first
+	ConsumeBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if a buff needs to be on the target first
+	ConsumeMyBuff = GlobalSpellID--[[English_Spell_Name]],   --place buff ID or table of IDs here if your buff needs to be on the target first
+	ConsumeBuffUnit = "player",   --you will need to use this if the buff or debuff is not applied to your target
+	ConsumeUseBuffID = true,    --use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+	ConsumeStack = 2,   --use this if the spell requires more than one application of the buff or debuff
+	ConsumeStackTaken = 2,   --use this if the spell consumes more than one application at a time
+	ConsumeStackGiven = 2,   --use this if the buff or debuff is applied with more than one application at a time
+	ConsumeMoreBuffTime = 5,   --use this to require more time be on the buff or debuff
+	
+	Debuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	MyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	Buff1 = GlobalSpellID--[[English_Spell_Name]],
+	MyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	BuffUnit1 = "player",
+	UseBuffID1 = true,
+	Stack1 = 2,
+	StackGiven1 = 2,
+	EarlyRefresh1 = 5,
+	
+	RequireDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	RequireMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	RequireBuffUnit1 = "player",
+	RequireUseBuffID1 = true,
+	RequireStack1 = 2,
+	RequireStackGiven1 = 2,
+	RequireMoreBuffTime1 = 5,
+	
+	ConsumeDebuff1 = GlobalSpellID--[[English_Spell_Name]],   --a sequential number may be added to the end of these flag names to allow as many additional checks as needed
+	ConsumeMyDebuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeMyBuff1 = GlobalSpellID--[[English_Spell_Name]],
+	ConsumeBuffUnit1 = "player",
+	ConsumeUseBuffID1 = true,
+	ConsumeStack1 = 2,
+	ConsumeStackTaken1 = 2,
+	ConsumeStackGiven1 = 2,
+	ConsumeMoreBuffTime1 = 5,
+	
+	GlobalPetCooldownSpell = GlobalSpellID--[[English_Spell_Name]],   -- use this if spell has more than a global cooldown
+	EnemyTargetNeeded = true,   --use this if the spell should have an enemy targeted
+	Interrupt = true,   --use this if the target should be casting or channeling an interruptible ability
+	NotIfActive = true,   --(you may use a spell ID, a table of spell IDs, or a true value for this spell, but will only check casting or channeling for other spells) use this if the spell may be toggled on such as auto attack or on next swing spells, or to disable when casting or channeling, or if the spell has a cooldown
+	PetFrameNeeded = true,   --use this is the pet frame needs to be shown to cast this spell
+	PetHealthNotNeeded = true,   --use this if the pet does not need to have health to cast this spell
+	NoStopChannel = true,   --(you may use a spell ID, a table of spell IDs, or a true value for all spells) use this if you intend to always wait for the channel to finish - this will flash earlier based on the channeling time left
+	NoGCD = true,   --use this to not use global cool down time to indicate the spell earlier
+	Unit = "pettarget",   --this should not be used unless the spell is not to be cast on the pet's target
+	
+	NoPowerCheck = true,   --use this to disable the power checking
+	EvenIfNotUsable = true,   --use this to disable the usability checking and may be used if currently in the process of completing a prerequisite that will make the spell usable
+	
+	Continue = true,   --this will make it so that even if this spell flashes in a list of spells it will continue checking the rest of the spells so that they may also be able to flash
+	FlashColor = "White",   --use this to change the flash color if you want it to flash something other than white
+	FlashSize = s.FlashSizePercent() * 2,   --use this to change the flash size
+	FlashBrightness = 100,   --use this to change the flash brightness
+	FlashBlink = true,   --use this to have the button blink
+	FlashID = GlobalSpellID--[[English_Spell_Name]],   --use this to add a spell ID or a table of spell IDs that will replace the spell that is flashed
+	
+	Check = function(z)   --use this to dynamically check conditions first before everything else has been checked
+		return true
+	end,
+	Run = function(z)   --use this to dynamically modify settings before everything else has been checked
+		z.FlashColor = s.If(x.ActiveEnemy, "White", "Pink")
+	end,
+	CheckLast = function(z)   --use this to dynamically check conditions last after everything else has been checked
+		return true
+	end,
+	RunLast = function(z)   --use this to dynamically modify settings after everything else has been checked
+		return true
+	end,
+	Override = function(z)   --use this to use this function for condition checking and nothing else
+		return true
+	end,
+}
+<</code>>
+
+===== ** Returns:
+
+; ** castable
+:		(boolean) True if the spell is ready to be cast.
+
+\\
+----
+\\
+
+=== ** s.CheckThenFlash
+
+Determines if a spell is able to be cast and if so flashes it.
+
+<<code lua>>castable = s.CheckThenFlash(InfoArray, NoFlash)<</code>>
+
+===== ** Arguments:
+
+; ** InfoArray
+:		(table) A table of arguments.
+; ** NoFlash
+:		(boolean) If true will only check conditions but will not flash the spell.
+
+===== ** Returns:
+
+; ** castable
+:		(boolean) True if the spell is ready to be cast.
+
+\\
+----
+= ** Flash Functionality
+----
+\\
+
+=== ** s.Flashable
+
+Determines if a specified spell is able to be found on the action bars to be flashed.
+
+<<code lua>>found = s.Flashable(SpellName, NoMacros)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Spell name or global spell id number or table of global spell id numbers.
+; ** NoMacros
+:		(boolean) If true will skip checking for macros.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if a specified spell is able to be found on the action bars to be flashed.
+
+\\
+----
+\\
+
+=== ** s.Flash
+
+This is used to flash an action bar spell.
+
+<<code lua>>s.Flash(SpellName, color, size, brightness, blink, NoMacros)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Spell name or global spell id number or table of global spell id numbers.
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+; ** NoMacros
+:		(boolean) If true will skip checking for macros.
+
+\\
+----
+\\
+
+=== ** s.FlashPet
+
+This is used to flash a pet bar spell.
+
+<<code lua>>s.FlashPet(SpellName, color, size, brightness, blink)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell or table of global spell id numbers.
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+
+\\
+----
+\\
+
+=== ** s.FlashForm
+
+This is used to flash a stance, form, presence, aura or aspect bar spell.
+
+<<code lua>>s.FlashForm(SpellName, color, size, brightness, blink)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell or table of global spell id numbers.
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+
+\\
+----
+\\
+
+=== ** s.FlashTotemCall
+
+This is used to flash the multiple totem call button.
+
+<<code lua>>s.FlashTotemCall(color, size, brightness, blink)<</code>>
+
+===== ** Arguments:
+
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+
+\\
+----
+\\
+
+=== ** s.FlashTotemRecall
+
+This is used to flash the multiple totem recall button.
+
+<<code lua>>s.FlashTotemRecall(color, size, brightness, blink)<</code>>
+
+===== ** Arguments:
+
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+
+\\
+----
+\\
+
+=== ** s.FlashFrame
+
+This is used to flash a frame.
+
+<<code lua>>s.FlashFrame(frame, color, size, brightness, blink)<</code>>
+
+===== ** Arguments:
+
+; ** frame
+:		(variable) The variable assigned to a frame that you want to be flashed.
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+
+\\
+----
+\\
+
+=== ** s.ItemFlashable
+
+Determines if a specified item is able to be found on the action bars to be flashed.
+
+<<code lua>>found = s.ItemFlashable(ItemName, NoMacros)<</code>>
+
+===== ** Arguments:
+
+; ** ItemName
+:		(string or number or table) Item name or item id number or table of item id numbers.
+; ** NoMacros
+:		(boolean) If true will skip checking for macros.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if a specified item is able to be found on the action bars to be flashed.
+
+\\
+----
+\\
+
+=== ** s.FlashItem
+
+This is used to flash an action bar item.
+
+<<code lua>>s.FlashItem(ItemName, color, size, brightness, blink, NoMacros)<</code>>
+
+===== ** Arguments:
+
+; ** ItemName
+:		(string or number or table) Item name or item id number or table of item id numbers.
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+; ** NoMacros
+:		(boolean) If true will skip checking for macros.
+
+\\
+----
+\\
+
+=== ** s.VehicleFlashable
+
+Determines if a specified spell is able to be found on the vehicle action bar to be flashed.
+
+<<code lua>>found = s.VehicleFlashable(SpellName)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell or table of global spell id numbers.
+
+===== ** Returns:
+
+; ** found
+:		(boolean) True if a specified spell is able to be found on the vehicle action bar to be flashed.
+
+\\
+----
+\\
+
+=== ** s.FlashVehicle
+
+This is used to flash a vehicle bar spell.
+
+<<code lua>>s.FlashVehicle(SpellName, color, size, brightness, blink)<</code>>
+
+===== ** Arguments:
+
+; ** SpellName
+:		(string or number or table) Localized name or global id number of the spell or table of global spell id numbers.
+; ** color
+:		(string or table or nil) Will accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined. May be nil for "White".
+; ** size
+:		(number or nil) Percent for the flash size or nil for default.
+; ** brightness
+:		(number or nil) Percent for the flash brightness or nil for default.
+; ** blink
+:		(boolean) If true will make the action button fade in and out.
+
+\\
+----
+\\
+
+=== ** s.FlashSizePercent
+
+Gives the percent that SpellFlash has been set to for the flash size.
+
+<<code lua>>percent = s.FlashSizePercent()<</code>>
+
+===== ** Returns:
+
+; ** percent
+:		(number) Percent that SpellFlash has been set to for the flash size.
+
+\\
+----
+\\
+
+=== ** s.FlashBrightnessPercent
+
+Gives the percent that SpellFlash has been set to for the flash brightness.
+
+<<code lua>>percent = s.FlashBrightnessPercent()<</code>>
+
+===== ** Returns:
+
+; ** percent
+:		(number) Percent that SpellFlash has been set to for the flash brightness.
+
+\\
+----
+= ** Module Configurations
+----
+\\
+
+=== ** s.GetModuleFlashable
+
+This checks to see if a module is not disabled and able to be flashed.
+
+<<code lua>>NotDisabled = s.GetModuleFlashable(AddonName)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string) Addon name of the module.
+
+===== ** Returns:
+
+; ** NotDisabled
+:		(boolean) Returns true if the module is not disabled and able to be flashed.
+
+\\
+----
+\\
+
+=== ** s.GetModuleConfig
+
+This is used to get the value of a module configuration.
+
+<<code lua>>value = s.GetModuleConfig(AddonName, config)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string) Addon name of the module.
+; ** config
+:		(string) Name of the module configuration.
+
+===== ** Returns:
+
+; ** value
+:		Value of the module configuration.
+
+\\
+----
+\\
+
+=== ** s.SetModuleConfig
+
+This is used to set the value of a module configuration.
+
+<<code lua>>s.SetModuleConfig(AddonName, config, value)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string) Addon name of the module.
+; ** config
+:		(string) Name of the module configuration.
+; ** value
+:		Any value to save to the module configuration or nil to delete the module configuration.
+
+\\
+----
+\\
+
+=== ** s.ClearAllModuleConfigs
+
+This is used to delete all module configuration values.
+
+<<code lua>>s.ClearAllModuleConfigs(AddonName)<</code>>
+
+===== ** Arguments:
+
+; ** AddonName
+:		(string) Addon name of the module.
+
+\\
+----
+= ** s.config
+----
+\\
+
+=== ** s.config.spell_flashing_off
+
+This is used to determine if flashing is disabled.
+
+<<code lua>>value = s.config.spell_flashing_off<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if flashing is disabled.
+
+\\
+----
+\\
+
+=== ** s.config.enable_blinking
+
+This is used to determine if spell button blinking is enabled.
+
+<<code lua>>value = s.config.enable_blinking<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if spell button blinking is enabled.
+
+\\
+----
+\\
+
+=== ** s.config.disable_macro_flashing
+
+This is used to determine if macro flashing is disabled.
+
+<<code lua>>value = s.config.disable_macro_flashing<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if macro flashing is disabled.
+
+\\
+----
+\\
+
+=== ** s.config.use_all_class_modules
+
+This is used to determine if all class modules will be used at the same time.
+
+<<code lua>>value = s.config.use_all_class_modules<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if all class modules will be used at the same time.
+
+\\
+----
+\\
+
+=== ** s.config.suppress_range_check
+
+This is used to determine if range checking is disabled.
+
+<<code lua>>value = s.config.suppress_range_check<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if range checking is disabled.
+
+\\
+----
+\\
+
+=== ** s.config.suppress_speed_check
+
+This is used to determine if speed checking is disabled.
+
+<<code lua>>value = s.config.suppress_speed_check<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if speed checking is disabled.
+
+\\
+----
+\\
+
+=== ** s.config.flash_size_percent
+
+If not default, returns the flash size percent.
+
+<<code lua>>value = s.config.flash_size_percent<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(number or nil) Flash size percent.
+
+\\
+----
+\\
+
+=== ** s.config.flash_brightness_percent
+
+If not default, returns the flash brightness percent.
+
+<<code lua>>value = s.config.flash_brightness_percent<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(number or nil) Flash brightness percent.
+
+\\
+----
+\\
+
+=== ** s.config.in_combat_only
+
+This is used to determine if flashing is only enabled in combat.
+
+<<code lua>>value = s.config.in_combat_only<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if flashing is only enabled in combat.
+
+\\
+----
+\\
+
+=== ** s.config.disable_default_proc_highlighting
+
+This is used to determine if default proc highlighting is disabled.
+
+<<code lua>>value = s.config.disable_default_proc_highlighting<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if default proc highlighting is disabled.
+
+\\
+----
+\\
+
+=== ** s.config.selected_class_module
+
+This is used to determine the Addon Name of the currently selected class module.
+
+<<code lua>>value = s.config.selected_class_module<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(string or nil) Addon Name of the currently selected class module.
+
+\\
+----
+= ** local x = s.UpdatedVariables
+----
+\\
+
+=== ** x.Enemy
+
+This is used to determine if you are targeting an enemy.
+
+<<code lua>>value = x.Enemy<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if you are targeting an enemy.
+
+\\
+----
+\\
+
+=== ** x.ActiveEnemy
+
+This is used to determine if you are targeting an active enemy.
+
+<<code lua>>value = x.ActiveEnemy<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if you are targeting an active enemy.
+
+\\
+----
+\\
+
+=== ** x.NoCC
+
+This is used to determine if your target does not have a crowed control debuff.
+
+<<code lua>>value = x.NoCC<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if your target does not have a crowed control debuff.
+
+\\
+----
+\\
+
+=== ** x.InInstance
+
+This is used to determine if you are in an instance.
+
+<<code lua>>value = x.InInstance<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(number or nil) 1 if the player is in an instance or nil otherwise.
+
+\\
+----
+\\
+
+=== ** x.InstanceType
+
+This is used to determine the type of instance you are in.
+
+<<code lua>>value = x.InstanceType<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(string) "none" when outside an instance, "pvp" when in a battleground, "arena" when in an arena, "party" when in a 5-man instance and "raid" when in a raid instance.
+
+\\
+----
+\\
+
+=== ** x.PetAlive
+
+This is used to determine if you have a combat pet that is out and alive.
+
+<<code lua>>value = x.PetAlive<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if you have a combat pet that is out and alive.
+
+\\
+----
+\\
+
+=== ** x.PetActiveEnemy
+
+This is used to determine if your pet has a target that is an active enemy.
+
+<<code lua>>value = x.PetActiveEnemy<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if your pet has a target that is an active enemy.
+
+\\
+----
+\\
+
+=== ** x.PetNoCC
+
+This is used to determine if your pet's target does not have a crowed control debuff.
+
+<<code lua>>value = x.PetNoCC<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if your pet's target does not have a crowed control debuff.
+
+\\
+----
+\\
+
+=== ** x.Lag
+
+This is used to find the network latency in seconds.
+
+<<code lua>>value = x.Lag<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(number) Network latency in seconds.
+
+\\
+----
+\\
+
+=== ** x.DoubleLag
+
+This is used to find the network latency in seconds times two.
+
+<<code lua>>value = x.DoubleLag<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(number) Network latency in seconds times two.
+
+\\
+----
+\\
+
+=== ** x.ThreatPercent
+
+This is used to find the threat percent you have with your current target.
+
+<<code lua>>value = x.ThreatPercent<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(number) Your threat on the target as a percentage of the amount required to pull aggro, scaled according to your range from the target. At 100 you will pull aggro. 100 if you are tanking and 0 if you are not on the target's threat list.
+
+\\
+----
+\\
+
+=== ** x.EnemyDetected
+
+This is used to determine if you are in combat or an enemy is targeted.
+
+<<code lua>>value = x.EnemyDetected<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if you are in combat or an enemy is targeted.
+
+\\
+----
+\\
+
+=== ** x.ShouldPermanentBuff
+
+This is used to determine if you should cast buffs that have an unlimited duration.
+
+<<code lua>>value = x.ShouldPermanentBuff<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if you should cast buffs that have an unlimited duration.
+
+\\
+----
+\\
+
+=== ** x.ShouldTemporaryBuff
+
+This is used to determine if you should cast buffs that have a limited duration.
+
+<<code lua>>value = x.ShouldTemporaryBuff<</code>>
+
+===== ** Returns:
+
+; ** value
+:		(boolean) True if you should cast buffs that have a limited duration.

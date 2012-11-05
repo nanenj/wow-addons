@@ -1,0 +1,2131 @@
+
+
+
+== Version 6.2
+
+* Added a third argument to these functions:
+** s.PowerPercent
+** s.Power
+** s.MaxPower
+** s.PowerMissingPercent
+** s.PowerMissing
+
+
+== Version 6.1
+
+* Now properly registering some events that were mistakenly disabled.
+
+
+== Version 6.0.3
+
+* Added a header to all messages sent from SpellFlash to the chat window.
+
+
+== Version 6.0.2
+
+* Added an error message for modules that have not been updated to use the latest format.
+
+
+== Version 6.0.1
+
+* Removed the Hunter melee spell and changed the Druid melee spell for checking melee distance.
+
+
+== Version 6.0
+
+* Bumped toc version number.
+* Updated global spell cooldown detection to check the Execute spell for Warriors.
+* Updated global spell cooldown detection to check the Redemption spell for Paladins.
+
+
+== Version 5.186
+
+* Fixed "Division by zero" error in beta.
+
+
+== Version 5.185
+
+* Fixed an error in beta.
+
+
+== Version 5.184.2
+
+* Fixed an error in beta.
+
+
+== Version 5.183
+
+* Added a Conditional flag to the spell table options.
+* Added NotIfActive, NoPowerCheck, and EnemyTargetNeeded flags to the pet spell table options.
+
+
+== Version 5.182
+
+* Added function: s.Dummy
+
+
+== Version 5.181
+
+* In Mists of Pandaria, will now be able to flash buttons from a Spell ID that does not give the name of the spell.
+
+
+== Version 5.180
+
+* Fixed the s.UnregisterModuleEvent function.
+* Removed the EventFrame argument from the s.RegisterModuleEvent function.
+
+
+== Version 5.179
+
+* Added a Check flag for the spell tables to replace CheckFirst.
+* Added a RunLast flag for the spell tables.
+
+
+
+== Version 5.178
+
+* Will now also scan the action bars every time a pet is changed.
+
+
+== Version 5.177.1
+
+* Small edit to aura checking.
+
+
+== Version 5.177
+
+* Removed third SpawnCount return from the s.GUIDInfo and s.UnitInfo functions.
+
+
+== Version 5.175
+
+* Replaced all the SpellToolTipLineTwo arguments in the aura checking functions with a UseBuffID or UseDebuffID argument.
+** If true will compare the buff or debuff Spell ID to the provided Spell ID.
+* Added a UseBuffID flag for all the spell tables.
+** use this to check for the actual Spell ID of the buff or debuff, instead of just checking the name of the buff or debuff
+
+
+== Version 5.174.7
+
+* Added partial updates for Mists of Pandaria.
+** s.TalentMastery replaced with s.Spec
+** s.InRaidOrParty replaced with s.InGroup
+** Fixed s.HasSpell
+** Fixed s.HasTalent
+
+
+== Version 5.173.1
+
+* Small performance increase to the way module disabling is handled.
+
+
+== Version 5.173
+
+* Fixed bug that would cause a module to not flash if enabling a module after all modules have previously been disabled.
+* Fixed possible bug with spell cast tracking.
+
+
+== Version 5.172
+
+* Improved spell-cast tracking.
+
+
+== Version 5.171
+
+* The delay time from s.AuraDelay will now only be added if the spell is currently detected as traveling toward or hitting the target.
+* A possible bug fix for the s.SpellDelay function.
+
+
+== Version 5.170
+
+* The function s.GetPrimaryThreatTarget will no longer try to check player controlled or out of combat targets.
+
+
+== Version 5.169
+
+* The function s.CastTime will no longer be able to return negative values.
+
+
+== Version 5.168
+
+* The spell table Override flag will now allow flashing again.
+
+
+== Version 5.167
+
+* The Flash and Flashable functions will now accept a table of spell IDs.
+
+
+== Version 5.166
+
+* SpellFlash configurations are now completely exposed in the s.config table.
+
+
+== Version 5.165
+
+* Fixed possible error.
+
+
+== Version 5.162
+
+* Will now be able to flash flyout buttons.
+** The spell name used to flash the button may need to be different than the name of the flyout.
+** To find the correct name or spell ID that needs to be used to flash the flyout, use the "/sfc debug" slash command and then move the flyout button onto an action bar.
+* Will now offset the power that will be used by casting a spell by the power that will be generated while the spell is casting.
+
+
+== Version 5.161
+
+* Added the function: s.Moving
+
+
+== Version 5.160
+
+* Possible fix to problem when EnumerateFrames might be returning a variable that is not an actual frame.
+
+
+== Version 5.159
+
+* Added the function: s.GetModuleFlashable
+
+
+== Version 5.158
+
+* Added a third "any" argument to the s.SpellDelay and s.SpellOrAuraDelay functions.
+* The spell table CheckFirst flag will now be checked before the Run flag.
+
+
+== Version 5.157
+
+* Fixed aura delay detection for spells that apply an aura before doing instant spell damage.
+
+
+== Version 5.156
+
+* Fixed delay time detection to be more accurate.
+
+
+== Version 5.155
+
+* Fixed up cast travel and delay time detection to be much more accurate.
+
+
+== Version 5.154
+
+* Will no longer use a spell miss to calculate last spell travel time.
+
+
+== Version 5.153
+
+* Added "SpellFlash: Items" as an official module to SpellFlash.
+* The NotIfActive spell table flag will now accept a spell ID or table of spell IDs.
+* Added functions:
+** s.CurrentItem
+** s.CurrentVehicle
+** s.InRaid
+** s.InParty
+** s.InRaidOrParty
+
+
+== Version 5.152
+
+* Using "all" for the unit argument in the s.SpellTravelStartTime function will now return a table with keys representing GUIDs and values representing tables with launch times.
+
+
+== Version 5.151
+
+* Cleaned up some possibly conflicting travel time timers.
+
+
+== Version 5.150
+
+* The s.SpellTravelStartTime function will now also include launch times from spells that are currently casting.
+* The s.SpellTravelStartTime function can now use "all" as a unit string and it will then return times for all targets for the selected spell.
+
+
+== Version 5.149
+
+* Updated to the 6.0 version of the BigLibTimer library.
+* Added the function: s.RegisterBigLibTimer
+
+
+== Version 5.148
+
+* Updated to the 5.1 version of the BigLibTimer library.
+
+
+== Version 5.147
+
+* Updated to the 5.0 version of the BigLibTimer library.
+* The function s.GetPrimaryThreatTarget will now check to see if units exist before checking them.
+
+
+== Version 5.146
+
+* Updated to the 4.2 version of the BigLibTimer library.
+
+
+== Version 5.145
+
+* The function s.SpellTravelStartTime will now return a table of numbers or nil if not available.
+
+
+== Version 5.144
+
+* Updated to the 4.1 version of the BigLibTimer library.
+
+
+== Version 5.143
+
+* Added function: s.SpellTravelStartTime
+
+
+== Version 5.142
+
+* Added function: s.LastSpellTravelTime
+
+
+== Version 5.141
+
+* Updated to the 4.0 version of the BigLibTimer library.
+
+
+== Version 5.140
+
+* Added a second unit argument to the s.SpellDelay function.
+* Added function: s.GetPrimaryThreatTarget
+
+
+== Version 5.139
+
+* The functions s.EnemyTargetingYourFriend and s.EnemyTargetingYou will now consider your vehicle as you as well.
+
+
+== Version 5.138
+
+* Added a "mana" party or raid unit flag to the buff checking functions that will require the unit to currently have a mana bar.
+
+
+== Version 5.137
+
+* Added "Bitten's SpellFlash: Priest" as an official module to SpellFlash.
+
+
+== Version 5.136
+
+* Raid or party buff and debuff checking will now only return a 1 or a 0 for stack or remaining time checking if a buff or debuff is found.
+
+
+== Version 5.135
+
+* Repaired small mistake with the spell table consume flags.
+
+
+== Version 5.134
+
+* Added consume buff and debuff flags.
+
+
+== Version 5.133
+
+* Maximum debuff slot checking has been removed.
+
+
+== Version 5.132
+
+* Repaired the NoStopChannel spell table flag so that it will accept a single spell ID.
+
+
+== Version 5.131
+
+* Added the NoStopChannel flag for the spell tables.
+
+
+== Version 5.130
+
+* Added "Bitten's SpellFlash: Rogue" as an official module to SpellFlash.
+
+
+== Version 5.129
+
+* Removed an event call that could possibly have been causing lag for some classes.
+
+
+== Version 5.128.1
+
+* Will no longer call event functions for modules registered with the s.RegisterModuleEvent function if spell flashing has been disabled in the main SpellFlash options window.
+
+
+== Version 5.128
+
+* Added functions:
+** s.RegisterModuleEvent
+** s.UnregisterModuleEvent
+* Added a second AddonName argument to the s.RegisterOtherAurasFunction function.
+
+
+== Version 5.127
+
+* Added Interrupt flag to pet spell table options.
+
+
+== Version 5.126.1
+
+* Removed a debug message.
+
+
+== Version 5.126
+
+* Added "Bitten's SpellFlash: DK" as an official module to SpellFlash.
+
+
+== Version 5.125
+
+* Updated to the 1.50 version of SpellFlashCore.
+
+
+== Version 5.124
+
+* Replaced the Death Knight's Blood Strike with Death Coil for global cooldown checking.
+
+
+== Version 5.123
+
+* Added "Bitten's SpellFlash: Mage" and "Bitten's SpellFlash: Pally" as official modules to SpellFlash.
+
+
+== Version 5.122
+
+* Added the ability to add a number to the end of the buff and debuff spell table flags.
+** This will allow unlimited buffs and debuffs to be checked along side each other.
+
+
+== Version 5.121
+
+* Changed the way s.HasSpell looks for known spells.
+* Added function: s.AddSettingsListener
+
+
+== Version 5.120
+
+* Added a second NoFlash argument to the s.CheckThenFlash function.
+
+
+== Version 5.119
+
+* Added "Bitten's SpellFlash: Druid" and "Bitten's SpellFlash: Shaman" as official modules to SpellFlash.
+** I will have direct collaboration with the author of these modules, and I will try my best to make sure that all officially included modules meet my level of standards or beyond.
+
+
+== Version 5.118
+
+* Modified the s.TalentMastery function so that an argument of 0 can be passed to check if no talent points are spent.
+
+
+== Version 5.117
+
+* Fixed mistake in FlashID flag.
+
+
+== Version 5.116
+
+* Added a Run flag for adding a function that will not be used for condition checking but may be used to dynamically modify other settings.
+
+
+== Version 5.115
+
+* Fixed required buff and debuff checking.
+
+
+== Version 5.114
+
+* Added form, stance, and aspect checking to the castable function.
+** Form tables will now be automatically checked to see if they are in the form, stance, or aspect without needing to add buff or form checking to the table.
+
+
+== Version 5.113
+
+* Added edit box configurations.
+
+
+== Version 5.112
+
+* Added function: s.GlobalCooldown
+* Added a lot more possible flags to the s.Castable function.
+
+
+== Version 5.111
+
+* Added functions:
+** s.If
+** s.Castable
+
+
+== Version 5.110.1
+
+* Updated to the 1.49.2 version of SpellFlashCore.
+
+
+== Version 5.110
+
+* Changed the way event triggers are handled.
+
+
+== Version 5.109
+
+* Updated code for the blink option.
+
+
+== Version 5.108
+
+* Updated code for the blink option.
+
+
+== Version 5.107.1
+
+* Updated to the 1.47 version of SpellFlashCore.
+
+
+== Version 5.107
+
+* Updated the s.RegisterOtherAurasFunction function so that it will only take a function argument, and will also check to see if the same function has already been added.
+
+
+== Version 5.106
+
+* Added s.Replace and s.CopyTable functions.
+
+
+== Version 5.105
+
+* Now using hooksecurefunc to disable Default Proc Highlighting.
+
+
+== Version 5.104
+
+* Fixed bug that would prevent SpellFlash from loading without LibActionButton.
+
+
+== Version 5.103
+
+* Fixed support for LibActionButton.
+
+
+== Version 5.102
+
+* Fixed support for LibActionButton.
+
+
+== Version 5.101
+
+* Added support for LibActionButton and all action bar addons that use it.
+
+
+== Version 5.100.5
+
+* Bumped TOC to 40300.
+
+
+== Version 5.100.4
+
+* Added support for Brazilian Portuguese translation.
+
+
+== Version 5.100.3
+
+* Small bug fix to old code.
+
+
+== Version 5.100.2
+
+* Fixed options window font sizes.
+
+
+== Version 5.100.1
+
+* Repaired localization fonts for some languages in the XML file directly.
+
+
+== Version 5.100
+
+* Removed permanent mob immunity data gathering.
+** This is no longer needed because almost no mobs are permanently immune to a players spells any more.
+
+
+== Version 5.99.4
+
+* Repaired drop down menu.
+
+
+== Version 5.99.3
+
+* Will now cache the returns when calling GetSpellInfo and GetItemInfo for better performance.
+
+
+== Version 5.99.2
+
+* Made small adjustment to the options window.
+
+
+== Version 5.99.1
+
+* Repaired localization fonts for some languages.
+
+
+== Version 5.99
+
+* Repaired localization fonts for some languages.
+
+
+== Version 5.98.2
+
+* Edited the title color.
+
+
+== Version 5.98.1
+
+* Repaired toc file.
+
+
+== Version 5.98
+
+* Added the ability to flash the Assist pet button.
+
+
+== Version 5.97.1
+
+* Bumped TOC to 40200.
+
+
+== Version 5.97
+
+* Compensated for the additional parameters added to the COMBAT_LOG_EVENT_UNFILTERED event for the game client version 4.2.
+
+
+== Version 5.96
+
+* Compensated for the additional parameter added to the COMBAT_LOG_EVENT_UNFILTERED event for the game client version 4.1.
+
+
+== Version 5.95.2
+
+* Bumped TOC to 40100.
+
+
+== Version 5.95.1
+
+* Edited the wording a little for the default Blizzard spell proc highlighting option in the options window.
+
+
+== Version 5.95
+
+* Added an option to disable the default Blizzard spell proc highlighting in the options window.
+
+
+== Version 5.94
+
+* Edited the s.Boss function a little.
+
+
+== Version 5.93
+
+* Added spell immunity detection to the s.PetCastable function.
+
+
+== Version 5.92
+
+* The s.Boss function will now also compare with the "boss1", "boss2", "boss3" and "boss4" units.
+* Moved objects a little in the options frame template.
+
+
+== Version 5.91
+
+* Added an option in the options window to have the spell buttons only flash if you are in combat.
+
+
+== Version 5.90
+
+* Added s.NotDieing and s.Player functions.
+
+
+== Version 5.89
+
+* Added s.ItemFlashable and s.FlashItem functions.
+
+
+== Version 5.88.1
+
+* Fixed possible but unlikely bug with the s.Buff function.
+
+
+== Version 5.88
+
+* Added a NoCrowedControlCheck argument to the s.ActiveEnemy function.
+
+
+== Version 5.87
+
+* Fixed bug with the z.Interrupt option for the castable checking functions.
+
+
+== Version 5.86
+
+* Should now correctly handle indicating buffs and debuffs early based on your current cast time and the current cooldown of the buff or debuff instead of incorrectly adding the times together.
+
+
+== Version 5.85
+
+* Added z.Interrupt option for the castable checking functions.
+
+
+== Version 5.84.4
+
+* Edited the options saving function.
+
+
+== Version 5.84.3
+
+* Build checking has been removed from the Localization.lua file and will now be ran at the start of each file independently.
+
+
+== Version 5.84.2
+
+* Reduced the script slider description font size by one point and added a little more space between the left and right check boxes in the options frame template.
+
+
+== Version 5.84.1
+
+* Renamed a few files and will now no longer pre-load the SpellFlashAddon_OptionsFrameTemplate1 template frame.
+
+
+== Version 5.84
+
+* Added 14 optional check buttons to the options frame template.
+
+
+== Version 5.83
+
+* Edited a group checking option in the s.HealthPercent, s.HealthDamagePercent, s.PowerPercent and s.PowerMissingPercent functions.
+** The "notfull" option in the unit argument when using the "raid" or "party" checking options will now only check group members who have less than 90% health.
+
+
+== Version 5.82
+
+* Added more group checking options to the s.HealthPercent, s.HealthDamagePercent, s.PowerPercent and s.PowerMissingPercent functions.
+** Added "notfull" and "average" options to the unit argument when using the "raid" or "party" checking options.
+** Added a second return value giving the number of checked group members when using the "raid" or "party" checking options.
+
+
+== Version 5.81.1
+
+* Rearranged the options window.
+
+
+== Version 5.81
+
+* Repaired the global cooldown checking that has been broken since version 5.77.
+* The following functions will now accept a table of spell names or global ID numbers for the SpellName argument:
+** s.SpellInRange
+** s.SpellHasRange
+** s.UsableSpell
+** s.CurrentSpell
+
+
+== Version 5.80
+
+* Documented all x variables in the API.
+* Added new x variables:
+** x.EnemyDetected
+** x.ShouldPermanentBuff
+** x.ShouldTemporaryBuff
+
+
+== Version 5.79
+
+* Added s.FlashTotemCall and s.FlashTotemRecall functions.
+
+
+== Version 5.78.3
+
+* Improved the module configuration functions to be more resource efficient.
+
+
+== Version 5.78.2
+
+* Repaired the options frame templates that had been broken in the last release.
+
+
+== Version 5.78.1
+
+* Edited the module configuration functions some.
+* Edited the options frame templates some.
+
+
+== Version 5.78
+
+* Updated the way buff and debuff applications are detected with the buff and debuff checking functions.
+* Added z.NoEquipCheck option for the item castable checking function.
+
+
+== Version 5.77
+
+* Added z.Stack and z.EarlyRefresh options to the castable checking functions.
+
+
+== Version 5.76
+
+* The options frame templates are now loaded with SpellFlash and no longer need to be bundled with the modules.
+
+
+== Version 5.75
+
+* Added the s.FlashFrame function.
+
+
+== Version 5.74
+
+* Fixed a bug with the item buff detection functions.
+
+
+== Version 5.73
+
+* Updated to the 1.36 version of SpellFlashCore.
+** Updated compatibility for the OpenRDX addon.
+
+
+== Version 5.72
+
+* Cleaned up the code to improve performance.
+* Updated to the 1.35 version of SpellFlashCore.
+** Fixed a possible error from popping up and cleaned up the code a little to improve performance.
+
+
+== Version 5.71
+
+* Updated to the 1.33 version of SpellFlashCore.
+** Added the ability to flash the Totem Bar with the use of the s.Flash function.
+
+
+== Version 5.70
+
+* The s.UnitSelection function will no longer lock up the game when using "enemy" for the unit argument.
+
+
+== Version 5.69
+
+* Added z.NoPowerCheck option to the castable checking functions.
+
+
+== Version 5.68
+
+* Added the functions s.Cursed, s.Magic and s.UnitSelection.
+
+
+== Version 5.67
+
+* Fixed the s.MainHandItemBuff and s.OffHandItemBuff functions to properly search the item's tooltip text for the name of the buff.
+* Added the DurationRemainingGreaterThan argument to the s.MainHandItemBuff and s.OffHandItemBuff functions.
+* Added functions:
+** s.MainHandItemBuffStack
+** s.MainHandItemBuffDuration
+** s.OffHandItemBuffStack
+** s.OffHandItemBuffDuration
+** s.RangedItemBuff
+** s.RangedItemBuffStack
+** s.RangedItemBuffDuration
+
+
+== Version 5.66
+
+* Fixed the s.MainHandItemBuff and s.OffHandItemBuff functions to work with the global spell id numbers.
+* The s.MainHandItemBuff and s.OffHandItemBuff functions will now also accept a table of spell names or global spell id numbers.
+
+
+== Version 5.65
+
+* Now takes into account the cast time of currently casting spells to indicate sooner what spells should be cast next.
+
+
+== Version 5.64
+
+* The castable checking functions will now take lag into account for casting and channeling detection.
+* Added the functions: s.CastingName, s.ChannelingName and s.CastingOrChannelingName
+
+
+== Version 5.63
+
+* Fixed the changes added in the 5.61 release so that they will now work correctly.
+
+
+== Version 5.61
+
+* The unit argument for the functions s.HealthPercent, s.HealthDamagePercent, s.PowerPercent and s.PowerMissingPercent may be replaced with the argument "raid" or "party".
+** When using "raid" or "party" as the unit argument, you may also add a combination of options to it separated by a line pipe such as "raid|range|afk|notself|healer".
+** Use "range" to make sure that the unit is in range of most common spells.
+** Use "afk" to make sure that the unit is not AFK.
+** Use "notself" to not check yourself.
+** Use "healer" to make sure the unit is a healer class.
+
+
+== Version 5.60
+
+* Added the s.ImmunityDebuff function.
+
+
+== Version 5.59
+
+* Added the arguments DurationRemainingGreaterThan, Stealable and Dispelable to the following functions:
+** s.BreakOnDamageCC, s.NoDamageCC, s.CrowedControlled, s.Feared, s.Rooted, s.MovementImpaired, s.Poisoned and s.Diseased
+
+
+== Version 5.58
+
+* Added the s.Healer function used to check for a healer class.
+
+
+== Version 5.57.1
+
+* Last release did not upload correctly.
+
+
+== Version 5.57
+
+* Fixed bug with group buff checking.
+
+
+== Version 5.56
+
+* Removed the s.BuffFromOwnerInRange function.
+* Added the s.SelfBuff function.
+* For the buff checking functions you may add a combination of options separated by a line pipe as the unit argument such as "raid|all|range|afk|notself|healer".
+** Use "all" to only return true if all group members have the buff.
+** Use "range" to make sure that the unit is in range of most common spells.
+** Use "afk" to make sure that the unit is not AFK.
+** Use "notself" to not check yourself for the buff.
+** Use "healer" to make sure the unit is a healer class.
+
+
+== Version 5.55
+
+* Repaired bug with the buff and debuff checking functions introduced in the last release.
+
+
+== Version 5.54
+
+* Repaired the buff checking functions when using "raid", "party", --"allraid" or "allparty"-- as the unit argument.
+
+
+== Version 5.53
+
+* --Optimised the s.BuffFromOwnerInRange function.
+
+
+== Version 5.52
+
+* --Added the s.BuffFromOwnerInRange function.
+* --Buff checking functions may now use "raid", "party", "allraid" and "allparty" for the unit argument.
+** The unit functionality of "raid" and "party" have been changed to only check to see if any group member has the buff.
+** --The unit functionality of "allraid" and "allparty" will now be used to see if all group members have the buff.
+** If the unit argument is "raid" then it will return true if any active party or raid member has the buff.
+** If the unit argument is "party" then it will return true if any active party member has the buff.
+** --If the unit argument is "allraid" then it will return true if all active party and raid members have the buff.
+** --If the unit argument is "allparty" then it will return true if all active party members have the buff.
+
+
+== Version 5.51
+
+* The z.BuffUnit variable has been returned to the castable functions and will be required for buffs or debuffs that are not applied to your target.
+** z.BuffUnit should be used instead of z.Unit for self buffs or any buff or debuff that is not applied to your target.
+
+
+== Version 5.50
+
+* Targeting has been modified to dynamically adjust for focus targeting.
+* The following functions have been modified to use "target" or "focus" as the default unit argument when nil is used instead of "player":
+** s.Class, s.Race, s.Casting, s.Channeling, s.CastingOrChanneling, s.GetCasting, s.GetChanneling, s.GetCastingOrChanneling, s.Buff, s.BuffStack, s.BuffDuration, s.MyBuff, s.MyBuffStack and s.MyBuffDuration
+* The z.Unit variable will need to be defined in the castable functions if the spell is not to be cast on the target.
+** --Spells that are intended to be cast on yourself will need to have z.Unit = "player" included in the castable functions.
+** --This also replaces the z.BuffUnit variable.
+
+
+== Version 5.44
+
+* Added the s.GUIDInfo and s.UnitInfo functions.
+
+
+== Version 5.43
+
+* Will now consider most Training Dummies as an active enemy.
+
+
+== Version 5.42
+
+* Repaired the s.PetCastable function to work with the base pet actions again.
+
+
+== Version 5.41
+
+* Updated to the 1.32 version of SpellFlashCore.
+** Repaired form bar flashing for the latest version of the Dominos addon.
+
+
+== Version 5.40
+
+* Fixed possible bug with vehicle spell flashing.
+
+
+== Version 5.39
+
+* Repaired pet bar flashing.
+
+
+== Version 5.38
+
+* Updated to the 1.30 version of SpellFlashCore.
+** Repaired compatibility with the latest version of Bartender.
+
+
+== Version 5.37
+
+* Updated to the 1.29 version of SpellFlashCore.
+
+
+== Version 5.36
+
+* Updated to the 1.28 version of SpellFlashCore.
+** Fixed possible bug with Button Forge button frame detection.
+
+
+== Version 5.35
+
+* Updated to the 1.27 version of SpellFlashCore.
+** Added support for the Button Forge addon.
+
+
+== Version 5.34
+
+* Now taking into account the sub name of a spell for spell flashing.
+* Updated castable checking functions to use the spell ID instead of the spell name when able.
+
+
+== Version 5.33
+
+* Now compensating for cooldown delay when on global cooldown for early indication of buffs and debuffs.
+* Updated to the 1.25 version of SpellFlashCore.
+
+
+== Version 5.32
+
+* Repaired LibStub packaging in the 1.24 version of SpellFlashCore.
+
+
+== Version 5.31
+
+* Updated to the 1.23 version of SpellFlashCore.
+
+
+== Version 5.30
+
+* Added the ability to use a table of class names as the class argument of the s.Class function.
+* Added the ability to use a table of race names as the race argument of the s.Race function.
+
+
+== Version 5.29
+
+* Updated to the 1.22 version of SpellFlashCore.
+
+
+== Version 5.28.2
+
+* Option for disabling debuff owner checking on private servers has been repositioned in the options window.
+
+
+== Version 5.28
+
+* Added option in the options menu to disable movement and range checking from within the castable checking functions.
+** This option was coded by Gaff3 from curse.com.
+
+
+== Version 5.27
+
+* Will now give the highest duration remaining found when a table of spell names or Global ID numbers are used in the SpellName argument with the s.BuffDuration, s.MyBuffDuration, s.DebuffDuration and s.MyDebuffDuration functions
+
+
+== Version 5.26
+
+* Added the ability to also use in the SpellName argument a table of localized spell names or global spell ID's with the s.Casting, s.Channeling, s.CastingOrChanneling, s.GetCasting, s.GetChanneling and s.GetCastingOrChanneling functions.
+
+
+== Version 5.25
+
+* Removed the mine argument from the buff and debuff checking functions.
+* Added new functions:
+** s.MyBuff, s.MyBuffStack, s.MyBuffDuration, s.MyDebuff, s.MyDebuffStack, and s.MyDebuffDuration
+
+
+== Version 5.24
+
+* Updated to the 1.21 version of SpellFlashCore.
+** Fixed a bug that would prevent a macro from flashing for a spell that contains regex special characters.
+
+
+== Version 5.23.1
+
+* Changed the way the castable checking functions check for cooldowns.
+
+
+== Version 5.23
+
+* Added a Slot argument to the s.Equipped function.
+
+
+== Version 5.22
+
+* Repaired the s.CheckIfVehicleSpellCastable and s.VehicleFlashable functions.
+
+
+== Version 5.21
+
+* Added more options to the s.Buff function's unit argument.
+** --If the unit argument is "party" then it will return true if all active party members have the buff.
+** --If the unit argument is "raid" then it will return true if all active party and raid members have the buff.
+
+
+== Version 5.20
+
+* The x table passed to the spam functions has now been made global with the s.UpdatedVariables table.
+
+
+== Version 5.19
+
+* Added compatibility for the latest version of the Bartender addon.
+
+
+== Version 5.18
+
+* Repaired the s.HasGlyph function.
+
+
+== Version 5.17.1
+
+* Bumped the toc file interface number to 40000.
+
+
+== Version 5.17
+
+* For Cataclysm, edited the s.Equipped function to check if the item is broken.
+
+
+== Version 5.16
+
+* For Cataclysm, reformatted the arguments for the buff and debuff checking functions.
+** Updated the API documentation to reflect this change.
+
+
+== Version 5.15.1
+
+* Removed error that would only show up on the levels before you are able to put points into talents.
+
+
+== Version 5.15
+
+* For Cataclysm:
+** Added the s.SpellOrAuraDelay function, and removed the s.SpellDelay function from within the s.AuraDelay function.
+** Changed return value for the s.SpellInRange function to a boolean true or false value.
+** The s.HasGlyph function now takes global spell ID numbers instead of item ID numbers.
+
+
+== Version 5.14
+
+* Updated to the 1.19 version of SpellFlashCore.
+
+
+== Version 5.13
+
+* Now packaging SpellFlashCore with SpellFlash using the repository packager .pkgmeta externals and move-folders commands.
+
+
+== Version 5.12
+
+* Updated to use the BigLibTimer library included with SpellFlashCore.
+
+
+== Version 5.11
+
+* For Cataclysm, edited the s.Class function and added the s.Race function.
+
+
+== Version 5.10.1
+
+* For Cataclysm, repaired last release.
+
+
+== Version 5.10
+
+* For Cataclysm, removed duplicate legacy functions from the API that only existed for backward compatibility with older modules.
+
+
+== Version 5.9
+
+* For Cataclysm, cleaned up a lot of the functions and started to document the API.
+
+
+== Version 5.8
+
+* For Cataclysm, edited all functions so that the SpellName may be substituted with the global spell ID number.
+
+
+== Version 5.7
+
+* --Updated to use the LibBigTimer library included with SpellFlashCore.
+* Repaired the s.Casting, s.Channeling and s.CastingOrChanneling functions to return the correct seconds remaining.
+
+
+== Version 5.6
+
+* Added x.ThreatPercent variable to the table that is passed to the Cataclysm spam functions.
+* Added the function s.TalentMastery(TreeTabNumber) for Cataclysm that may be used to determine what talent tree has the most points in it.
+
+
+== Version 5.5
+
+* Updated the timer functions to remove a bug that would mistakenly overlap a function call.
+
+
+== Version 5.4
+
+* The timer functions are now handled by an internal library.
+
+
+== Version 5.3
+
+* The functions SpellFlashAddon.Casting, SpellFlashAddon.Channeling and SpellFlashAddon.CastingOrChanneling will now return the remaining seconds or nil if none.
+
+
+== Version 5.2
+
+* Added the z.NotWhileMoving argument to the castable checking functions.
+
+
+== Version 5.1
+
+* Added x.Lag and x.DoubleLag variables to the table that is passed to the Cataclysm spam functions.
+
+
+== Version 5.0
+
+* When running in Cataclysm only, will no longer send arguments separately to the spam functions. Will now send all arguments in a single table so that adding arguments in the future will be less problematic.
+
+
+== Version 4.15
+
+* The PetCastable function now returns false if the pet is casting or channeling the spell.
+
+
+== Version 4.14
+
+* Edited cooldown checking functionality a little.
+
+
+== Version 4.13
+
+* Refined cooldown checking functionality.
+
+
+== Version 4.12
+
+* Repaired pet spell bar cooldown checking functionality.
+
+
+== Version 4.11
+
+* Repaired cooldown checking functionality.
+
+
+== Version 4.10 Beta
+
+* Doubled the lag amount compensated for buffs and debuffs in the Castable checking functions.
+
+
+== Version 4.9 Beta
+
+* The Castable checking functions will now compensate for lag.
+
+
+== Version 4.8 Beta
+
+* Updated list of debuffs.
+
+
+== Version 4.7 Beta
+
+* Began updating code to work in Cataclysm.
+
+
+== Version 4.6
+
+* Removed and replaced the SpellFlashCore.Event table.
+
+
+== Version 4.5
+
+* Removed and replaced the SpellFlashCore.SlashHandler table.
+
+
+== Version 4.4
+
+* Added option in the options window to blink spells that are being flashed. This is for those who would like the flashing spells to be more noticeable.
+* Moved the position of the NoMacros argument down one space to make room for the blink argument.
+
+
+== Version 4.3.2
+
+* Added a few German, Spanish, French and Russian localizations required for functionality.
+* Poorly added the rest of the German localizations with the use of Google Translate.
+
+
+== Version 4.3.1
+
+* Fixed some lua errors.
+
+
+== Version 4.3
+
+* Added the option to disable macros from flashing.
+* The flashing functionality of this addon has been separated into a required dependency called SpellFlashCore.
+
+
+== Version 4.2
+
+* Changed the way module names are handled so that modules may now be displayed by their localized title in the options menu.
+
+
+== Version 4.1.1
+
+* Modified the Load On Demand functionality.
+
+
+== Version 4.1
+
+* SpellFlashAddon.Spam[AddonName] must now always be a function and may no longer be a table.
+* Removed SpellFlashAddon.GetPlayerConfig and SpellFlashAddon.SetPlayerConfig functions.
+* Module configurations may now be accessed with the new SpellFlashAddon.GetModuleConfig, SpellFlashAddon.SetModuleConfig and SpellFlashAddon.ClearAllModuleConfigs functions.
+
+
+== Version 4.0.4
+
+* Added "Mind Control" to the list of crowed control debuffs.
+* Updated SpellFlashAddon.UsesMana function to also include checking if the unit uses mana even if it is not the currently used power source.
+
+
+== Version 4.0.3
+
+* Added PetNoCC variable to the spam function output.
+* Added unit existence checking to the buff and debuff checking function.
+* Updated flashing functions to only accept color tables {r=1.0, g=1.0, b=1.0} or a string with the name of a color that has already been defined by this addon.
+
+
+== Version 4.0.2
+
+* Updated localization functionality.
+* Updated configuration functionality.
+
+
+== Version 4.0.1
+
+* Updated timer functions to allow function arguments.
+* Arguments for timer functions have been rearranged.
+
+
+== Version 4.0
+
+* Added option to select a single class module in the options menu that disables flashing for all other class modules.
+
+
+== Version 3.50
+
+* Improved range and spell cost in the castable checking function some.
+
+
+== Version 3.49
+
+* Repaired the function SpellFlashAddon.Form.
+
+
+== Version 3.48
+
+* Correctly replaced event UPDATE_SHAPESHIFT_FORMS with UPDATE_SHAPESHIFT_FORM.
+
+
+== Version 3.47
+
+* Now able to check if an item is castable.
+* Renamed localization variable from LOCALIZATION to Table.Localize.
+
+
+== Version 3.46
+
+* Flashing should be a little more accurate after a debuff is resisted. However with a lot of lag it may flash for a moment if a spell is resisted but is still applied.
+
+
+== Version 3.45
+
+* This is a version change only to set the curse client to automatically download the official modules along with this addon.
+
+
+== Version 3.44
+
+* No longer bundling module addons in the same package as SpellFlash.
+
+
+== Version 3.43
+
+* Added and renamed a few more local functions to reduce the script size.
+* Attempted to reduce the chance of a rare nil value error.
+* Will no longer flash a spell while casting if not enough power exists for both the spell cast and the next spell.
+* Buff and Debuff rank checking variable now able to take a set rank number or a boolean true value to automatically find the max rank based on the spell name.
+
+
+== Version 3.42
+
+* Repaired a small situational bug from last version for detecting if a target has a buff or debuff of a higher rank then you have learned to prevent it from flashing, even if it is looking for other attributes that would allow the spell to flash otherwise.
+
+
+== Version 3.41
+
+* Improved buff and debuff rank checking when checking for more then one buff or debuff at a time listed within a table.
+* Repaired bug from last version that allowed a buff or debuff to continue flashing while it was currently casting.
+
+
+== Version 3.40
+
+* Replaced the z.DebuffName and z.BuffName variables in the Castable functions with more specific variables.
+* The new z.Debuff, z.MyDebuff, z.Buff and z.MyBuff variables are now able to take either a single name or a table of names.
+* Updated Hunter Functionality:
+**	Will no longer flash "Trueshot Aura" if you are already buffed with "Abomination's Might".
+
+
+== Version 3.39
+
+* Will now flash a macro based on the shown icon if #show or #showtooltip is set to show only a single spell icon.
+
+
+== Version 3.38
+
+* Completely reformatted localization functionality.
+* Updated SpellFlash_TemplateAddon:
+**	Significantly reconfigured file and variable names to reduce the amount of required changes to convert SpellFlash_TemplateAddon into a functional module.
+
+
+== Version 3.37
+
+* Updated SpellFlash_TemplateAddon:
+**	Added the ability to add multiple selectable scripts per module addon.
+
+
+== Version 3.36
+
+* Now checks the body of a macro for the spell name before flashing just in case.
+
+
+== Version 3.35
+
+* No longer uses the #flash meta tag in the body of a macro or the macro title name for flash indication.
+* Will now dynamically flash the macro if it finds the meta tag #show or #showtooltip in the macro.
+* This dynamic macro detection is based on the displayed macro icon, so the icon of the macro must change accordingly for the flashing detection to work properly.
+
+
+== Version 3.34
+
+* Will no longer search macro titles to look for macros to flash.
+* --Will now flash a macro if you include a meta tag in the body of the macro like this:--
+** --#flash SpellName--
+
+
+== Version 3.33
+
+* Will no longer try to load SpellFlash_TemplateAddon.
+* --Reset saved configurations from earlier versions.--
+
+
+== Version 3.32
+
+* Repaired some incorrect configuration search strings.
+* --Reset saved configurations from earlier versions.--
+
+
+== Version 3.31
+
+* Repaired "Extra Bars" addon support.
+
+
+== Version 3.30
+
+* Added ability to flash items that are on the action bars.
+* Will now only flash the max rank you have learned of a spell.
+
+
+== Version 3.29
+
+* Will now automatically enabled checking to see if debuffs are from you if the owner of a debuff is found on a private server.
+
+
+== Version 3.28
+
+* Fixed "Extra Bars" addon support for multiple talent specs.
+* Fixed buff and debuff flashing delay.
+
+
+== Version 3.27
+
+* Fixed checking for spells that activate.
+
+
+== Version 3.26
+
+* Added function SpellFlashAddon.SetOtherAuras to indicate if a spell applies a buff or debuff of a different name.
+* This function is currently being used in the SpellFlash_Functions_Warlock.lua file.
+
+
+== Version 3.25
+
+* Updated buff and debuff flashing delay.
+* Added "Debuff Owner Checking" option in the options window that is disabled by default for private servers.
+
+
+== Version 3.24
+
+* Corrected buff and debuff flashing delay.
+
+
+== Version 3.23
+
+* Updated Warlock Functionality:
+**	Increased priority for Incinerate when the Molten Core buff is up.
+* Updated SpellFlash_TemplateAddon:
+**	Added more local functions to reduce the script size.
+
+
+== Version 3.22
+
+* Corrected buff and debuff flashing delay.
+* Renamed included functions that begin with a lower case letter to begin with an upper case letter.
+** Example: SpellFlashAddon.checkBuff is renamed to SpellFlashAddon.CheckBuff
+* Updated SpellFlash_TemplateAddon:
+**	Added more local functions to reduce the script size, including the SetColor function for selecting a different color if conditions are met.
+
+
+== Version 3.21
+
+* Fixed flashing for vehicles.
+
+
+== Version 3.20
+
+* Added the ability to not load an addon at all unless you log on with a specified class or race.
+
+
+== Version 3.19
+
+* Added option to disable flashing for each addon without requiring to log out of the game to disable them.
+
+
+== Version 3.18
+
+* Refined the scripts some more and edited the flash function to use some color names instead of only red-green-blue values.
+
+
+== Version 3.17
+
+* Renamed function SpellFlashAddon.FlashActionButtonBySpellName to SpellFlashAddon.FlashAction.
+* Renamed function SpellFlashAddon.FlashFormButtonBySpellName to SpellFlashAddon.FlashForm.
+* Renamed function SpellFlashAddon.FlashPetButtonBySpellName to SpellFlashAddon.FlashPet.
+* Renamed function SpellFlashAddon.FlashVehicleButtonBySpellName to SpellFlashAddon.FlashVehicle.
+* Renamed function SpellFlashAddon.FlashableButtonFound to SpellFlashAddon.Flashable.
+* Renamed function SpellFlashAddon.PetBarActionCastable to SpellFlashAddon.PetCastable.
+* Updated the function SpellFlashAddon.CheckIfSpellCastable to use fewer variables.
+* Renamed many of the functions that make use of the function SpellFlashAddon.CheckIfSpellCastable.
+
+
+== Version 3.16
+
+* Fixed the Warlock's Soul Link function.
+* Moved main class functions back into main addon folder.
+
+
+== Version 3.15
+
+* Updated melee range checking functionality for all classes.
+* Updated the function SpellFlashAddon.CheckIfSpellCastable to use fewer variables.
+
+
+== Version 3.14
+
+* Updated stance, form, and pet button frame detection to not use texture matching.
+
+
+== Version 3.13
+
+* Updated stance, form, and pet button frame detection.
+
+
+== Version 3.12
+
+* Reformatted saved variables.
+* Updated button frame detection.
+
+
+== Version 3.11
+
+* Reformatted saved variables.
+* Added slash command to disable debuff owner checking:
+** /sf owner checking
+
+
+== Version 3.10
+
+* Made button frame detection more universal so that it may support more action button addons without requiring specific addon support.
+
+
+== Version 3.09
+
+* Updated buff detection functionality.
+
+
+== Version 3.08
+
+* Updated Warrior Functionality:
+**	Will no longer flash "Battle Shout" if you are already buffed with "Blessing of Might" or "Greater Blessing of Might".
+
+
+== Version 3.07
+
+* Added function SpellFlashAddon.isOffHandEquipped().
+* Updated Warrior Functionality:
+**	Added indicator for Shockwave.
+
+
+== Version 3.06
+
+* Updated Hunter Functionality:
+**	Will now only give initial priority to Hunter's Mark if the target is not active or is a player who is targeting you.
+
+
+== Version 3.05
+
+* Added child options frames for every separate addon.
+
+
+== Version 3.04
+
+* Improved the SpellFlashAddon.MeleeDistance function to allow for the inclusion of spells that are just outside of melee range as melee range indicators when a melee range only spell has not yet been learned.
+
+
+== Version 3.03
+
+* Updated Hunter Functionality:
+**	Improved range detection in early levels for Attack and Raptor Strike.
+
+
+== Version 3.02
+
+* Updated Hunter Functionality:
+**	Fixed pet spell "Heart of the Phoenix".
+
+
+== Version 3.01
+
+* Updated Hunter Functionality:
+**	Cower will now only flash if your pet is below 50% health.
+**	Added indicators for the pet's "Lick Your Wounds", "Heart of the Phoenix", "Last Stand" & "Roar of Recovery" spells.
+
+
+== Version 3.00
+
+* Separated class functions and other functionality into separate addons.
+
+
+== Version 2.20
+
+* Updated the toc file number for compatibility.
+
+
+== Version 2.19
+
+* Will now flash on all action bar addon buttons even if it is redundant.
+
+
+== Version 2.18
+
+* Fixed a small unharmful bug that only produced an error code for some people.
+* Added a few notes to the code for perspective developers.
+
+
+== Version 2.17
+
+* Fixed small bug with immunity detection functionality.
+
+
+== Version 2.16
+
+* Improved detection of spells that are cast on enemy targets some.
+
+
+== Version 2.15
+
+* Improved the proactive immunity detection to filter out targets with a Banish or Cyclone debuff.
+** --This will wipe all immunity data gathered with older versions of SpellFlash.--
+
+
+== Version 2.14
+
+* Added indicator for the Hunter's Silencing Shot spell if the target is casting or channeling.
+* Increased the amount of time to indicate the Hunter's Chimera Shot spell to compensate for travel time.
+
+
+== Version 2.13
+
+* Will no longer use the Warlock's Drain Life spell for dps if you have the Ruin talent.
+* Increased the Warlock's Unstable Affliction spell priority always over Shadow Bolt.
+
+
+== Version 2.12
+
+* Will now suggest the the Hunter's Serpent Sting on an elite target even if the target's health is lower then 35%.
+* For Warlock's, will now only give Shadow Bolt higher priority for the Shadow Mastery debuff if Improved Shadow Bolt has at least 4 talent points.
+
+
+== Version 2.11
+
+* Added indicators for the Warlock's Backlash buff.
+* Increased priority of the Warlock's Chaos Bolt slightly if the target is controlled by a player.
+
+
+== Version 2.10
+
+* Updated immune mob ignore list function slightly.
+
+
+== Version 2.09
+
+* Removed the 32 name limit for the immune mob ignore list.
+* Fixed bug with Tool-tip info not being detected properly for buffs or debuffs when requested.
+
+
+== Version 2.08
+
+* Improved indication for the Warlock's Conflagrate spell.
+
+
+== Version 2.07
+
+* Added detection of Hunter's stings and Concussion Shot air travel time.
+
+
+== Version 2.06
+
+* For Warlock's, slightly increased the priority of Shadow Bolt with Improved Shadow Bolt if the Shadow Mastery debuff is not up.
+
+
+== Version 2.05
+
+* Fixed major bug with the buff and debuff checking function.
+* Should now detect remaining buff and debuff time correctly.
+* Included Warlock's Conflagrate changes in the previous release notes.
+* For Warlock's, will now put more priority on Immolate if the talents Backdraft or Fire and Brimstone are used.
+* For Warlock's, will now flash the pet Attack button for your Imp if you have the Empowered Imp talent, even if Phase Shift is on.
+
+
+== Version 2.04
+
+* Will no longer use a red flash on global cooldown, will use the regularly used colors even on global cooldown.
+* A red flash is used for Emergency Mitigation Cooldowns as it was in previous versions.
+* A yellow flash will now be used for both Limited Time and No Global Cooldown abilities.
+* Will now always flash the Warlock's Conflagrate spell if you have Glyph of Conflagrate or Backdraft, no matter how much time is left on your Immolate.
+
+
+== Version 2.03
+
+* Will now remove a spell from the immunity detection list if it successfully hits a target.
+* This is intended to detect mob's with full immunity buffs so that they are ignored when checking for immunity to specific spells.
+* The immune mob ignore list is now converted into a global list that will be saved as a single list for all characters.
+* Will also add a target to the immune mob ignore list if a spell that was shown as immune is automatically removed from the immunity list.
+
+
+== Version 2.02
+
+* Removed Searing Pain from the Warlock spell flashing script.
+
+
+== Version 2.01
+
+* Will no longer flash spells and abilities red if not on cooldown when casting or channeling.
+* Will no longer flash when a spell is cast and a buff or debuff has yet to be updated.
+* Fixed bug that prevented spells with a cast time and a debuff to be indicated before the debuff is removed.
+* Removed the manual indication for all of the Warlock spells.
+* Will no longer suggest the Warlock's spell Curse of the Elements if Earth and Moon is on the target.
+
+
+== Version 2.00
+
+* Indicated Abilities and Spells will now flash red when on global cooldown.
+
+
+== Version 1.67
+
+* Added simple indicator for the Warrior's Heroic Throw spell.
+
+
+== Version 1.66
+
+* Will now suggest another Warlock curse if your Curse of the Elements and Ebon Plague is on the target at the same time.
+
+
+== Version 1.65
+
+* For confirmation, will now select the name in the drop down menu when added to the ignore immunity checking list.
+
+
+== Version 1.64
+
+* Improved indicators for the Argent Tournament mount abilities.
+
+
+== Version 1.63
+
+* Cleaned up code some to possibly prepare for classes that have yet to be added for spell flashing.
+
+
+== Version 1.62
+
+* Will no longer suggest the Warlock's spell Curse of the Elements if Ebon Plague is on the target.
+* Separated the Warlock's curse suggestions to always suggest a curse separate from the used spell rotation, even if a curse has not yet been used on the target.
+
+
+== Version 1.61
+
+* Added indicators for the Argent Tournament mount abilities.
+* Added indicator for the Human's Every Man for Himself spell.
+* Added indicator for the Undead's Will of the Forsaken spell.
+* The Warlock's spell Curse of the Elements will now always be indicated if not on an elite or boss target.
+
+
+== Version 1.60
+
+* Will now better indicate the Warlock's Drain Soul spell with the talent Improved Drain Soul taken into consideration.
+* Added indicator for the Warlock's Health Funnel spell for pet healing.
+
+
+== Version 1.59
+
+* Improved algorithm for indicating the Warlock's Drain Life spell.
+* Added indicator for the Warlock's Shadow Bolt spell when Shadow Trance is active.
+
+
+== Version 1.58
+
+* Added the Drain Soul and Drain Life spells to the damage rotation for Affliction Warlocks.
+
+
+== Version 1.57
+
+* Will now store the names of the spells cast on an enemy until the enemy dies or you go to a loading screen.
+
+
+== Version 1.56
+
+* Lowered the priority of the Warlock's Soul Fire spell below the instant cast spells.
+* Added more accurate detections for discovering spells cast on an enemy.
+
+
+== Version 1.55
+
+* Added indicators for most Warlock spells, but many of them will need to be used on the target first before it will start to flash them.
+
+
+== Version 1.54
+
+* Added additional check to see if target is a boss.
+
+
+== Version 1.53
+
+* Will now suggest a warlock's Shadowburn if the soul bag is full or more.
+
+
+== Version 1.52
+
+* Will now be able to determine if a spell that is casting or being channeled is able to be interrupted.
+
+
+== Version 1.51
+
+* Switched the Orange (Optional) flash with a Pink flash, the Red (Finishing Move) flash with an Orange flash, and the Pink (Emergency Mitigation Cooldowns) flash with a Red flash.
+
+
+== Version 1.50
+
+* Added indicator for the Warlock's Soul Link buff.
+* Fixed the Warlock's Life Tap and Dark Pact indicators.
+* Fixed code that determines if the target will give XP or honor.
+* Will no longer suggest the Hunter's Concussive Shot if the target is Casting or Channeling.
+* Will no longer suggest a Hunter's sting if the target it not a player with health at 35% or less or a boss.
+* Will now suggest a Hunter's Serpent Sting instead of Viper Sting if the target is a player with health at 35% or less or a regular mob.
+* Will no longer flash the pet's follow button unless the pet's target is at 35% or less health, when determining if the pet's target is fleeing.
+
+
+== Version 1.46
+
+* Repaired Warlock's Soul Shard counting function by replacing it with the existing API's GetItemCount function.
+
+
+== Version 1.45
+
+* Repaired item counting function.
+* Added indicators for the Warlock's Armor Buffs.
+
+
+== Version 1.44
+
+* Added support for the OpenRDX addon.
+* Added indicators for the Warlock's Drain Soul, Shadowburn, Life Tap and Dark Pact.
+
+
+== Version 1.43
+
+* Added indicator for Chimera Shot at 2.5 seconds left on Serpent Sting or Viper Sting.
+
+
+== Version 1.42
+
+* Will now suggest Serpent Sting if the target has mana and Viper Sting is on cooldown. This will allow for some mana rejuvenation but not wast time with less dps.
+
+
+== Version 1.41
+
+* Fixed the flash color of Hunter Stings. Will now flash white if the target is active like most of the other abilities.
+
+
+== Version 1.40
+
+* Added indicators for most of the Hunter spells.
+
+
+== Version 1.37
+
+* Now able to flash macros with long spell names by only checking for the first 15 characters of the spell name followed by an F.
+* Example: Commanding ShouF
+
+
+== Version 1.36
+
+* Will now check to see if the target has a Crowed Control Debuff on them before suggesting a damaging spell.
+* Added Cyclone and Hex to the Crowd Control checking.
+* Will now check to see if a debuff slot is open before suggesting Viper Sting or Serpent Sting.
+
+
+== Version 1.35
+
+* Will now suggest a pets defensive mode if you are in aggressive mode outside of an instance.
+* No longer scans the Spell Book to find spell information.
+
+
+== Version 1.34
+
+* Added an option to adjust the spell flash brightness in the options window.
+
+
+== Version 1.33
+
+* Added indicators for the Hunter pet's Cower and Growl.
+* Removed the Hunter pet's "Defensive Mode" indicator for when outside of an instance.
+* Added some indicators for Warlock & Death Knight pets.
+
+
+== Version 1.32
+
+* Will no longer flash the buttons on an additional action bar if it shares the same action slot numbers as the first action bar. That was introduced in the last version and is reverted in this version.
+
+
+== Version 1.31
+
+* Added support for the nUI addon.
+
+
+== Version 1.30
+
+* Added support for the Extra Bars addon.
+* Removed requirement for spells to be on an action bar to get spell information.
+
+
+== Version 1.22
+
+* Added some functionality for Hunter Stings.
+
+
+== Version 1.21
+
+* Fixed functionality for Hunter Pets and Aspects.
+
+
+== Version 1.20
+
+* Added support for the Dominos addon.
+* Added some functionality for Hunter Pets, Aspects and a few spells.
+
+
+== Version 1.19
+
+* Removed a few arguments from the timer function.
+* Removed some redundant debug code from the timer functions.
+
+
+== Version 1.18
+
+* Fixed bugs with detecting spells and spell buttons introduced in the previous version.
+* Fixed small bug with cooldown checking functions. Will no longer determine that a spell is on cooldown if the spell is not found.
+* Will no longer suggest Whirlwind if an off-hand weapon is not equipped.
+* Repaired the yet to be used function SpellFlashAddon.CancelBuff(SpellName, icon_texture).
+
+
+== Version 1.17
+
+* Will now suggest both Shouts if neither is buffed.
+* For improved performance, now using GetActionInfo with GetSpellInfo to get Action Button spell names and ranks instead of scanning the Action Button tooltips.
+* Spell name localization has been replaced with direct calls to GetSpellInfo with the spell name as a label commented out next to it.
+
+
+== Version 1.16
+
+* Will now scan talent tabs and spell books to store the information when a change is detected for faster reference lookups.
+* This is so that the entire spell-book and every talent tab does not need to be scanned every time information for a single spell or talent is needed.
+* This may reduce processing time for complicated scripts.
+
+
+== Version 1.15
+
+* Will now properly detect the buttons when switching specs if "Auto Button Scan" is not disabled.
+* Will now suggest Heroic Strike if you are below level 40 and you have at least 20 rage points.
+
+
+== Version 1.14
+
+* Fixed very small bug that prevented the sleep debuff of Wyvern Sting from being detected.
+* Will no longer suggest Rend if all debuff slots are full on the target.
+* Slowly cleaning up existing outdated code for other classes, so that spell suggestion scripts may be created for them as well.
+
+
+== Version 1.13
+
+* Fixed small bug with melee range detection.
+
+
+== Version 1.12
+
+* Localized all of the Hunter spell names for all languages.
+
+
+== Version 1.11
+
+* Added an option to adjust the spell flash size in the options window.
+* --Will now flash a macro if it is named with the desired spell name with the upper case letter F attached to the end of the macro name, as long as the actual spell is placed on at least one of the action bars even if that bar is hidden.--
+** --For example: Heroic StrikeF--
+* --The spell name must be in the language of the used game client with the capital letter F at the end of it.--
+* --If the macro is renamed, then you will need to move the macro off of or onto one of the action bars for the change to be detected.--
+
+
+== Version 1.10
+
+* Will no longer flash Shield Block unless within melee distance of the target.
+
+
+== Version 1.09
+
+* Reduced flash size a little.
+* Added indicator for Attack to the Warrior script.
+* Damage spell buttons will now blink Orange or not at all if the target is not active.
+
+
+== Version 1.08
+
+* Redid the color selections a little:
+** Pink: Emergency Mitigation Cooldowns
+** Orange: Optional
+
+
+== Version 1.07
+
+* Added the options frame to the games built in options UI window list.
+
+
+== Version 1.06
+
+* Added Localization for the options window so that it may be translated into other languages.
+* Localized all of the Racial, DeathKnight and Warlock spell names for all languages.
+
+
+== Version 1.05
+
+* Localized all of the Warrior spell names for all languages.
+
+
+== Version 1.04
+
+* Added indicator for Enraged Regeneration.
+
+
+== Version 1.03
+
+* Small Warrior script change for AOE debuffs.
+* Added indicator for Shield Wall.
+
+
+== Version 1.02
+
+* Added indicator for Hamstring to the Warrior script for players and fleeing mobs.
+* Also added indicators for Berserker Rage, Last Stand, Taunt, Mocking Blow, Shield Block and Intervene.
+* Removed Sweeping Strikes from Warrior script.
+* Increased flash size.
+
+
+== Version 1.01
+
+* Fixed a few bugs with the flashing script. Redid the color selections.
+
+
+== Version 1.0g
+
+* Adjusted the flashing colors brightness some.
+
+
+== Version 1.0f
+
+* Will no longer flash Battle Shout if your Commanding Shout is active.
+* Will now also flash Commanding Shout if not enabled if you already have Battle Shout from someone else.
+* The colors used for flashing spells have also been revised.
+
+
+== Version 1.0e
+
+* Updated some targeting detection in the warrior spell flashing script.
+
+
+== Version 1.0d
+
+* Updated spell interruption spells some in the warrior spell flashing script and removed a few debug errors.
+
+
+== Version 1.0c
+
+* Updated spell interruption spells some in the warrior spell flashing script and removed a few target detection bugs.
+
+
+== Version 1.0b
+
+* Added a few more spells to the warrior spell flashing script and added checking if enemy target is selected.
+
+
+== Version 1.0a
+
+* This is an Alpha release with some functionality added for Warriors only.
+
