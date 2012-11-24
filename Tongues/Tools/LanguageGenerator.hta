@@ -1,0 +1,98 @@
+<html>
+	<script language="VBscript">
+		dim Width, Height
+		Width = 768
+		Height = 512
+		window.resizeTo Width, Height
+		window.moveTo (screen.width / 2) - (Width / 2), (screen.height/2) - (Height/2)
+	</script>
+
+	<head>
+		<title>Tongues Language Generator</title>
+		    <hta:application ID="oTonguesLanguageGenerator"
+		     applicationname="Tongues Language Generator"
+		     border="thin"
+		     borderstyle="normal"
+		     caption="yes"
+		     maximizebutton="yes"
+		     minimizebutton="yes"
+		     showintaskbar="yes"
+		     singleinstance="no"
+		     scroll = "no"
+		     sysmenu="yes"
+		     version="1.0"
+		     />
+	</head>
+
+	<script language="VBScript">
+		class lua_string
+			function gsub(text,pattern,replacement)
+				Dim re
+				Set re = new regexp
+				re.Pattern = pattern
+				re.Global = True
+				text = re.Replace(text, replacement)
+				gsub = text
+			end function
+		end class
+
+		function GenerateButton()
+			dim string : set string = new lua_string
+
+			dim language : language = window.document.all.Language.value			
+
+			window.document.all.Output.value = ""
+			window.document.all.Output.value = "Tongues.Custom.Language[""" & language & """] = { " & vbCR
+				if window.document.all.MaxWordLength.value = "" then
+					window.document.all.MaxWordLength.value = 0
+				end if
+				dim num : num = window.document.all.MaxWordLength.value
+
+				if window.document.all.WordCount.value = "" then
+					window.document.all.WordCount.value = 0
+				end if
+				dim num2 : num2 = window.document.all.WordCount.value
+
+				dim w: w = split(window.document.all.Alphabet.value, ",")
+
+				if num > 0 then
+					for i = 1 to num
+						window.document.all.Output.value = window.document.all.Output.value & chr(9) & "[" & i & "] = {" 
+						For j = 1 to num2
+							window.document.all.Output.value = window.document.all.Output.value & """"
+
+							For k = 1 to i
+								Randomize(Now())
+								window.document.all.Output.value = window.document.all.Output.value & w(int(Rnd()*(Ubound(w))))
+							next
+							window.document.all.Output.value = window.document.all.Output.value & """," 
+						next
+						window.document.all.Output.value = window.document.all.Output.value & "}," & vbCR
+					next
+				end if
+			window.document.all.Output.value = window.document.all.Output.value & "};" & vbCR
+
+		end function
+	</script>
+
+	<body>
+		<div id="Main" style="position:absolute;left: 0px; top: 0px;">
+			<div style="position:absolute;left: 10px; top: 10px;">Language Name</div>
+			<input type="textbox" id='Language' style="position:absolute;left: 120px; top: 10px;" />
+
+			<div style="position:absolute;left: 10px; top: 35px;">Alphabet</div>
+			<input type="textbox" id='Alphabet' style="position:absolute;left: 120px; top: 35px;" />
+
+			<div style="position:absolute;left: 320px; top: 10px;">Word Count</div>
+			<input type="textbox" id='WordCount' style="position:absolute;left: 450px; top: 10px;width:20px;" />
+
+			<div style="position:absolute;left: 320px; top: 35px;">Word Length Limit</div>
+			<input type="textbox" id='MaxWordLength' style="position:absolute;left: 450px; top: 35px;width:20px;" />
+
+			<div style="position:absolute;left: 10px; top: 60px;">Lua Code</div>
+			<textarea id='Output' style="position:absolute;left: 10px; top: 80px;width:748px;height:390px" ></textarea>
+
+			<button id='GenerateButton' name='Generate' onClick='GenerateButton()' style="position:absolute;left: 470px;top: 10px;">Generate</button>
+		</div>
+	</body>
+</html> 

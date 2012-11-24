@@ -1,0 +1,35 @@
+## Interface: 50001
+## Title: MyRolePlay
+## Version: 5.0.4.99
+## Author: Etarna Moonshyne
+## Email: etarna@moonshyne.org
+## Notes: Lets you share roleplaying profile information (such as last names and descriptions) with other roleplayers using this, or a compatible, AddOn.
+## URL: http://moonshyne.org/
+## X-Website: http://moonshyne.org/
+## SavedVariablesPerCharacter: mrpSaved, mdbSaved
+MyRolePlay.lua
+ChatThrottleLib.lua
+LibMSP.lua
+Locale.lua
+Locale_enGB.lua
+Locale_enUS.lua
+Options.lua
+Profile.lua
+FormChange.lua
+EquipSet.lua
+Predictive.lua
+Exchange.lua
+ID.lua
+Update.lua
+UI_Display.lua
+UI_Editor.lua
+UI_EditFrames.lua
+UI_Tab.lua
+UI_Browser.lua
+UI_Tooltip.lua
+UI_Button.lua
+UI_Target.lua
+UI_Options.lua
+ChatName.lua
+Command.lua
+Init.lua

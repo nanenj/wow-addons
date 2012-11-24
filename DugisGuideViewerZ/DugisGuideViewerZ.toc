@@ -1,0 +1,60 @@
+## Interface: 50001
+## Title: Dugi Questing Essential |cffffffff2.20|r
+## Notes: Questing Addon Copyright 2010-2012 UltimateWoWGuide.com
+## Version: 2.20
+## X-Website: http://www.ultimatewowguide.com/
+## X-Email: webmaster@ultimatewowguide.com
+## X-Category: Quest
+## SavedVariablesPerCharacter: CurrentQuestIndex, CurrentTitle, CurrentZone, DugisGuideUser, DugisGuideViewerDB, DugisArrowDb, DugisFlightmasterDataTable
+## SavedVariables: MapOverlays, DugisFlightmasterLookupTable, TaxiDataCollection
+## OptionalDeps: TomTom
+## X-CompatibleLocales: enUS, enGB, deDE, frFR, esES, esMX, koKR, ruRU
+
+# Library Files
+Libs\Astrolabe\Load.xml
+Libs\Load.xml
+
+# Localization
+Localization\Localization.enUS.lua
+Localization\Localization.esMX.lua
+Localization\Localization.deDE.lua
+Localization\Localization.frFR.lua
+Localization\Localization.itIT.lua
+Localization\Localization.koKR.lua
+Localization\Localization.ptBR.lua
+Localization\Localization.ruRU.lua
+Localization\LibBabble-SubZone-3.0\Lib.xml
+Localization\LibBabble-Class-3.0\Lib.xml
+Localization\LibBabble-Race-3.0\Lib.xml
+Localization\LibBabble-Faction-3.0\Lib.xml
+
+# Base
+DugisGuideViewer.lua
+Debug.lua
+Modules.lua
+BossButtonWorkaround.lua
+
+# Implementation
+Widget.lua
+MapUtils.lua
+Localization\Translator.lua
+DugisGuideViewer.xml
+WatchFrame.lua
+ItemButton.lua
+arrow.lua
+Ants.lua
+Corpse.lua
+AutoQuestAccept.lua
+MapOverlays.lua
+AutoSell.lua
+QuestPOI.lua
+MiniBlobs.lua
+libs\menu.lua
+LDB.lua
+MapPreview.lua
+WorldMapTracking.lua
+WorldMapTrackingPoints.lua
+Taxi.lua
+TaxiDB.lua
+TaxiData.lua
+AutoQuestLoot.lua

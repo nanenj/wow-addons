@@ -1,0 +1,15 @@
+## Interface: 50001
+## Title: Satchel Queue
+## Notes: Queues for Satchels!
+## Author: Frunk
+## Version: 0.1
+## SavedVariables: SatchelQueueDB
+## X-Curse-Packaged-Version: r32
+## X-Curse-Project-Name: Satchel Queue
+## X-Curse-Project-ID: satchel-queue
+## X-Curse-Repository-ID: wow/satchel-queue/mainline
+
+embeds.xml
+
+SatchelQueue.lua
+SatchelQueue.xml

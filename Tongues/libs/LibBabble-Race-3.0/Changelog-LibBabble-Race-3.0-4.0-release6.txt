@@ -1,0 +1,19 @@
+------------------------------------------------------------------------
+r31 | nevcairiel | 2010-11-15 19:36:34 +0000 (Mon, 15 Nov 2010) | 1 line
+Changed paths:
+   A /tags/4.0-release6 (from /trunk:30)
+
+Weekly Tag - #6
+------------------------------------------------------------------------
+r30 | nevcairiel | 2010-11-15 19:36:01 +0000 (Mon, 15 Nov 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-Race-3.0.lua
+
+Automated LibBabble re-generation from the localization system
+------------------------------------------------------------------------
+r28 | nevcairiel | 2010-11-10 20:19:09 +0000 (Wed, 10 Nov 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-Race-3.0.lua
+
+Automated LibBabble re-generation from the localization system
+------------------------------------------------------------------------

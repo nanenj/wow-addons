@@ -1,0 +1,34 @@
+--Tongues.Custom.Dialect={
+
+Tongues.Custom.Dialect["Darnassian"] = {
+	["substitute"] = {
+		[1] = { 
+			["yes"] = "Anu'dora",
+			["it's true"] = "Anu'dora",
+			["on my honor"] = "Az'thero'dalah'dor",
+			["what is it"] = "Ashra thoraman",
+			["who goes there"] = "Fandu'dath'belore",
+			["who's there"] = "Fandu'dath'belore",
+			["do it"] = "Ash Karath",
+		};
+	};
+};
+
+Tongues.Custom.Dialect["Death Knight"] = {
+	["substitute"] = {
+		[1] = {
+			["bye"] = "suffer well",
+			["goodbye"] = "suffer well",
+			["farewell"] = "suffer well"
+		};
+	["affects"] = {
+		[1] = merge({
+			Tongues.Affect["Hiss"]["substitute"][1],
+			Tongues.Affect["Growl"]["substitute"][1],
+		});
+	};
+};
+
+
+
+

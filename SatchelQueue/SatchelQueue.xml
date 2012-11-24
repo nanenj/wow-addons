@@ -1,0 +1,32 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+    <Button name="SatchelQueue_Button" inherits="MagicButtonTemplate" parent="LFDQueueFrame" text="Satchel">
+		<Size>
+			<AbsDimension x="135" y="22"/>
+		</Size>
+        <Anchors>
+            <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="LFDQueueFrameRandom">
+				<Offset>
+					<AbsDimension x="-4" y="4"/>
+				</Offset>
+			</Anchor>
+        </Anchors>
+        <Scripts>
+            <OnClick>
+                SatchelQueue:Toggle()
+            </OnClick>
+			<OnLoad>
+				LFDQueueFrameFindGroupButton:SetPoint("BOTTOMLEFT", LFDQueueFrameRandom, "BOTTOMLEFT", 4, 4)
+			</OnLoad>
+        </Scripts>
+    </Button>
+    
+    <Frame name="SatchelQueue_Flash" frameStrata="FULLSCREEN_DIALOG" setAllPoints="true" hidden="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture file="Interface/FullScreenTextures/LowHealth" alphaMode="ADD"/>
+            </Layer>
+        </Layers>
+    </Frame>
+    
+    <GameTooltip name="SatchelQueue_Tooltip" inherits="GameTooltipTemplate"/>
+</Ui>

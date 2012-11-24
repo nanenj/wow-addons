@@ -1,0 +1,25 @@
+------------------------------------------------------------------------
+r88 | nevcairiel | 2010-11-24 15:11:12 +0000 (Wed, 24 Nov 2010) | 1 line
+Changed paths:
+   A /tags/4.0-release7 (from /trunk:87)
+
+Weekly Tag - #7
+------------------------------------------------------------------------
+r87 | nevcairiel | 2010-11-24 15:09:38 +0000 (Wed, 24 Nov 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-CreatureType-3.0.lua
+
+Automated LibBabble re-generation from the localization system
+------------------------------------------------------------------------
+r85 | nevcairiel | 2010-11-10 20:19:00 +0000 (Wed, 10 Nov 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-CreatureType-3.0.lua
+
+Automated LibBabble re-generation from the localization system
+------------------------------------------------------------------------
+r83 | nevcairiel | 2010-10-26 15:11:14 +0000 (Tue, 26 Oct 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-CreatureType-3.0.lua
+
+Automated LibBabble re-generation from the localization system
+------------------------------------------------------------------------

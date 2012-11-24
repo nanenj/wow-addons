@@ -1,0 +1,313 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui">
+    <Frame name="GHM_DD_Template" inherits="UIDropDownMenuTemplate" enableMouse="true" virtual="true">
+        <Scripts>
+            <OnLoad>
+                local name = self:GetName();
+
+                _G[name.."Left"]:SetTexture("");
+                _G[name.."Middle"]:SetTexture("");
+                _G[name.."Right"]:SetTexture("");
+
+                self.displayMode = "MENU"
+                local button = _G[name.."Button"]
+                button:ClearAllPoints();
+                button:SetPoint("RIGHT",self,"RIGHT",-2,3);
+
+                local f = CreateFrame("Frame",nil,button );
+
+                f:SetPoint("TOPRIGHT",self,"TOPRIGHT",0,0);
+                f:SetPoint("BOTTOMLEFT",self,"BOTTOMLEFT",0,6);
+
+                f:SetBackdrop({
+                    bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+                    edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+                    tile = true, tileSize = 16, edgeSize = 16,
+                    insets = { left = 4, right = 23, top = 4, bottom = 4 },
+                });
+                f:SetBackdropColor(0,0,0,0.5);
+                f:SetFrameLevel(self:GetFrameLevel());
+            </OnLoad>
+
+            <OnClick>
+                ToggleDropDownMenu(1, nil, DropDownMenu, DropDownMenuButton, 0, 0);
+            </OnClick>
+        </Scripts>
+        <Frames>
+            <Frame name="$parentText">
+                <Size>
+                    <AbsDimension x="100" y="14"/>
+                </Size><!-- -->
+                <Anchors>
+                    <Anchor point="LEFT" relativePoint="LEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="3"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="RIGHT" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-20" y="3"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF" text="">
+                            <Anchors>
+                                <Anchor point="TOPLEFT"/>
+                                <Anchor point="BOTTOMRIGHT"/>
+                            </Anchors>
+                            <FontHeight>
+                                <AbsValue val="10"/>
+                            </FontHeight>
+                            <Color r="1" g="1" b="1"/>
+
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+
+        </Frames>
+    </Frame>
+
+
+    <Frame name="GHM_CustomDD_Template" virtual="true">
+        <Size>
+            <AbsDimension x="130" y="100"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentLabel" inherits="GHM_TextLabel_Template" font="GHM_GameFontSmall" text="" justifyH="LEFT">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <FontHeight>
+                        <AbsValue val="11"/>
+                    </FontHeight>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentArea">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="0" y="-17"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentDD" inherits="GHM_DD_Template">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+                        </Anchors>
+                    </Frame>
+
+                </Frames>
+
+            </Frame>
+        </Frames>
+    </Frame>
+
+    <!--
+    <Frame name="GHM_CustomDD_Template" inherits="UIDropDownMenuTemplate" enableMouse="true" virtual="true">
+        <Scripts>
+            <OnLoad>
+
+                UIDropDownMenu_Initialize(self, function(self)
+                    if self.GetData then
+                        local t = self.GetData();
+                        if type(t) == "table" then
+                            for i = 1,#t do
+                                local text;
+                                if type(t[i]) == "table" then
+                                    text = t[i].text;
+                                else
+                                    text = t[i];
+                                end
+                                info = {};
+                                info.text = text;
+                                info.value = i;
+                                info.owner = self;
+                                info.notCheckable = true;
+                                info.func = function(self)
+                                    local text;
+                                    local returnValue;
+                                    if type(t[self.value]) == "table" then
+                                        text = t[self.value].text;
+                                        returnValue = t[self.value].value;
+                                    else
+                                        text = t[self.value];
+                                    end
+                                    _G[ (self.owner):GetName().."TextLabel"]:SetText(text);
+                                    if self.owner.returnIndex == true then
+                                        self.owner.main.SetLabel(self.owner.label,self.value);
+                                        self.owner.value = self.value;
+                                    elseif returnValue then
+                                        self.owner.main.SetLabel(self.owner.label,returnValue);
+                                        self.owner.value = returnValue;
+                                    else
+                                        self.owner.main.SetLabel(self.owner.label,text);
+                                        self.owner.value = text;
+                                    end
+
+                                    if self.owner.OnSelect then
+                                        self.owner.OnSelect(i);
+                                    end
+                                end;
+                                UIDropDownMenu_AddButton(info);
+                            end
+                        end
+                    end
+                end);
+
+                local f = self;
+                f.Force = function(data)
+                    local dataTable = f.GetData();
+                    local label = _G[f:GetName().."TextLabel"];
+                    if type(dataTable[1]) == "table" then
+                        if f.returnIndex then
+                            local t = dataTable[data] or {};
+                            label:SetText(t.text or "");
+                            f.main.SetLabel(f.label,t.value);
+                        else
+                            for i,v in pairs(dataTable) do
+                                if type(v) == "table" and v.value == data then
+                                    label:SetText(v.text or "");
+                                    f.main.SetLabel(f.label,v.value);
+                                    break;
+                                elseif v == data then
+                                    label:SetText(v);
+                                    f.main.SetLabel(f.label,v);
+                                    break
+                                end
+                            end
+                        end
+
+                    elseif type(data) == "number" then
+                        local text = dataTable[data];
+                        if text then
+                            label:SetText(text);
+                            if f.returnIndex == true then
+                                f.main.SetLabel(f.label,data);
+                            else
+                                f.main.SetLabel(f.label,text);
+                            end
+                            if f.OnSelect then f.OnSelect(data); end
+                        end
+                    elseif type(data) == "string" then
+                        for i = 1,#(dataTable) do
+                            if data == dataTable[i] then
+                                label:SetText(data);
+                                if f.returnIndex == true then
+                                    f.main.SetLabel(f.label,i);
+                                else
+                                    f.main.SetLabel(f.label,data);
+                                end
+                                if f.OnSelect then f.OnSelect(i); end
+                            end
+                        end
+                    end
+                end
+                f.Clear = function(self)
+                local label = _G[f:GetName().."TextLabel"];
+                local text = f.GetData()[1];
+                if text then
+                label:SetText(text);
+                if f.returnIndex == true then
+                f.main.SetLabel(f.label,1);
+                else
+                f.main.SetLabel(f.label,text);
+                end
+                end
+
+                end
+
+
+                local name = self:GetName();
+
+                _G[name.."Left"]:SetTexture("");
+                _G[name.."Middle"]:SetTexture("");
+                _G[name.."Right"]:SetTexture("");
+
+                self.displayMode = "MENU"
+
+                local f = CreateFrame("Frame",nil, _G[name.."Button"]);
+                f:SetPoint("RIGHT",2,0);
+
+                f:SetWidth(134);
+                f:SetHeight(25);
+                f:SetBackdrop({
+                bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+                edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+                tile = true, tileSize = 16, edgeSize = 16,
+                insets = { left = 4, right = 23, top = 4, bottom = 4 },
+                });
+                f:SetBackdropColor(0,0,0,0.5);
+
+                f:SetFrameLevel(self:GetFrameLevel());
+            </OnLoad>
+
+            <OnClick>
+                ToggleDropDownMenu(1, nil, DropDownMenu, DropDownMenuButton, 0, 0);
+            </OnClick>
+        </Scripts>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentLabel" inherits="GHM_TextLabel_Template" font="GameFontNormalSmall" text="" justifyH="LEFT">
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="20" y="0"/>
+                            </Offset>
+                        </Anchor>
+
+                    </Anchors>
+                    <FontHeight>
+                        <AbsValue val="11"/>
+                    </FontHeight>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentText">
+                <Size>
+                    <AbsDimension x="100" y="14"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="LEFT" relativePoint="LEFT">
+                        <Offset>
+                            <AbsDimension x="25" y="3"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                    </OnClick>
+                </Scripts>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF" text="">
+                            <Anchors>
+                                <Anchor point="TOPLEFT"/>
+                                <Anchor point="BOTTOMRIGHT"/>
+                            </Anchors>
+                            <FontHeight>
+                                <AbsValue val="10"/>
+                            </FontHeight>
+                            <Color r="1" g="1" b="1"/>
+
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+
+        </Frames>
+    </Frame>
+    -->
+</Ui>

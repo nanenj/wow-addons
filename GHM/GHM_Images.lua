@@ -1,0 +1,1121 @@
+local loaded = false;
+function GHM_LoadImageList()
+	if loaded then
+		return
+	end
+	loaded = true;
+--Creatures
+GHM_IMGLIST = {
+	["Humanoid"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hogger", x = 128, y = 64 },--gnol
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Admiral Ripsnarl", x = 128, y = 64 },--worg
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Eviscerator", x = 128, y = 64 },--worg
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyromancer Loregrain", x = 128, y = 64 },--taur
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-WarmasterBlackhorn", x = 128, y = 64 },--taur
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Helix Gearbreaker", x = 128, y = 64 },--gob
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ribbly Screwspigot", x = 128, y = 64 },--Gob
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tinkerer Gizlock", x = 128, y = 64 },--gob
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lumbering Oaf", x = 128, y = 64 },--gob		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Exarch Maladaar", x = 128, y = 64 },--drae
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mennu the Betrayer", x = 128, y = 64 },--drae
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Swamplord Muselek", x = 128, y = 64 },--drae
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk", x = 128, y = 64 },--QB
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse", x = 128, y = 64 },--QB
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank", x = 128, y = 64 },--qb
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba", x = 128, y = 64 },--qb	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug", x = 128, y = 64 },--qb
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Augh", x = 128, y = 64 },--pyg
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grimlok", x = 128, y = 64 },--trog
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grubbis", x = 128, y = 64 },--trog
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Oggleflint", x = 128, y = 64 }, --trg
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Revelosh", x = 128, y = 64 },--trog	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkweaver Syth", x = 128, y = 64 },--arra
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Erekem", x = 128, y = 64 },--arra
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Talon King Ikiss", x = 128, y = 64 },--ara
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Bjarngrim", x = 128, y = 64 },--vry
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ingvar the Plunderer", x = 128, y = 64 },--vry
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-King Ymiron", x = 128, y = 64 },--vry
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sjonnir the Ironshaper", x = 128, y = 64 },--vry
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Skadi the Ruthless", x = 128, y = 64 },--vry
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Skarvald the Constructor", x = 128, y = 64 },--vry
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nexus Prince Shaffar", x = 128, y = 64 },--eth
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Xevozz", x = 128, y = 64 },--eth
+	},
+	["Aquatic"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warlord Kalithresh", x = 128, y = 64 },--nag
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady NazJar", x = 128, y = 64 },--nag
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess", x = 128, y = 64 },--nag
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Thespia", x = 128, y = 64 },--nag
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Cookie", x = 128, y = 64 },--mur
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gelihast", x = 128, y = 64 },--mur
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mutanus the Devourer", x = 128, y = 64 },--mur
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Eck the Ferocious", x = 128, y = 64 },--oracle
+	},
+	["Ogre"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warbringer Omrogg", x = 128, y = 64 },--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Glubtok", x = 128, y = 64 },--og		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer", x = 128, y = 64 },--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Blackheart the Inciter", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Okthor the Breaker", x = 128, y = 64 },--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok", x = 128, y = 64 },--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk", x = 128, y = 64 },--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Fengus", x = 128, y = 64 },--og
+	--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Stomper Kreeg", x = 128, y = 64 },--og
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Romogg Bonecrusher", x = 128, y = 64 },--og
+	},
+	["Beast"] = {
+		{ p = "", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Anzu", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Beauty", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Beast", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chimaeron", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghazan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-King Dred", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Skum", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kresh", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lockmaw", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rotgrip", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gizrul the Slavener", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Halycon", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hadronox", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mother Smolderweb", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rokmar the Crackler", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Black Stalker", x = 128, y = 64 },	
+	},
+	["Dragonkin"] = {
+		{ p = "", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Epoch Hunter", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Infinite Corruptor", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Aeonus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chrono Lord Deja", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chrono Lord Epoch", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Murozond", x = 128, y = 64 }, -- Infinite
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus", x = 128, y = 64 }, -- Green
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Keristrasza", x = 128, y = 64 }, -- Red
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Varos Cloudstrider", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ley Guardian Eregos", x = 128, y = 64 }, -- Blue
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nazan", x = 128, y = 64 }, -- Nether
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gyth", x = 128, y = 64 }, -- Chromatic
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tsulong", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Elegon", x = 128, y = 64 },-- Celestial
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Slabhide", x = 128, y = 64 },		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Altairus", x = 128, y = 64 },-- Elemental
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Wyrmthalak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Drakkisath", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-NefarianBWD", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-OnyxiaBWD", x = 128, y = 64 }, -- Black
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Atramedes", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Drakos the Interrogator", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Umbriss", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Karsh Steelbender", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Maloriak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Theralion", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ultraxion", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Valiona Dungeon", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Valiona Raid", x = 128, y = 64 }, --Twilight	
+	},
+	["Giant"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Quagmirran", x = 128, y = 64 }, -- Fungal Giant
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hungarfen", x = 128, y = 64 }, -- FG
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Landslide", x = 128, y = 64 }, -- SG	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Krystallus", x = 128, y = 64 }, -- Stone Giant
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Morchok", x = 128, y = 64 }, -- SG
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ozruk", x = 128, y = 64 },--SG	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-BaelGar", x = 128, y = 64 }, -- Molten Giant
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmus", x = 128, y = 64 }, -- MG
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Rhyolith", x = 128, y = 64 }, -- MG
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Volkhan", x = 128, y = 64 },-- S M G
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ironaya", x = 128, y = 64 }, -- titan
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Maiden of Grief", x = 128, y = 64 }, -- Titan
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Loken", x = 128, y = 64 }, -- Titan
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Archaedas", x = 128, y = 64 }, -- titan
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rajh", x = 128, y = 64 }, -- TU
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Isiset", x = 128, y = 64 }, -- T U
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ammunae", x = 128, y = 64 }, -- titan uldum
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Anraphet", x = 128, y = 64 }, -- T U
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Forgemaster Throngus", x = 128, y = 64 }, -- Ettin
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Halfus Wyrmbreaker", x = 128, y = 64 }, -- ettin
+	},
+	["Mechanical"] = {
+		{ p = "", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanotron", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electron", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmatron", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Toxitron", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ancient Stone Keeper", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Phalanx", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Drakkari Colossus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Foe Reaper 5000", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mechano Lord Capacitus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Techbot", x = 128, y = 64 },
+	},
+	["Elemental"] = {
+		{ p = "", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Adarogg", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-AlAkir", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alysrazor", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Amanitar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ambassador Flamelash", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Anomalus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Anshal", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcurion", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Arion", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Asaad", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ascendant Lord Obsidius", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baleroc", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Aquanis", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bethtilac The Red Widow", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Celebras the Cursed", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Corborus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Devourer of Souls", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Elementium Monstrosity", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Feludius", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grand Vizier Ertan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ichoron", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ignacious", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ionar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Krystallus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Laj", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lei Shi", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Incendius", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Overheat", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Roccor", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmaw", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Morchok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Murmur", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nezir", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Noxxion", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyroguard Emberseer", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ragnaros", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rageface", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Razorlash", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Riplimb", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rohash", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shannox", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Siamat", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Verdan the Everliving", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Vexallus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warp Splinter", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Yan Zhu the Uncasked", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Theradras", x = 128, y = 64},
+	},
+	["Undead"] = {
+		{ p = "", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Timmy the Cruel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorekeeper Polkelt", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Ravenian", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Meathook", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ramstein the Gorger", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Forgemaster Garfrost", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ick", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald", x = 128, y = 64 },		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Thalnos the Soulrender", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rattlegore", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Prophet Tharonja", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Earthrager Ptah", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Chillheart", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Novos the Summoner", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ras Frostwhisper", x = 128, y = 64 },		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Unforgiven", x = 128, y = 64 },			
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baroness Anastari", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Svala Sorrowgrave", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Anubarak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Anubshiah", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nerubenkan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Krikthir the Gatewatcher", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dalronn the Controller", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Salramm the Fleshcrafter", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Keleseth", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Taldaram", x = 128, y = 64 },
+	},
+	["Demon"] = {
+		{ p = "", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alizabal", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ambassador Hellmaw", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Argaloth", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Balnazzar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bazzalan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Broggok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dalliah the Doomsayer", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gatewatcher Gyro Kill", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gatewatcher Iron Hand", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Vyletongue", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-MalGanis", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mannoroth", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Moragg", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Occuthar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Omor the Unscarred", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pandemonius", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Perotharn", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Priestess Delrissa", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Selin Fireheart", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shirrak the Dead Watcher", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Taragaman the Hungerer", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Maker", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Thorngrin the Tender", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Wrath Scryer Soccothrates", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Yor", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zereketh the Unbound", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zuramat the Obliterator", x = 128, y = 64 },
+	},
+	["Other"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Ulthok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Herald Volazj", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Yorsahj the Unsleeping", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Erudax", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warlord Zonozz", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mindbender Ghursha", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ozumat", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Harbinger Skyriss", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Husam", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Prophet Barim", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Temple Guardian Anhuur", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gortok Palehoof", x = 128, y = 64 },
+	},
+	["Lore"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Archbishop Benedictus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-BaineBloodhoof", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chogall", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Fandral Staghelm", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Whitemane", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-JainaProudmoore", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kaelthas Sunstrider", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-QueenAzshara", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-SylvanasWindrunner", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tribunal of the Ages", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-TyrandeWhisperwind", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Vanessa VanCleef", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lich King", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Corrupted Deathwing", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Deathwing", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sinestra", x = 128, y = 64 },
+	},
+	["Pandaria"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Amber Shaper Unsok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Blade Lord Tayak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Rimok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Vojak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Pavalak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grand Empress Shekzeer", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Imperial Vizier Zorlok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Saboteur Kiptilak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Striker Gadok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Vizier Jinbak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Wind Lord Meljarak", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Wing Leader Neronok", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Raigonn", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Garalon", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gekkan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Cobalt Guardian", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Feng the Accursed", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jan xi", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ming the Cunning", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Xin the Weaponmaster", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zian of the Endless Shadow", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hoptallus", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ook Ook", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Protector Kaolan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Wise Mari", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gu Cloudstrike", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Liu Flameheart", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorewalker Stonestep", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Master Snowdrift", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Taran Zhu", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sha of Anger", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sha of Doubt", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sha of Fear", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sha of Violence", x = 128, y = 64 },
+	},
+	["Dwarf"] = {		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baelog", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Stoutbeard", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Eric the Swift", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Olaf", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Moira Bronzebeard", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-AngerRel", x = 128, y = 64 }, --DI
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-DoomRel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-DopeRel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-GloomRel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-HateRel", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-SeethRel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-VileRel", x = 128, y = 64 },		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Keeper Bethek", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Keeper Ofgut", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Keeper Pelver", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Keeper Uggel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Keeper Vorfalk", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Keeper Zimrel", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Emperor Thaurissan", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Fineous Darkvire", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Galgann Firehammer", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Angerforge", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Golem Lord Argelmach", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Justice Grimstone", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Grebmar", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hurley Blackbreath", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warder Stilgiss", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Plugger Spazzring", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Krick", x = 128, y = 64 },
+	},
+	["Orc"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Kolurg", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dark Shaman Koranthal", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grand Champions-Horde", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hagara", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jedoga Shadowseeker", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jergosh the Invoker", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Drahga Shadowburner", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lava Guard Gordoth", x = 128, y = 64 },--F G	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Vazruden", x = 128, y = 64 }, --F
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kelidan the Breaker", x = 128, y = 64 },--F
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Blood Guard Porung", x = 128, y = 64 }, --F
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grand Warlock Nethekurse", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warchief Kargath Bladefist", x = 128, y = 64 },-- F B
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Watchkeeper Gargolmar", x = 128, y = 64 }, -- F B
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warchief Rend Blackhand", x = 128, y = 64 }, --B
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Quartermaster Zigris", x = 128, y = 64 }, --B
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grandmaster Vorpil", x = 128, y = 64 }, --B
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gorosh the Dervish", x = 128, y = 64 }, --B	
+	},
+	["Elf"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Asira Dawnslayer", x = 128, y = 64 }, -- BE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Sarannis", x = 128, y = 64 }, -- BE 
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Botanist Freywinn", x = 128, y = 64 }, -- BE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris", x = 128, y = 64 }, -- BE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nethermancer Sepethrea", x = 128, y = 64 },--BE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pathaleon the Calculator", x = 128, y = 64 }, -- BE	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Cyanigosa", x = 128, y = 64 }, -- HE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grand Magus Telestra", x = 128, y = 64 }, -- HE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Malicia", x = 128, y = 64 },-- HE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Anacondra", x = 128, y = 64 }, -- NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Cobrahn", x = 128, y = 64 },--NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Pythas", x = 128, y = 64 },--NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Serpentis", x = 128, y = 64 },--NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak", x = 128, y = 64 }, -- NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris", x = 128, y = 64 },--NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin", x = 128, y = 64 },--NE
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Varothen", x = 128, y = 64 }, -- NE
+	},
+	["Human"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grand Champions-Alliance", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lieutenant Drake", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Skarloc", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mage Lord Urom", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magistrate Barthilas", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Randolph Moloch", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Flameweaver Koegler", x = 128, y = 64 },	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan", x = 128, y = 64 },--SC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Armsmaster Harlan", x = 128, y = 64 },--SC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Brother Korloff", x = 128, y = 64 },--SC	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Herod", x = 128, y = 64 },--SC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Braun", x = 128, y = 64 },--SC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey", x = 128, y = 64 },--SC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas", x = 128, y = 64 },--SC	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Scarlet Commander Mograine", x = 128, y = 64 },--SC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Argent Confessor Paletress", x = 128, y = 64 },--AC	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Eadric the Pure", x = 128, y = 64 },--AC		
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn", x = 128, y = 64 }, --TC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett", x = 128, y = 64 }, --TC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Corla, Herald of Twilight", x = 128, y = 64 }, --TC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bronjahm", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Doctor Theolen Krastinov", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Priestess Azil", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jandice Barov", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Aurius Rivendare", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Maleki the Pallid", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Falric", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Marwyn", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Scourgelord Tyrannus", x = 128, y = 64 },--DC
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Black Knight", x = 128, y = 64 },--DC,
+	},
+	["Forsaken"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Ashbury", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Godfrey", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Walden", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Malor", x = 128, y = 64 },--scarlet
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks", x = 128, y = 64 },--scarlet
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Galford", x = 128, y = 64 },--scarlet
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Willey Hopebreaker", x = 128, y = 64 }, -- Scarlet
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lillian Voss", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Marduk Blackpool", x = 128, y = 64 },
+	},
+	["Troll"] ={
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Antusul", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodlord Mandokir", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chief Ukorz Sandscalp", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Daakara", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Galdarah", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Garajal the Spiritbinder", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hazzarah", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hex Lord Malacrass", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Priest Venoxis", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Priestess Kilnara", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jindo the Godbreaker", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Moorabi", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nekrum Gutchewer", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Renataki", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ruuzlu", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadow Hunter Voshgajin", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadowpriest Sezzizz", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Theka the Martyr", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-War Master Voone", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Witch Doctor Zumrah", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Wushoolay", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zanzil the Outcast", x = 128, y = 64 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grilek", x = 128, y = 64 },--GT
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grizzle", x = 128, y = 64 }, -- GT	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Trollgore", x = 128, y = 64 },--GT
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akilzon", x = 128, y = 64 }, -- AP
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Halazzi", x = 128, y = 64 }, -- AP
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nalorakk", x = 128, y = 64 },--AP	
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Janalai", x = 128, y = 64 },--AP
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sladran", x = 128, y = 64 },--AP	
+	},
+	["Alliance Symbols"] = {
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-DRAENEI",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-DraeneiBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-DWARF",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-DwarfBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-NIGHTELF",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-NightElfBIG",x=256,y=256},
+		{p="Interface\\Calendar\\UI-Calendar-Event-PVP02",x=256,y=256},
+		{p="Interface\\Timer\\Alliance-Logo",x=256,y=256},
+	},
+	["Horde Symbols"] = {
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-ORC",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-OrcBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-TROLL",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-TrollBIG",x=256,y=256},
+		{p="Interface\\Calendar\\UI-Calendar-Event-PVP01",x=256,y=256},
+		{p="Interface\\FlavorImages\\BloodElfLogo-small",x=256,y=256},
+		{p="Interface\\Timer\\Horde-Logo",x=256,y=256},
+	},
+	["Magic Symbols"] = {
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune1",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-1",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-2",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-3",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-4",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-5",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-6",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-7",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-8",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-9",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-10",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-11",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-12",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-13",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-14",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-15",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-16",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-17",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-18",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-19",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-Glyph-Rune-20",x=256,y=256},
+		{p="Interface\\SpellShadow\\Spell-Shadow-Acceptable",x=256,y=256},
+		{p="Interface\\SPELLBOOK\\UI-GlyphFrame-Glow",x=256,y=256},
+		{p="Interface\\Transmogrify\\EtherealLines",x=256,y=256},
+	},
+	["Other Symbols"] = {
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-FOSSIL",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-FossilBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-MISC",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-MiscBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-Mogu",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-MoguBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-NERUBIAN",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-NerubianBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-Pandaren",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-PandarenBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-TOLVIR",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-TolvirBIG",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ARCH-RACE-VRYKUL",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-Race-VrykulBIG",x=256,y=256},
+		{p="Interface\\Calendar\\EventNotification",x=256,y=256},
+		{p="Interface\\Challenges\\ChallengeMode_Medal_Bronze",x=256,y=256},
+		{p="Interface\\Challenges\\challenges-bronze",x=256,y=256},
+		{p="Interface\\Challenges\\ChallengeMode_Medal_Silver",x=256,y=256},
+		{p="Interface\\Challenges\\challenges-silver",x=256,y=256},
+		{p="Interface\\Challenges\\ChallengeMode_Medal_Gold",x=256,y=256},
+		{p="Interface\\Challenges\\challenges-gold",x=256,y=256},
+		{p="Interface\\Challenges\\ChallengeMode_Medal_Platinum",x=256,y=256},
+		{p="Interface\\Challenges\\challenges-plat",x=256,y=256},
+		{p="Interface\\FlavorImages\\ScarletCrusadeLogo",x=256,y=256},
+		{p="Interface\\Timer\\Panda-Logo",x=256,y=256},
+		{p="Interface\\PaperDollInfoFrame\\Character-Plus",x=256,y=256},
+	},
+	["Holidays"] = {
+		{p="Interface\\Calendar\\Holidays\\Calendar_BrewfestStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_ChildrensWeekStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_DayOfTheDeadEnd",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_DayOfTheDeadStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_Fireworks",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_FishingExtravaganza",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_HallowsEndEnd",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_HallowsEndStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_HarvestFestivalEnd",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_HarvestFestivalStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_MidsummerStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_NoblegardenStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_OlymicsStart",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_PiratesDay",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_WinterVeilEnd",x=256,y=256},
+		{p="Interface\\Calendar\\Holidays\\Calendar_WinterVeilStart",x=256,y=256}	
+	},
+	["Artifacts"] = {
+		{p="Interface\\ARCHEOLOGY\\ArchRare-AmberFly",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-AncientShamanHeaddress",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-BabyPterrodax",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-BonesOfTransformation",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-ChaliceMountainKings",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-ClockworkGnome",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-CthunsPuzzleBox",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-DinosaurSkeleton",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-DraeneiRelic",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-DruidandPriestStatue",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-GenBeauregardsLastStand",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-HighborneSoulMirror",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-KaldoreiWindChimes",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-OldGodTrinket",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-PandarenTortureDummy",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-PendantoftheAqir",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-QueenAzsharaGown",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-QuilinStatue",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-RingoftheBoyEmperor",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-ScepterofAzAqir",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-ScimitaroftheSirocco",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-ShriveledMonkeyPaw",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-SpearofXuen",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-StaffofAmmunrae",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-StaffofSorcererThanThaurissan",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TheInnKeepersDaughter",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TinyDinosaurSkeleton",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TrollDrum",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TrollGolem",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TrollVoodooDoll",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TurtleShield",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-TyrandesFavoriteDoll",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-UmbrellaofChiJi",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-VrykulDrinkingHorn",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-WispAmulet",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\ArchRare-ZinRokhDestroyer",x=256,y=256},
+		{p="Interface\\ARCHEOLOGY\\Arch-TempRareSketch",x=256,y=256},
+	},
+	["Character Portraits"] = {
+		{p="Interface\\CHARACTERFRAME\\TemporaryPortrait-Vehicle-Organic",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TemporaryPortrait-Vehicle-Mechanical",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-PET",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TemporaryPortrait-Monster",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-WORGEN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-TROLL",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-TAUREN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-SCOURGE",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-PANDAREN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-ORC",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-NIGHTELF",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-HUMAN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TemporaryPortrait-Male-Goblin",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-GNOME",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-GILNEAN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-DWARF",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-DRAENEI",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-MALE-BLOODELF",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-WORGEN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-TROLL",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-TAUREN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-SCOURGE",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-PANDAREN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-ORC",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-NIGHTELF",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-HUMAN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-GOBLIN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-GNOME",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-GILNEAN",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-DWARF",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-DRAENEI",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TEMPORARYPORTRAIT-FEMALE-BLOODELF",x=256,y=256},
+		{p="Interface\\CHARACTERFRAME\\TemporaryPortrait",x=256,y=256},
+	},
+	["Solid Scenes"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-AhnkahetTheOldKingdom", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Auchindoun", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-AzjolNerub", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-BaradinHold", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-BlackfathomDeeps", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-BlackrockCaverns", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-BlackrockDepths", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-BlackrockSpire", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-BlackwingDescent", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-CavernsOfTime", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-CoilfangReservoir", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Deadmines", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-DireMaul", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-DragonSoul", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-DrakTharonKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-EndTime", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Firelands1", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-GateoftheSettingSun", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Gnomeregan", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-GrimBatol", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-GrimBatolRaid", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Gundrak", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HallsofLightning", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HallsofOrigination", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HallsofReflection", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HallsofStone", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HeartofFear", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HellfireCitadel", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-HourOfTwilight", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-LostCityofTolvir", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Magisters Terrace", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Maraudon", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-MogushanPalace", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-MogushanVaults", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Pandaria", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-PitofSaron", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-RagefireChasm", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-RazorfenDowns", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-RazorfenKraul", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ScarletHalls", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ScarletMonastery", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Scholomance", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ShadowFangKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ShadowpanMonastery", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-SiegeofNizaoTemple", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-SkywallRaid", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-StormstoutBrewery", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Stratholme", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-SunkenTemple", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TempestKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TempleoftheJadeSerpent", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TerraceoftheEndlessSpring", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TheCullingOfStratholme", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TheForgeofSouls", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TheNexus", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TheOculus", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TheStockade", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TheStonecore", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-VortexPinnacle", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ThroneoftheTides", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-TrialOfTheChampion", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-Uldaman", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-UtgardeKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-UtgardePinnacle", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-VioletHold", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-WailingCaverns", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-WellOfEternity", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ZulAman", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ZulFarrak", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-LOREBG-ZulGurub", x = 256, y = 256 },
+	},
+	["Faded Scenes"] = {
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-AhnkahetTheOldKingdom", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Auchindoun", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-AzjolNerub", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-BaradinHold", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-BlackfathomDeeps", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-BlackrockCaverns", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-BlackrockDepths", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-BlackrockSpire", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-BlackwingDescent", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-CavernsOfTime", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-CoilfangReservoir", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Deadmines", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-DireMaul", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-DragonSoul", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-DrakTharonKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-EndTime", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Firelands1", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-GateoftheSettingSun", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Gnomeregan", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-GrimBatol", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-GrimBatolRaid", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Gundrak", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HallsofLightning", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HallsofOrigination", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HallsofReflection", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HallsofStone", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HeartofFear", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HellfireCitadel", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-HourOfTwilight", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-LostCityofTolvir", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-MagistersTerrace", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Maraudon", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-MogushanPalace", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-MogushanVaults", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Pandaria", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-PitofSaron", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-RagefireChasm", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-RazorfenDowns", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-RazorfenKraul", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ScarletHalls", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ScarletMonastery", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Scholomance", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ShadowFangKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ShadowpanMonastery", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-SiegeofNizaoTemple", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-SkywallRaid", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-StormstoutBrewery", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Stratholme", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-SunkenTemple", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TempestKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TempleoftheJadeSerpent", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TerraceoftheEndlessSpring", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheCullingOfStratholme", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheForgeofSouls", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheNexus", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheOculus", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheStockade", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheStonecore", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TheVortexPinnacle", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ThroneoftheTides", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-TrialOfTheChampion", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-Uldaman", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-UtgardeKeep", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-UtgardePinnacle", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-VioletHold", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-WailingCaverns", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-WellOfEternity", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ZulAman", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ZulFarrak", x = 256, y = 256 },
+		{ p = "Interface\\EncounterJournal\\UI-EJ-BACKGROUND-ZulGurub", x = 256, y = 256 },
+	},
+	["Vehicels"] = {
+		{p="Interface\\MINIMAP\\VEHICLE-AIR-ALLIANCE",x=256,y=256},
+		{p="Interface\\MINIMAP\\VEHICLE-AIR-HORDE",x=256,y=256},
+		{p="Interface\\MINIMAP\\Vehicle-Carriage",x=256,y=256},
+		{p="Interface\\Vehicles\\SeatIndicator\\vehicle-mammoth",x=256,y=256},
+		{p="Interface\\Vehicles\\SeatIndicator\\vehicle-motorcycle",x=256,y=256},
+		{p="Interface\\Vehicles\\SeatIndicator\\vehicle-rocket",x=256,y=256},
+		{p="Interface\\Vehicles\\SeatIndicator\\vehicle-yak",x=256,y=256},
+	},
+	["Target Symbols"] = {
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_1",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_2",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_3",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_4",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_5",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_6",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_7",x=256,y=256},
+		{p="Interface\\TARGETINGFRAME\\UI-RaidTargetingIcon_8",x=256,y=256},	
+	},
+	["Continent"] = {
+		{p="Interface\\TAXIFRAME\\TAXIMAP0",x=256,y=256},
+		{p="Interface\\TAXIFRAME\\TAXIMAP1",x=256,y=256},
+		{p="Interface\\TAXIFRAME\\TAXIMAP530",x=256,y=256},
+		{p="Interface\\TAXIFRAME\\TAXIMAP571",x=256,y=256},
+		{p="Interface\\TAXIFRAME\\Taximap870",x=256,y=256},
+	},
+	["World"] = {
+		{p="Interface\\GLues\\LOADINGSCREENS\\LoadScreenWorld",x=512,y=512},
+	},
+	["Misc"] = {
+		{p="Interface\\PetBattles\\MountJournal-NoMounts",x=256,y=256},
+		{p="Interface\\PetBattles\\PetBattlesQueue",x=256,y=256},
+		{p="Interface\\Pictures\\9330_gammerita_color_256",x=256,y=256},
+		{p="Interface\\Pictures\\9330_gammerita_sepia_256",x=256,y=256},
+		{p="Interface\\Pictures\\11482_crystals_east",x=256,y=256},
+		{p="Interface\\Pictures\\11482_crystals_north",x=256,y=256},
+		{p="Interface\\Pictures\\11482_crystals_west",x=256,y=256},
+		{p="Interface\\Pictures\\11482_crystals_mini_east",x=256,y=256},
+		{p="Interface\\Pictures\\11482_crystals_mini_north",x=256,y=256},
+		{p="Interface\\Pictures\\11482_crystals_mini_west",x=256,y=256},
+		{p="Interface\\Pictures\\11733_nightdragon_256",x=256,y=256},
+		{p="Interface\\Pictures\\11733_whipper_256",x=256,y=256},
+		{p="Interface\\Pictures\\11733_windblossom_256",x=256,y=256},
+		{p="Interface\\Pictures\\11733_blackrock_256",x=256,y=256},
+		{p="Interface\\Pictures\\11733_blasted_256",x=256,y=256},
+		{p="Interface\\Pictures\\11733_ungoro_256",x=256,y=256},
+		{p="Interface\\Pictures\\11733_bldbank_256",x=256,y=256},
+		{p="Interface\\Pictures\\14679_Tirion_256",x=256,y=256},
+		{p="Interface\\Pictures\\Linken__color_256px",x=256,y=256},
+		{p="Interface\\Pictures\\Linken_sepia_256px",x=256,y=256},
+		{p="Interface\\Pictures\\obj_nesingwary_256",x=256,y=256},
+		{p="Interface\\Pictures\\Winterspring_Memento_256",x=256,y=256},
+		{p="Interface\\Pictures\\21037_crudemap_256",x=256,y=256},
+		{p="Interface\\Pictures\\24475_gordawg_256",x=256,y=256},
+	},
+-- Maps
+	["Arathi"] = {
+		{p="Interface\\WorldMap\\Arathi\\BoulderfistHall1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\Bouldergor1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\CircleOfEastBinding1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\CircleofInnerBinding1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\CircleofWestBinding1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\CirecleofOuterBinding1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\DabyriesFarmstead1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\FaldirsCove1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\GalensFall1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\GoShekFarm1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\Hammerfall1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\NorthfoldManor1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\RefugePoint1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\StromgardeKeep1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\ThandolSpan1",x=256,y=256},
+		{p="Interface\\WorldMap\\Arathi\\WitherbarkVillage1",x=256,y=256},
+	},
+	["Ashenvale"] = {
+		{p="Interface\\WorldMap\\Ashenvale\\Astranaar1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\BoughShadow1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\FallenSkyLake1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\FelfireHill1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\LakeFalathim1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\MaelstrasPost1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\MaelstrasPost2",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\NightRun1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\OrendilsRetreat1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\RaynewoodRetreat1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\Satyrnaar1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\SilverwindRefuge1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\TheHowlingVale1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\TheRuinsofStardust1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\TheShrineofAssenia1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\TheZoramStrand1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\TheZoramStrand3",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\ThistlefurVillage1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\ThunderPeak1",x=256,y=256},
+		{p="Interface\\WorldMap\\Ashenvale\\WarsongLumberCamp1",x=256,y=256},	
+	},
+	["Azshara"] = {
+		{p="Interface\\WorldMap\\Azshara\\BearsHead1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\BilgewaterHarbor1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\BilgewaterHarbor2",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\BilgewaterHarbor4",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\BilgewaterHarbor5",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\BitterReaches1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\BlackmawHold1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\DarnassianBaseCamp1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\GallywixPleasurePalace1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\LAKEMENNAR1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\OrgimmarRearGate1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\OrgimmarRearGate2",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\RavencrestMonument1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\RuinsofArkkoran1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\RUINSOFELDARATH1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\StormCliffs1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\TheSecretLab1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\THESHATTEREDSTRAND1",x=256,y=256},
+		{p="Interface\\WorldMap\\Azshara\\TowerofEldara1",x=256,y=256},
+	},
+	["Azuremyst Isle"] = {
+		{p="Interface\\WorldMap\\AzuremystIsle\\AmmenFord1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\AmmenVale1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\AmmenVale2",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\AmmenVale3",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\AmmenVale4",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\AzureWatch1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\BristlelimbVillage1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\Emberglade1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\FairbridgeStrand1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\GreezlesCamp1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\MoongrazeWoods1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\NestlewoodHills1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\OdesyusLanding1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\PodCluster1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\PodWreckage1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\ShadowRidge1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\SiltingShore1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\SilvermystIsle1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\StillpineHold1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\TheExodar1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\TheExodar2",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\ValaarsBerth1",x=256,y=256},
+		{p="Interface\\WorldMap\\AzuremystIsle\\WrathscalePoint1",x=256,y=256},
+	},
+	["Badlands"] = {
+		{p="Interface\\WorldMap\\Badlands\\AgmondsEnd1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\AgmondsEnd2",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\AgmondsEnd3",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\AgmondsEnd4",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\AngorFortress1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\ApocryphansRest1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\ApocryphansRest2",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\CampBoff1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\CampBoff3",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\CampCagg1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\CampCagg2",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\CampKosh1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\DeathwingScar1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\DeathwingScar2",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\HammertoesDigsite1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\LethlorRavine1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\LethlorRavine2",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\LethlorRavine3",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\LethlorRavine4",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\TheDustbowl1",x=256,y=256},
+		{p="Interface\\WorldMap\\Badlands\\Uldaman1",x=256,y=256},
+	},
+	["Northern Barrens"] = {
+		{p="Interface\\WorldMap\\Barrens\\BoulderLodeMine1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\DreadmistPeak1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\FarWatchPost1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\GroldomFarm1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\MorshanRampart1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\Ratchet1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheCrossroads1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheDryHills1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheForgottenPools1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheForgottenPools2",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheMerchantCoast1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheSludgeFen1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheStagnantOasis1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheStagnantOasis2",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheWailingCaverns1",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\TheWailingCaverns2",x=256,y=256},
+		{p="Interface\\WorldMap\\Barrens\\ThornHill1",x=256,y=256},
+	},
+	["Southern Barrens"] = {
+		{p="Interface\\WorldMap\\SouthernBarrens\\BaelModan1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\Battlescar1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\Battlescar2",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\ForwardCommand1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\FrazzlecrazMotherload1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\HonorsStand1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\HuntersHill1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\NorthwatchHold1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\RazorfenKraul1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\RuinsofTaurajo1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\TheOvergrowth1",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\TheOvergrowth2",x=256,y=256},
+		{p="Interface\\WorldMap\\SouthernBarrens\\VendettaPoint1",x=256,y=256},
+	},
+	["Blade's Edge Mountains"] = {
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\BashirLanding1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\BladedGulch1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\BladesipreHold1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\BloodmaulCamp1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\BloodmaulOutpost1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\BrokenWilds1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\CircleofWrath1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\DeathsDoor1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\FelstormPoint1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\FelstormPoint2",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\ForgeCampAnger1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\ForgeCampTerror1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\ForgeCampWrath1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\Grishnath1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\GruulsLayer1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\JaggedRidge1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\MokNathalVillage1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\RavensWood1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\RazorRidge1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\RidgeofMadness1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\RuuanWeald1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\Skald1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\Sylvanaar1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\TheCrystalpine1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\TheSingingRidge1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\ThunderlordStronghold1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\VeilLashh1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\VeilRuuan1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\VekhaarStand1",x=256,y=256},
+		{p="Interface\\WorldMap\\BladesEdgeMountains\\VortexPinnacle1",x=256,y=256},
+		--{p="Interface\\WorldMap\\BladesEdgeMountains\\",x=256,y=256},
+	},
+--
+}
+end
+
+local catLoaded = false;
+function GHM_GetImageCat()
+	if catLoaded then
+		return
+	end
+	catLoaded = true;
+GHM_IMGCATLIST = {
+	["Creatures"] = {
+		["Races"] = {
+			"Troll",
+			"Forsaken",
+			"Elf",
+			"Dwarf",
+			"Orc",
+			"Human",
+			"Ogre",
+			"Aquatic",
+			"Humanoid",
+		},
+		["Monster"] = {
+			"Beast",
+			"Demon",
+			"Dragonkin",
+			"Elemental",
+			"Mechanical",
+			"Undead",
+			"Giant",
+			"Lore",
+			"Pandaria",
+			"Other",
+		},
+	},
+	["Maps"] = {
+		["Full Maps"] = {
+			"Continent",
+			"World",
+		},		
+		["Kalimdor"] = {
+			"Ashenvale",
+			"Azshara",
+			"Azuremyst Isle",
+			"Northern Barrens",
+			
+		},
+		["Eastern Kingdoms"]={
+			"Arathi",
+			"Badlands",
+		},
+		["Outland"] = {
+			"Blade's Edge Mountains",
+		},
+	},
+	["Symbols"] = {
+		"Alliance Symbols",
+		"Horde Symbols",
+		"Magic Symbols",
+		"Other Symbols",
+		"Artifacts",
+		"Holidays",
+		"Vehicels",
+		"Target Symbols",
+	},
+	["Pictures"] = {
+		"Solid Scenes",
+		"Faded Scenes",
+		"Misc",
+	},
+	
+}
+end
+
+

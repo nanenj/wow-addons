@@ -1,0 +1,46 @@
+## Interface: 50001
+## Title: Tongues
+## Version:1.5.1d
+## Notes: Create and use custom-defined languages, dialects, effects, and filters.
+## DefaultState: Enabled
+## Author: (Original)Skrull Adams (maintainer)Aurorablade/Fethas
+## OptionalDeps: Trey
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: Tongues_Global
+## SavedVariablesPerCharacter: Tongues_Character
+-----------------------------------------------------------
+
+Core\LibStub\LibStub.lua
+Core\CallBackHandler-1.0\CallBackHandler-1.0.xml
+Core\LibDataBroker-1.1.lua
+libs\AceComm-3.0\AceComm-3.0.xml
+libs\AceSerializer-3.0\AceSerializer-3.0.xml
+libs\LibBabble-Race-3.0\lib.xml
+libs\LibBabble-Faction-3.0\lib.xml
+libs\LibBabble-CreatureType-3.0\lib.xml
+
+locales.lua
+Core\Object.lua
+Core\libs.lua
+Core\filters.lua
+Custom\customfilters.lua
+Core\affects.lua
+Custom\customaffects.lua
+Core\phonetics.lua
+Core\languages.lua
+Custom\customlanguages.lua
+Core\dialects.lua
+Custom\customdialects.lua
+Core\UI.lua
+Core\pets.lua
+Core\mounts.lua
+Tongues.lua
+comm.lua
+
+
+
+
+
+
+

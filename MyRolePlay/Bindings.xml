@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="CHARACTER_SHEET" description="Browse Target Player’s Character Profile" header="MYROLEPLAY">
+		mrp:Show()
+	</Binding>
+</Bindings>

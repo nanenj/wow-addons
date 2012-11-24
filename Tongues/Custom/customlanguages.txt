@@ -1,0 +1,166 @@
+-----------------------------------------------------------------------------------------------------
+-- Custom Language: Atali
+-- 	Adapted for
+Tongues.Custom.Language["Atali"] = {
+	[1] = { "e", "u", "a","i"},
+	[2] = { "ei", "ah", "gi", "ni", "du", "he", "na", "ne", "el", "al", "am" , "at", "ak","ur", "en", "te" },
+	[3] = { "hai", "sur", "fei", "tul", "maq", "dur", "mat", "zen","zai", "zul", "rax", "nor", "tan"},
+	[4] = { "rana", "vede", "xora", "mada", "rini", "nado", "zifu", "jade", "made" },
+	[5] = { "nando", "amman", "midir", "karas", "vidir", "uzuli" },
+	[6] = { "sulani", "ommari", "wakari", "sunori", "serenity", "kuvvas" },
+	[7] = { "reespek", "rivasut", "yahsoda", "lok'dim", "craaveh", "godeshi", "uptfeil" },
+	[8] = { "machette", "oondasta", "wehnehji", "nyamanro", "vhutless", "zutiping" },
+	[9] = { "or'manlei", "fus'obeai", "tor'vasai" }
+};
+
+Tongues.Custom.Language["Atali"]["ignore"] = { "Durotar", "Zandalar", "Voodoo", "Hakkar", "exodar", "Amani", "Darkspear","Thrall","Sylvannas","Vol'jin","Bloodhoof","Kael'thas","Theron","Wrynn","Proudmoore","Tyrande","Malfurion","Illidan","Zul'Amman","Zul'Gurub","Ula'tek","C'thun"};
+
+Tongues.Custom.Language["Atali"]["substitute"] = {
+	["faithful"]	= "Atal",
+	["brethren"]	= "Atal'ai",
+	["god"]		= "Hakkar",
+	["good"]	= "nando",
+	["evil"]	= "raxas",
+	["elune"]	= "Sidana",
+	["moon"]	= "Si",
+	["demon"]	= "hudar",
+	["scourge"]	= "Rax'ali",
+	["malourne"]	= "Ch'hadas",
+	["sun"]		= "hada",
+	["tauren"]	= "Toro",
+	["orc"]		= "Maniri",
+	["undead"]	= "Dedar",
+	["blood elf"]	= "Dorei",
+	["troll"]	= "Zandali",
+	["human"]	= "Zidu",
+	["dwarf"]	= "Ari",
+	["night elf"]	= "Dorei",
+	["draenei"]	= "Er'un",
+	["gnome"]	= "Ti'kar",
+	["worgen"]	= "Halani",
+	["wolf"]	= "hala",
+	["priest"]	= "Atal",
+	["shaman"]	= "Vol",
+	["druid"]	= "Ji",
+	["hunter"]	= "Da'Kar",
+	["warlock"]	= "Hur",
+	["warrior"]	= "Dar",
+	["rogue"]	= "Rax'an",
+	["deathknight"]	=" Dar ti'rax",
+	["mage"]	= "Sura",
+	["paladin"]	= "Dar'atal",
+	["undercity"]	= "Dedar'nar",
+	["silvermoon"]	= "Hada'nar" ,
+	["thunder bluff"]= "Toro'nar",
+	["orgrimmar"]	= "Orgi'nar",
+	["stormwind"]	= "Zidu'nar",
+	["ironforge"]	= "Ari'nar",
+	["darnassus"]	= "Sida'nar",
+	["blood"]	= "s'an'kar",
+};
+
+-- Tongues.Language: Tier ( Druidic, Yserran )
+Tongues.Custom.Language["Tier"] = {
+	[1] = { "a", "i", "y" },
+	[2] = { "aw", "en", "ae", "ne", "cy", "iy", "ey", "na" },
+	[3] = { "aos", "era", "fey", "nen", "tre", "awr", "duw", "aur", "gey", "tir", "cad", "anu", "kin", "ddu", "fae", "tir", "nog" },
+	[4] = { "caer", "waer", "daea", "bael", "bryn", "iaen", "cetr", "tref", "maen", "trud", "nuid", "aech", "faer", "yser", "mana", "ffin", "leir", "awen", "iona", "mach", "rvyf" },
+	[5] = { "gwion", "skaen", "dgaes", "ma'nae", "waith", "dagda", "rae'an", "sidhe", "faery", "ffyrd", "aegya", "celti", "gaegh", "waend", "esgid", "aegas", "laedr" },
+	[6] = { "claedd", "gildas", "taulkn", "darrow", "aefror", "ynifer", "mynydd", "llythr", "braegg", "areant", "cyffes", "aelfin", "mircae", "eliade", "thaede", "caegis", "tirnag" },
+	[7] = { "haegest", "dyffryn", "faerion", "nenneas", "swyddwr", "esgidin", "myrddin", "loch'wae", "gwydean", "elidaea", "creirwy", "afaegdu", "cenaryn" },
+	[8] = { "talaesin", "caer-mana", "noswaith", "aeswaith", "maerthyr", "ffenestr", "talhearn", "glaerdas", "irenaeus", "nemaeddr", "vaughran", "gwendydd", "fyrdraga" },
+	[9] = { "rhydderch", "llallogan", "angrboden", "gogyrwen", "marchaewg", "cynfeirdd", "milwraeth", "caeridwen", "arianrhed", "aaeyweayn" },
+	[10] = { "anysberwyd", "caer-tolgen", "aenydarrow", "saef'gyraen", "waithlaend", "caerhmn'ken", "andaest'ken", "nun'daergyr", "mal'faerion", "caer-aefryt", "ffaeryllt", "cynfaelyn" },
+	[11] = { "caermarthen", "nogdruddymn", "cenariumnae", "gwerthmandd", "darrowgryal", "ffelmnirhod", "mana-waeddyr", "feyffilndel" },
+	[12] = { "gremydigaeth", "aendlwygaere", "dae'neirwaith", "gaegh'ffaenyr", "weirglaerdas", "theymnaeddyr" }
+};
+
+-- ignore: Tier
+Tongues.Custom.Language["Tier"]["ignore"] = { "Tier", "Ysera", "Cenarius" };
+
+-- Altwords: Tier
+Tongues.Custom.Language["Tier"]["substitute"] = {
+	["druid"] 	= "weir", 
+	["druids"]	="weirye", 
+	["druidic"]	="tier", 
+	["yseran"]	="tier", 
+	["dream"]	="faery", 
+	["dreams"]	="fiaery"
+};
+
+-- Alternate title: Druidic - Tongues.Language: Tier
+Tongues.Custom.Language["Druidic"] = {
+	["alias"] = "Tier"
+};
+-- Alternate title: Yserran - Tongues.Language: Tier
+Tongues.Custom.Language["Yseran"] = {
+	["alias"] = "Tier"
+};
+
+Tongues.Custom.Language["Tier"].Difficulty = {
+	["default"] 	= 1000;
+
+	["Alliance"] 	= 0;
+	["Horde"] 	= 0;
+
+	["Human"]	= 0;
+	["Dwarf"] 	= 0;
+	["Gnome"] 	= 0;
+	["Night Elf"] 	= 0;
+	["Draenei"]	= 0;
+
+	["Orcish"]	= 0;
+	["Troll"]	= 0;
+	["Undead"]	= 0;
+	["Tauren"]	= 0;
+	["Blood Elf"]	= 0;
+
+	["Warrior"]	= 0;
+	["Rogue"]	= 0;
+	["Druid"]	= -900;
+	["Mage"]	= 0;
+	["Warlock"]	= 0;
+	["Paladin"]	= 0;
+	["Priest"]	= 0;
+	["Shaman"]	= 0;
+	["Hunter"]	= 0;
+	["Death Knight"]= 0;
+};
+
+Tongues.Custom.Language["Un'Gorian"] = {
+	[1] = { "a", "n", "g", "o", "l" };
+	[2] = { "ha", "ko", "no", "mu", "ag", "ka", "gi", "il" };
+	[3] = { "lok", "tar", "kaz", "ruk", "kek", "mog", "zug", "gul", "nuk", "aaz", "kil", "ogg" };
+	[4] = { "rega", "nogu", "tago", "uruk", "kagg", "zaga", "grom", "ogar", "gesh", "thok", "dogg", "maka", "maza" };
+	[5] = { "regas", "nogah", "kazum", "magan", "no'bu", "golar", "throm", "throm", "zugas", "re'ka", "no'ku", "ro'th" };
+	[6] = { "thrakk", "revash", "nakazz", "moguna", "no'gor", "goth'a", "raznos", "ogerin", "gezzno", "thukad", "makogg", "aaz'no" };
+};
+Tongues.Custom.Language["Un'Gorian"].Difficulty = {
+	["default"] 	= 1000;
+
+	["Alliance"] 	= 0;
+	["Horde"] 	= 0;
+
+	["Human"]	= 0;
+	["Dwarf"] 	= 0;
+	["Gnome"] 	= 0;
+	["Night Elf"] 	= 0;
+	["Draenei"]	= 0;
+
+	["Orcish"]	= 0;
+	["Troll"]	= 0;
+	["Undead"]	= 0;
+	["Tauren"]	= 0;
+	["Blood Elf"]	= 0;
+
+	["Warrior"]	= 0;
+	["Rogue"]	= 0;
+	["Druid"]	= 0;
+	["Mage"]	= 0;
+	["Warlock"]	= 0;
+	["Paladin"]	= 0;
+	["Priest"]	= 0;
+	["Shaman"]	= 0;
+	["Hunter"]	= 0;
+	["Death Knight"]= 0;
+};

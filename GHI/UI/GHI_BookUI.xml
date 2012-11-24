@@ -1,0 +1,2034 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+
+    <Font name="GHI_ItemTextFontH1" font="Fonts\MORPHEUS.TTF" justifyH="CENTER" virtual="true">
+        <FontHeight>
+            <AbsValue val="24"/>
+        </FontHeight>
+        <Color r="0.18" g="0.12" b="0.06"/>
+    </Font>
+
+    <Font name="GHI_ItemTextFontH2" font="Fonts\MORPHEUS.TTF" justifyH="CENTER" virtual="true">
+        <FontHeight>
+            <AbsValue val="20"/>
+        </FontHeight>
+        <Color r="0.18" g="0.12" b="0.06"/>
+    </Font>
+
+
+    <Frame name="GHI_ItemTextFrame" toplevel="true" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+        <Size>
+            <AbsDimension x="384" y="512"/>
+        </Size>
+        <Anchors>
+            <Anchor point="TOPLEFT">
+                <Offset>
+                    <AbsDimension x="0" y="-104"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <HitRectInsets>
+            <AbsInset left="0" right="30" top="0" bottom="70"/>
+        </HitRectInsets>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture file="Interface\Spellbook\Spellbook-Icon">
+                    <Size>
+                        <AbsDimension x="58" y="58"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="10" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="BORDER">
+                <Texture file="Interface\ItemTextFrame\UI-ItemText-TopLeft">
+                    <Size>
+                        <AbsDimension x="256" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                </Texture>
+                <Texture file="Interface\Spellbook\UI-SpellbookPanel-TopRight">
+                    <Size>
+                        <AbsDimension x="128" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="256" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture file="Interface\ItemTextFrame\UI-ItemText-BotLeft">
+                    <Size>
+                        <AbsDimension x="256" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="-256"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture file="Interface\Spellbook\UI-SpellbookPanel-BotRight">
+                    <Size>
+                        <AbsDimension x="128" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="256" y="-256"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentMaterialTopLeft">
+                    <Size>
+                        <AbsDimension x="256" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="21" y="-75"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMaterialTopRight">
+                    <Size>
+                        <AbsDimension x="64" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentMaterialTopLeft" relativePoint="TOPRIGHT"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMaterialBotLeft">
+                    <Size>
+                        <AbsDimension x="256" y="128"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentMaterialTopLeft" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMaterialBotRight">
+                    <Size>
+                        <AbsDimension x="64" y="128"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentMaterialTopLeft" relativePoint="BOTTOMRIGHT"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <FontString name="$parentTitleText" inherits="GameFontNormal">
+                    <Size>
+                        <AbsDimension x="224" y="14"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="6" y="230"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentCurrentPage" inherits="GameFontNormal">
+                    <Size>
+                        <AbsDimension x="192" y="0"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="10" y="-50"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+            </Layer>
+        </Layers>
+        <Frames>
+            <ScrollFrame name="$parentScrollFrame" inherits="UIPanelScrollFrameTemplate" hidden="false">
+                <Size>
+                    <AbsDimension x="280" y="355"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-66" y="-76"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+                            <Size>
+                                <AbsDimension x="28" y="256"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="0" y="5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+                        </Texture>
+                        <Texture name="$parentBottom" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+                            <Size>
+                                <AbsDimension x="28" y="107"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+                        </Texture>
+                    </Layer>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentMiddle">
+                            <Size>
+                                <AbsDimension x="25" y="365"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativeTo="$parentTop"/>
+                            </Anchors>
+                            <Color r="0" g="0" b="0" a="0.8"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <ScrollChild>
+                    <Frame name="$parentChild">
+                        <Size>
+                            <AbsDimension x="10" y="10"/>
+                        </Size>
+                        <Frames>
+                            <SimpleHTML name="GHI_ItemTextPageText" hidden="false">
+                                <Size>
+                                    <AbsDimension x="270" y="304"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="TOPLEFT">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-15"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+
+                                <Scripts>
+                                    <OnLoad>
+                                        self:SetScript("OnHyperlinkClick",GHI_BookHyperlinkClick);
+                                    </OnLoad>
+                                    <!--<OnHyperlinkClick>
+                                                 GHI_BookHyperlinkClick(tonumber(arg1));
+                                             </OnHyperlinkClick> -->
+
+                                </Scripts>
+                                <FontStringHeader1 inherits="GHI_ItemTextFontH1"/>
+                                <FontStringHeader2 inherits="GHI_ItemTextFontH2"/>
+                                <FontString inherits="ItemTextFontNormal"/>
+                            </SimpleHTML>
+                            <EditBox name="GHI_ItemTextPageMarkable" letters="950" autoFocus="false" multiLine="true"
+                                     hidden="true">
+                                <Size>
+                                    <AbsDimension x="270" y="400"></AbsDimension>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="TOPLEFT">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-15"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+
+                                <Scripts>
+                                    <OnEscapePressed>
+                                        self:ClearFocus();
+                                    </OnEscapePressed>
+                                    <OnClick>
+                                        self:SetFocus();
+                                    </OnClick>
+                                    <OnTextChanged>
+                                        self:SetText(self.text);
+                                    </OnTextChanged>
+                                </Scripts>
+                                <FontString inherits="MailTextFontNormal"></FontString>
+                            </EditBox>
+                        </Frames>
+
+                    </Frame>
+                </ScrollChild>
+            </ScrollFrame>
+            <StatusBar name="$parentStatusBar" hidden="true">
+                <Size>
+                    <AbsDimension x="250" y="21"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOM" relativeTo="$parentFrame">
+                        <Offset>
+                            <AbsDimension x="-5" y="128"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <Texture file="Interface\PaperDollInfoFrame\UI-Character-Skills-BarBorder">
+                            <Size>
+                                <AbsDimension x="256" y="23"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="CENTER"/>
+                            </Anchors>
+                            <TexCoords left="0" right="1.0" top="0.0625" bottom="0.75"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnLoad>
+                        self:SetFrameLevel(self:GetFrameLevel()+1);
+                    </OnLoad>
+                </Scripts>
+                <BarTexture file="Interface\TargetingFrame\UI-TargetingFrame-BarFill"/>
+                <BarColor r="0.25" g="0.75" b="0.25"/>
+            </StatusBar>
+            <Button name="$parentPrevPageButton">
+                <Size>
+                    <AbsDimension x="32" y="32"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER" relativePoint="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="90" y="-56"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString inherits="GameFontNormal" justifyH="LEFT" text="PREV">
+                            <Anchors>
+                                <Anchor point="LEFT" relativePoint="RIGHT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        PlaySound("igMainMenuOptionCheckBoxOn");
+                        GHI_BookPrevPage();
+                    </OnClick>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Down"/>
+                <DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Disabled"/>
+                <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+            </Button>
+            <Button name="$parentNextPageButton">
+                <Size>
+                    <AbsDimension x="32" y="32"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER" relativePoint="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-55" y="-56"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString inherits="GameFontNormal" justifyH="RIGHT" text="NEXT">
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="LEFT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        PlaySound("igMainMenuOptionCheckBoxOn");
+                        GHI_BookNextPage();
+                    </OnClick>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+                <DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Disabled"/>
+                <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+            </Button>
+            <Button name="$parentCloseButton">
+                <Size>
+                    <AbsDimension x="32" y="32"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER" relativePoint="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-45" y="-26"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        self:GetParent():Hide();
+                    </OnClick>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Down"/>
+                <HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
+            </Button>
+            <Button name="$parentEditButton" inherits="UIPanelButtonTemplate" text="EDIT_TEXT" hidden="true">
+                <Size>
+                    <AbsDimension x="70" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOP">
+                        <Offset>
+                            <AbsDimension x="10" y="-55"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        GHI_BookEdit(GHI_CurrentBookID,GHI_CurrentBookPage);
+                    </OnClick>
+                </Scripts>
+
+            </Button>
+            <Button name="$parentMarkButton" inherits="UIPanelButtonTemplate" text="MARK_TEXT" hidden="true">
+                <Size>
+                    <AbsDimension x="70" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOP">
+                        <Offset>
+                            <AbsDimension x="10" y="-55"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        if self.click == nil or self.click == 0 then
+                        GHI_ShowTextForMarking(GHI_CurrentBookID,GHI_CurrentBookPage);
+                        self.click = 1;
+
+                        self:SetText("View Text");
+                        elseif self.click == 1 then
+                        GHI_ItemTextFrame:Show();
+                        GHI_ItemTextPageText:Show();
+                        GHI_ItemTextPageMarkable:Hide();
+                        self:SetText("Mark Text");
+
+                        self.click = 0;
+                        end
+                    </OnClick>
+                </Scripts>
+
+            </Button>
+
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                GH_Localize(self);
+            </OnLoad>
+            <OnEvent>
+                --$parentFrame_OnEvent(event);
+            </OnEvent>
+            <OnUpdate>
+                --$parentFrame_OnUpdate(arg1);
+            </OnUpdate>
+            <OnShow>
+                PlaySound("igMainMenuOpen");
+                GHI_ItemTextEditFrame:Hide();
+            </OnShow>
+            <OnHide>
+                --Close$parent();
+                PlaySound("igMainMenuClose");
+            </OnHide>
+        </Scripts>
+    </Frame>
+
+    <Frame name="GHI_ItemTextEditFrame" toplevel="true" movable="true" enableMouse="true" hidden="true"
+           parent="UIParent">
+        <Size>
+            <AbsDimension x="384" y="512"/>
+        </Size>
+        <Anchors>
+            <Anchor point="TOPLEFT">
+                <Offset>
+                    <AbsDimension x="0" y="-104"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <HitRectInsets>
+            <AbsInset left="0" right="30" top="0" bottom="70"/>
+        </HitRectInsets>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture file="Interface\QuestFrame\UI-QuestLog-BookIcon">
+                    <Size>
+                        <AbsDimension x="58" y="58"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="10" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="BORDER">
+                <Texture file="Interface\ItemTextFrame\UI-ItemText-TopLeft">
+                    <Size>
+                        <AbsDimension x="256" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                </Texture>
+                <Texture file="Interface\Spellbook\UI-SpellbookPanel-TopRight">
+                    <Size>
+                        <AbsDimension x="128" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="256" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture file="Interface\ItemTextFrame\UI-ItemText-BotLeft">
+                    <Size>
+                        <AbsDimension x="256" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="-256"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture file="Interface\Spellbook\UI-SpellbookPanel-BotRight">
+                    <Size>
+                        <AbsDimension x="128" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="256" y="-256"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentMaterialTopLeft">
+                    <Size>
+                        <AbsDimension x="256" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="21" y="-75"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMaterialTopRight">
+                    <Size>
+                        <AbsDimension x="64" y="256"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentMaterialTopLeft" relativePoint="TOPRIGHT"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMaterialBotLeft">
+                    <Size>
+                        <AbsDimension x="256" y="128"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentMaterialTopLeft" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMaterialBotRight">
+                    <Size>
+                        <AbsDimension x="64" y="128"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentMaterialTopLeft" relativePoint="BOTTOMRIGHT"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <FontString name="$parentTitleText" inherits="GameFontNormal">
+                    <Size>
+                        <AbsDimension x="224" y="14"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="6" y="230"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentCurrentPage" inherits="GameFontNormal">
+                    <Size>
+                        <AbsDimension x="192" y="0"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="10" y="-40"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <ScrollFrame name="$parentScrollFrame" inherits="UIPanelScrollFrameTemplate">
+                <Size>
+                    <AbsDimension x="280" y="355"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-66" y="-76"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+                            <Size>
+                                <AbsDimension x="28" y="256"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="0" y="5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+                        </Texture>
+                        <Texture name="$parentBottom" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+                            <Size>
+                                <AbsDimension x="28" y="107"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+                        </Texture>
+                    </Layer>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentMiddle">
+                            <Size>
+                                <AbsDimension x="25" y="365"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativeTo="$parentTop"/>
+                            </Anchors>
+                            <Color r="0" g="0" b="0" a="0.8"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <ScrollChild>
+                    <Frame name="$parentChild">
+                        <Size>
+                            <AbsDimension x="10" y="10"/>
+                        </Size>
+                        <Frames>
+                            <EditBox name="GHI_ItemTextPageEdit" letters="950" autoFocus="false" multiLine="true"
+                                     hidden="false">
+                                <Size>
+                                    <AbsDimension x="270" y="400"></AbsDimension>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="TOPLEFT">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-15"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+
+                                <Scripts>
+                                    <OnEscapePressed>
+                                        self:ClearFocus();
+                                    </OnEscapePressed>
+                                    <OnClick>
+                                        self:SetFocus();
+                                    </OnClick>
+                                    <OnTextChanged>
+                                        --LA_ShowLetter(LA_CurrentShowing);
+                                    </OnTextChanged>
+                                </Scripts>
+                                <FontString inherits="MailTextFontNormal"></FontString>
+                            </EditBox>
+                        </Frames>
+                    </Frame>
+                </ScrollChild>
+            </ScrollFrame>
+            <StatusBar name="$parentStatusBar" hidden="true">
+                <Size>
+                    <AbsDimension x="250" y="21"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOM" relativeTo="$parentFrame">
+                        <Offset>
+                            <AbsDimension x="-5" y="128"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <Texture file="Interface\PaperDollInfoFrame\UI-Character-Skills-BarBorder">
+                            <Size>
+                                <AbsDimension x="256" y="23"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="CENTER"/>
+                            </Anchors>
+                            <TexCoords left="0" right="1.0" top="0.0625" bottom="0.75"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnLoad>
+                        self:SetFrameLevel(self:GetFrameLevel()+1);
+                    </OnLoad>
+                </Scripts>
+                <BarTexture file="Interface\TargetingFrame\UI-TargetingFrame-BarFill"/>
+                <BarColor r="0.25" g="0.75" b="0.25"/>
+            </StatusBar>
+            <Button name="$parentPrevPageButton">
+                <Size>
+                    <AbsDimension x="32" y="32"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER" relativePoint="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="90" y="-56"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString inherits="GameFontNormal" justifyH="LEFT" text="PREV">
+                            <Anchors>
+                                <Anchor point="LEFT" relativePoint="RIGHT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        PlaySound("igMainMenuOptionCheckBoxOn");
+                        GHI_BookEditPrevPage()
+                    </OnClick>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Down"/>
+                <DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Disabled"/>
+                <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+            </Button>
+            <Button name="$parentNextPageButton">
+                <Size>
+                    <AbsDimension x="32" y="32"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER" relativePoint="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-55" y="-56"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString inherits="GameFontNormal" justifyH="RIGHT" text="NEXT">
+                            <Anchors>
+                                <Anchor point="RIGHT" relativePoint="LEFT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        PlaySound("igMainMenuOptionCheckBoxOn");
+                        GHI_BookEditNextPage();
+                    </OnClick>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+                <DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Disabled"/>
+                <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+            </Button>
+            <Button name="$parentCloseButton">
+                <Size>
+                    <AbsDimension x="32" y="32"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="CENTER" relativePoint="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-45" y="-26"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        self:GetParent():Hide();
+                    </OnClick>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Down"/>
+                <HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
+            </Button>
+            <Frame name="$parentSideFrame">
+                <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
+                <Size>
+                    <AbsDimension x="155" y="435"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-40" y="32"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background"
+                          edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11"/>
+                    </BackgroundInsets>
+                    <TileSize>
+                        <AbsValue val="32"/>
+                    </TileSize>
+                    <EdgeSize>
+                        <AbsValue val="32"/>
+                    </EdgeSize>
+                </Backdrop>
+                <Layers>
+                    <Layer>
+
+                    </Layer>
+                </Layers>
+                <Frames>
+
+
+                    <Button name="$parentUndoButton" inherits="UIPanelButtonTemplate" text="UNDO_CHANGES">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativePoint="TOP">
+                                <Offset>
+                                    <AbsDimension x="0" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                GHI_BookUndo();
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+                    <Button name="$parentEditTitleButton" inherits="UIPanelButtonTemplate" text="EDIT_TITLE">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentUndoButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                StaticPopup_Show("GHI_EDIT_TITLE");
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+                    <Button name="$parentDeleteButton" inherits="UIPanelButtonTemplate" text="DELETE_PAGE">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentEditTitleButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                Old_GHI_EditID = nil;
+                                Old_GHI_EditPage = nil;
+                                StaticPopup_Show("GHI_DELETE_PAGE");
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+
+                    <Button name="$parentInsertBeforeButton" inherits="UIPanelButtonTemplate" text="INSERT_BEFORE">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentDeleteButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                GHI_BookAddPageBefore();
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+                    <Button name="$parentInsertAfterButton" inherits="UIPanelButtonTemplate" text="INSERT_AFTER">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentInsertBeforeButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                GHI_BookAddPageAfter();
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+                    <Frame name="$parentInsText" hidden="false">
+                        <Size>
+                            <AbsDimension x="100" y="12"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="BOTTOMLEFT" relativeTo="$parentInsertBeforeButton" relativePoint="TOPLEFT">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer>
+                                <FontString name="$parentLabel" inherits="GameFontHighlight" justifyH="LEFT"
+                                            text="INSERT_PAGE">
+                                    <FontHeight>
+                                        <AbsValue val="9"/>
+                                    </FontHeight>
+                                    <Color r="1" g="0.8196079" b="0"/>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+
+
+                    <Frame name="$parentMatDropDown" inherits="UIDropDownMenuTemplate" enableMouse="true"
+                           hidden="false">
+
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentInsertAfterButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="-62" y="-20"></AbsDimension>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentLabel" inherits="GameFontNormalSmall" text="MATERIAL"
+                                            justifyH="RIGHT">
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="32" y="15"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnLoad>
+                                UIDropDownMenu_Initialize(self, GHI_MatDD_Update);
+                            </OnLoad>
+
+                            <OnClick>
+                                GHI_CatagoryDD_OnClick();
+                            </OnClick>
+                        </Scripts>
+                        <Frames>
+
+
+                            <Frame name="$parentText">
+                                <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+                                <Size>
+                                    <AbsDimension x="100" y="14"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="LEFT" relativePoint="LEFT">
+                                        <Offset>
+                                            <AbsDimension x="25" y="3"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                    </OnClick>
+                                </Scripts>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF"
+                                                    text="PARCHMENT">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT"/>
+                                                <Anchor point="BOTTOMRIGHT"/>
+                                            </Anchors>
+                                            <FontHeight>
+                                                <AbsValue val="10"/>
+                                            </FontHeight>
+                                            <Color r="1" g="1" b="1"/>
+
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+
+                    <Button name="$parentH1Button" inherits="UIPanelButtonTemplate" text="HEADLINE_1">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentInsertAfterButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-55"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                GHI_Book_H1OnClick(self,button)
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+                    <Button name="$parentH2Button" inherits="UIPanelButtonTemplate" text="HEADLINE_2">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentH1Button" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                GHI_Book_H2OnClick(self,button)
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+
+                    <Frame name="$parentFontDropDown" inherits="UIDropDownMenuTemplate" enableMouse="true"
+                           hidden="false">
+
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentH2Button" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="-62" y="-20"></AbsDimension>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentLabel" inherits="GameFontNormalSmall" text="FRONT"
+                                            justifyH="RIGHT">
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="32" y="15"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnLoad>
+                                UIDropDownMenu_Initialize(self, GHI_FontDD_Update);
+                            </OnLoad>
+
+                            <OnClick>
+                                GHI_CatagoryDD_OnClick();
+                            </OnClick>
+                        </Scripts>
+                        <Frames>
+
+
+                            <Frame name="$parentText">
+                                <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+                                <Size>
+                                    <AbsDimension x="100" y="14"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="LEFT" relativePoint="LEFT">
+                                        <Offset>
+                                            <AbsDimension x="25" y="3"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                    </OnClick>
+                                </Scripts>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF"
+                                                    text="PARCHMENT">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT"/>
+                                                <Anchor point="BOTTOMRIGHT"/>
+                                            </Anchors>
+                                            <FontHeight>
+                                                <AbsValue val="10"/>
+                                            </FontHeight>
+                                            <Color r="1" g="1" b="1"/>
+
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+
+                    <EditBox name="$parentH1Size" hidden="false" letters="2" autoFocus="false" numeric="true">
+                        <Size>
+                            <AbsDimension x="20" y="32"></AbsDimension>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativePoint="BOTTOM" relativeTo="$parentH2Button">
+                                <Offset>
+                                    <AbsDimension x="0" y="-75"></AbsDimension>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+                                    <Size>
+                                        <AbsDimension x="20" y="32"></AbsDimension>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="-5" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0" right="0.2" top="0" bottom="1.0"></TexCoords>
+                                </Texture>
+                                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+                                    <Size>
+                                        <AbsDimension x="20" y="32"></AbsDimension>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="RIGHT">
+                                            <Offset>
+                                                <AbsDimension x="5" y="0"></AbsDimension>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0.7" right="1.0" top="0" bottom="1.0"></TexCoords>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnEscapePressed>
+                                self:ClearFocus();
+                            </OnEscapePressed>
+                            <OnClick>
+                                self:SetFocus();
+                            </OnClick>
+                            <OnEnterPressed>
+
+                            </OnEnterPressed>
+                            <OnUpdate>
+                                local n = tonumber(self:GetText());
+                                if n then
+                                if n > GHI_MAX_FONT_SIZE then
+                                self:SetText(GHI_MAX_FONT_SIZE);
+                                end
+                                end
+                            </OnUpdate>
+                            <OnLoad></OnLoad>
+                        </Scripts>
+                        <FontString inherits="ChatFontNormal"></FontString>
+                        <Frames>
+                            <Frame name="$parentText">
+                                <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+                                <Size>
+                                    <AbsDimension x="100" y="20"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-5"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                    </OnClick>
+                                </Scripts>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF"
+                                                    text="H1">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT"/>
+                                                <Anchor point="BOTTOMRIGHT"/>
+                                            </Anchors>
+                                            <FontHeight>
+                                                <AbsValue val="10"/>
+                                            </FontHeight>
+                                            <Color r="1" g="0.8196079" b="0"/>
+                                            <Shadow>
+                                                <Color r="0" g="0" b="0"/>
+                                                <Offset>
+                                                    <AbsDimension x="1" y="-1"/>
+                                                </Offset>
+                                            </Shadow>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                        </Frames>
+                    </EditBox>
+
+                    <EditBox name="$parentNSize" hidden="false" letters="2" autoFocus="false" numeric="true">
+                        <Size>
+                            <AbsDimension x="20" y="32"></AbsDimension>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="RIGHT" relativePoint="LEFT" relativeTo="$parentH1Size">
+                                <Offset>
+                                    <AbsDimension x="-20" y="0"></AbsDimension>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+                                    <Size>
+                                        <AbsDimension x="20" y="32"></AbsDimension>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="-5" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0" right="0.2" top="0" bottom="1.0"></TexCoords>
+                                </Texture>
+                                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+                                    <Size>
+                                        <AbsDimension x="20" y="32"></AbsDimension>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="RIGHT">
+                                            <Offset>
+                                                <AbsDimension x="5" y="0"></AbsDimension>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0.7" right="1.0" top="0" bottom="1.0"></TexCoords>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnEscapePressed>
+                                self:ClearFocus();
+                            </OnEscapePressed>
+                            <OnClick>
+                                self:SetFocus();
+                            </OnClick>
+                            <OnEnterPressed>
+
+                            </OnEnterPressed>
+                            <OnUpdate>
+                                local n = tonumber(self:GetText());
+                                if n then
+                                if n > GHI_MAX_FONT_SIZE then
+                                self:SetText(GHI_MAX_FONT_SIZE);
+                                end
+                                end
+                            </OnUpdate>
+                            <OnLoad></OnLoad>
+                        </Scripts>
+                        <FontString inherits="ChatFontNormal"></FontString>
+                        <Frames>
+                            <Frame name="$parentText">
+                                <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+                                <Size>
+                                    <AbsDimension x="100" y="20"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                                        <Offset>
+                                            <AbsDimension x="-10" y="-5"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                    </OnClick>
+                                </Scripts>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF"
+                                                    text="NORMAL">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT"/>
+                                                <Anchor point="BOTTOMRIGHT"/>
+                                            </Anchors>
+                                            <FontHeight>
+                                                <AbsValue val="10"/>
+                                            </FontHeight>
+                                            <Color r="1" g="0.8196079" b="0"/>
+                                            <Shadow>
+                                                <Color r="0" g="0" b="0"/>
+                                                <Offset>
+                                                    <AbsDimension x="1" y="-1"/>
+                                                </Offset>
+                                            </Shadow>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                        </Frames>
+                    </EditBox>
+
+                    <EditBox name="$parentH2Size" hidden="false" letters="2" autoFocus="false" numeric="true">
+                        <Size>
+                            <AbsDimension x="20" y="32"></AbsDimension>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentH1Size">
+                                <Offset>
+                                    <AbsDimension x="20" y="0"></AbsDimension>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+                                    <Size>
+                                        <AbsDimension x="20" y="32"></AbsDimension>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="-5" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0" right="0.2" top="0" bottom="1.0"></TexCoords>
+                                </Texture>
+                                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+                                    <Size>
+                                        <AbsDimension x="20" y="32"></AbsDimension>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="RIGHT">
+                                            <Offset>
+                                                <AbsDimension x="5" y="0"></AbsDimension>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0.7" right="1.0" top="0" bottom="1.0"></TexCoords>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnEscapePressed>
+                                self:ClearFocus();
+                            </OnEscapePressed>
+                            <OnClick>
+                                self:SetFocus();
+                            </OnClick>
+                            <OnEnterPressed>
+                                <OnUpdate>
+                                    local n = tonumber(self:GetText());
+                                    if n then
+                                    if n > GHI_MAX_FONT_SIZE then
+                                    self:SetText(GHI_MAX_FONT_SIZE);
+                                    end
+                                    end
+                                </OnUpdate>
+                            </OnEnterPressed>
+
+                            <OnLoad></OnLoad>
+                        </Scripts>
+                        <FontString inherits="ChatFontNormal"></FontString>
+                        <Frames>
+                            <Frame name="$parentText">
+                                <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+                                <Size>
+                                    <AbsDimension x="100" y="20"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-5"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                    </OnClick>
+                                </Scripts>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF"
+                                                    text="H2">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT"/>
+                                                <Anchor point="BOTTOMRIGHT"/>
+                                            </Anchors>
+                                            <FontHeight>
+                                                <AbsValue val="10"/>
+                                            </FontHeight>
+                                            <Color r="1" g="0.8196079" b="0"/>
+                                            <Shadow>
+                                                <Color r="0" g="0" b="0"/>
+                                                <Offset>
+                                                    <AbsDimension x="1" y="-1"/>
+                                                </Offset>
+                                            </Shadow>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                        </Frames>
+                    </EditBox>
+
+                    <Frame name="$parentSizeText" hidden="false">
+                        <Size>
+                            <AbsDimension x="100" y="12"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parentH2Button" relativePoint="BOTTOMLEFT">
+                                <Offset>
+                                    <AbsDimension x="0" y="-50"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer>
+                                <FontString name="$parentLabel" inherits="GameFontHighlight" justifyH="LEFT"
+                                            text="FONT_SIZE2">
+                                    <FontHeight>
+                                        <AbsValue val="9"/>
+                                    </FontHeight>
+                                    <Color r="1" g="0.8196079" b="0"/>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+
+                    <Button name="$parentInsertLinkButton" inherits="UIPanelButtonTemplate" text="INSERT_LINK">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentH1Size" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                StaticPopup_Show("GHI_INSERT_LINKPAGE");
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+                    <Button name="$parentInsertIconButton" inherits="UIPanelButtonTemplate" text="INSERT_LOGO">
+                        <Size>
+                            <AbsDimension x="100" y="20"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="TOP" relativeTo="$parentInsertLinkButton" relativePoint="BOTTOM">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                GHI_LogoChooseFrame:Show();
+                            </OnClick>
+                        </Scripts>
+
+                    </Button>
+
+
+                </Frames>
+            </Frame>
+
+
+            <Button name="$parentViewButton" inherits="UIPanelButtonTemplate" text="VIEW_TEXT" hidden="false">
+                <Size>
+                    <AbsDimension x="70" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOP">
+                        <Offset>
+                            <AbsDimension x="10" y="-55"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        GHI_BookSafePage();
+                        GHI_ItemTextFrameCurrentPage:SetText(GHI_EditPage.."/"..GHI_CurrentBook.pages);
+                        GHI_CurrentBookPage = GHI_EditPage;
+                        if GHI_CurrentBook.pages == 1 then
+                        GHI_ItemTextFramePrevPageButton:Hide();
+                        GHI_ItemTextFrameNextPageButton:Hide();
+                        else
+                        GHI_ItemTextFramePrevPageButton:Show();
+                        GHI_ItemTextFrameNextPageButton:Show();
+                        end
+
+                        GHI_ShowBook(GHI_CurrentBook.title,GHI_CurrentBook[GHI_EditPage],GHI_CurrentBookEdit,GHI_CurrentMaterial,GHI_CurrentBook.font,GHI_CurrentBook.n,GHI_CurrentBook.h1,GHI_CurrentBook.h2);
+                    </OnClick>
+                </Scripts>
+
+            </Button>
+
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                GH_Localize(self);
+            </OnLoad>
+            <OnEvent>
+                --$parentFrame_OnEvent(event);
+            </OnEvent>
+            <OnUpdate>
+                --$parentFrame_OnUpdate(arg1);
+            </OnUpdate>
+            <OnShow>
+                PlaySound("igMainMenuOpen");
+            </OnShow>
+            <OnHide>
+                --Close$parent();
+                GHI_BookSafePage();
+                PlaySound("igMainMenuClose");
+                GHI_EditPage = nil;
+                GHI_EditID = nil;
+
+
+            </OnHide>
+        </Scripts>
+    </Frame>
+
+
+    <Frame name="GHI_LogoTemplate" setAllPoints="false" virtual="true">
+        <Size>
+            <AbsDimension x="128" y="128"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+
+                <Texture name="$parentTopRight" alphaMode="BLEND">
+                    <Size>
+                        <AbsDimension x="64" y="64"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.5" top="0" bottom="1"/>
+                </Texture>
+                <Texture name="$parentBottomRight" alphaMode="BLEND">
+                    <Size>
+                        <AbsDimension x="64" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP" relativeTo="$parentTopRight" relativePoint="BOTTOM"/>
+                    </Anchors>
+                    <TexCoords left="0" right="0.5" top="0" bottom="1"/>
+                </Texture>
+                <Texture name="$parentTopLeft" alphaMode="BLEND">
+                    <Size>
+                        <AbsDimension x="64" y="64"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="$parentTopRight" relativePoint="LEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.5" right="0" top="0" bottom="1"/>
+                </Texture>
+                <Texture name="$parentBottomLeft" alphaMode="BLEND">
+                    <Size>
+                        <AbsDimension x="64" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP" relativeTo="$parentTopLeft" relativePoint="BOTTOM"/>
+                    </Anchors>
+                    <TexCoords left="0.5" right="0" top="0" bottom="1"/>
+                </Texture>
+
+            </Layer>
+        </Layers>
+    </Frame>
+
+    <Frame name="GHI_Logo1" inherits="GHI_LogoTemplate">
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+    </Frame>
+    <Frame name="GHI_Logo2" inherits="GHI_LogoTemplate">
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+    </Frame>
+    <Frame name="GHI_Logo3" inherits="GHI_LogoTemplate">
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+    </Frame>
+    <Frame name="GHI_Logo4" inherits="GHI_LogoTemplate">
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+    </Frame>
+    <Frame name="GHI_Logo5" inherits="GHI_LogoTemplate">
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+    </Frame>
+
+    <Frame name="GHI_LogoChooseFrame" hidden="true" parent="UIParrent" toplevel="true">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+            <AbsDimension x="300" y="210"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background"
+                  edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="12" top="12" bottom="11"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32"/>
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer>
+                <Texture name="$parentTitleBorder" hidden="false" file="Interface\DialogFrame\UI-DialogBox-Header">
+                    <Size>
+                        <AbsDimension x="160" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.2" right="0.8" top="0" bottom="0.6"/>
+                </Texture>
+                <FontString name="$parentTitleString" hidden="false" font="Fonts\FRIZQT__.TTF" text="INSERT_LOGO">
+                    <Size>
+                        <AbsDimension x="140" y="0"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="-6"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <FontHeight>
+                        <AbsValue val="12"/>
+                    </FontHeight>
+                    <Color r="1" g="0.8196079" b="0"/>
+                    <Shadow>
+                        <Color r="0" g="0" b="0"/>
+                        <Offset>
+                            <AbsDimension x="1" y="-1"/>
+                        </Offset>
+                    </Shadow>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentLogo" inherits="GHI_LogoTemplate">
+                <Anchors>
+                    <Anchor point="TOP" relativePoint="TOP">
+                        <Offset>
+                            <AbsDimension x="-70" y="-45"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+
+            <Slider name="$parentSlider" minValue="10" maxValue="169" defaultValue="10" valueStep="1"
+                    orientation="Horizontal">
+                <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4976-d66d-444e-bb2d-1ad102c87fed" />-->
+                <Size>
+                    <AbsDimension x="260" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOP" relativePoint="TOP">
+                        <Offset>
+                            <AbsDimension x="0" y="-35"></AbsDimension>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+
+                    </OnLoad>
+                    <OnValueChanged>
+                        local num = tonumber(self:GetValue());
+                        if not num then num = 10 end;
+                        local parent = self:GetParent():GetName();
+                        local TL = _G[parent.."LogoTopLeft"];
+                        local TR = _G[parent.."LogoTopRight"];
+                        local BL = _G[parent.."LogoBottomLeft"];
+                        local BR = _G[parent.."LogoBottomRight"];
+
+                        TL:SetTexture("Textures\\GuildEmblems\\Emblem_"..num.."_16_TU_U");
+                        TR:SetTexture("Textures\\GuildEmblems\\Emblem_"..num.."_16_TU_U");
+                        BL:SetTexture("Textures\\GuildEmblems\\Emblem_"..num.."_16_TL_U");
+                        BR:SetTexture("Textures\\GuildEmblems\\Emblem_"..num.."_16_TL_U");
+
+                        _G[self:GetName().."Label2"]:SetText((num));
+                    </OnValueChanged>
+                </Scripts>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentLabel1" justifyH="LEFT" font="Fonts\FRIZQT__.TTF" text="LOGO">
+                            <Anchors>
+                                <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                                    <Offset>
+                                        <AbsDimension x="5" y="0"></AbsDimension>
+                                    </Offset>
+                                </Anchor>
+
+                            </Anchors>
+                            <FontHeight>
+                                <AbsValue val="10"/>
+                            </FontHeight>
+                            <Color r="1" g="0.8196079" b="0"/>
+                        </FontString>
+                        <FontString name="$parentLabel2" justifyH="LEFT" font="Fonts\FRIZQT__.TTF" text="1">
+                            <Anchors>
+                                <Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="-5" y="0"></AbsDimension>
+                                    </Offset>
+                                </Anchor>
+
+                            </Anchors>
+                            <FontHeight>
+                                <AbsValue val="10"/>
+                            </FontHeight>
+                            <Color r="1" g="0.8196079" b="0"/>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Backdrop bgFile="Interface\Buttons\UI-SliderBar-Background"
+                          edgeFile="Interface\Buttons\UI-SliderBar-Border" tile="false">
+                    <BackgroundInsets>
+                        <AbsInset left="20" right="20" top="20" bottom="20"/>
+                    </BackgroundInsets>
+                    <TileSize>
+                        <AbsValue val="8"/>
+                    </TileSize>
+                    <EdgeSize>
+                        <AbsValue val="8"/>
+                    </EdgeSize>
+                </Backdrop>
+                <HitRectInsets>
+                    <AbsInset left="10" right="0" top="0" bottom="0"/>
+                </HitRectInsets>
+                <ThumbTexture name="$parentThumb" file="Interface\Buttons\UI-SliderBar-Button-Horizontal">
+                    <Size>
+                        <AbsDimension x="32" y="32"/>
+                    </Size>
+                </ThumbTexture>
+
+
+            </Slider>
+
+            <Frame name="$parentAlignDropDown" inherits="UIDropDownMenuTemplate" enableMouse="true" hidden="false">
+
+                <Anchors>
+                    <Anchor point="TOP" relativePoint="TOP">
+                        <Offset>
+                            <AbsDimension x="5" y="-90"></AbsDimension>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentLabel" inherits="GameFontNormalSmall" text="ALLIGNMENT"
+                                    justifyH="RIGHT">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+                                    <Offset>
+                                        <AbsDimension x="32" y="15"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnLoad>
+                        UIDropDownMenu_Initialize(self, GHI_AlignDD_Update);
+                    </OnLoad>
+
+                    <OnClick>
+                        ToggleDropDownMenu(1, nil, GHI_DropDownMenu, GHI_DropDownMenuButton, 0, 0);
+                    </OnClick>
+                </Scripts>
+                <Frames>
+
+
+                    <Frame name="$parentText">
+                        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+                        <Size>
+                            <AbsDimension x="100" y="14"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="LEFT" relativePoint="LEFT">
+                                <Offset>
+                                    <AbsDimension x="25" y="3"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                            </OnClick>
+                        </Scripts>
+                        <Layers>
+                            <Layer>
+                                <FontString name="$parentLabel" justifyH="LEFT" font="Fonts\FRIZQT__.TTF"
+                                            text="LEFT">
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT"/>
+                                        <Anchor point="BOTTOMRIGHT"/>
+                                    </Anchors>
+                                    <FontHeight>
+                                        <AbsValue val="10"/>
+                                    </FontHeight>
+                                    <Color r="1" g="1" b="1"/>
+
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+
+            <Button name="$parentOk" inherits="UIPanelButtonTemplate" hidden="false" text="INSERT">
+                <Size>
+                    <AbsDimension x="80" y="30"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                        <Offset>
+                            <AbsDimension x="-50" y="15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        GHI_IconBoxOnOk(self);
+
+                    </OnClick>
+                </Scripts>
+
+            </Button>
+
+            <Button name="$parentCancel" inherits="UIPanelButtonTemplate" hidden="false" text="CLOSE">
+                <Size>
+                    <AbsDimension x="80" y="30"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                        <Offset>
+                            <AbsDimension x="50" y="15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        self:GetParent():Hide();
+                    </OnClick>
+                </Scripts>
+
+            </Button>
+
+
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                GH_Localize(self);
+            </OnLoad>
+        </Scripts>
+    </Frame>
+
+
+    <!--  Transcripe -->
+    <Button name="GHI_ItemTextTranscribeButton" inherits="UIPanelButtonTemplate" text="TRANSCRIBE"
+            parent="ItemTextFrame">
+        <Size>
+            <AbsDimension x="120" y="20"/>
+        </Size>
+        <Anchors>
+            <Anchor point="TOP" relativePoint="TOP">
+                <Offset>
+                    <AbsDimension x="10" y="-40"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Scripts>
+            <OnLoad>
+                ItemTextCurrentPage:ClearAllPoints();
+                ItemTextCurrentPage:SetPoint("TOP", 10, -60);
+                GH_Localize(self);
+            </OnLoad>
+            <OnClick>
+                GHI_TranscribeTextItem();
+            </OnClick>
+        </Scripts>
+
+    </Button>
+
+    <Button name="GHI_MailTextTranscribeButton" inherits="UIPanelButtonTemplate" text="TRANSCRIBE"
+            parent="OpenMailFrame">
+        <Size>
+            <AbsDimension x="120" y="20"/>
+        </Size>
+        <Anchors>
+            <Anchor point="TOP" relativePoint="TOP">
+                <Offset>
+                    <AbsDimension x="100" y="-63"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Scripts>
+            <OnLoad>
+                ItemTextCurrentPage:ClearAllPoints();
+                ItemTextCurrentPage:SetPoint("TOP", -30, -70);
+                GH_Localize(self);
+            </OnLoad>
+            <OnClick>
+                GHI_TranscribeMailboxLetter();
+            </OnClick>
+        </Scripts>
+
+    </Button>
+
+</Ui>
